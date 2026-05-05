@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "arxiv_id": "2605.02829",
+    "title": "Compress Then Adapt? No, Do It Together via Task-aware Union of Subspaces",
+    "pdf_url": "https://arxiv.org/pdf/2605.02829.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-05T23:41:09.011903+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.01870",
+    "title": "Maistros: A Greek Large Language Model Adapted Through Knowledge Distillation From Large Reasoning Models",
+    "pdf_url": "https://arxiv.org/pdf/2605.01870.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-05T23:41:09.011903+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.02489",
+    "title": "GRAIL: A Deep-Granularity Hybrid Resonance Framework for Real-Time Agent Discovery via SLM-Enhanced Indexing",
+    "pdf_url": "https://arxiv.org/pdf/2605.02489.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-05T23:41:09.011903+09:00",
+    "model": "gemini-2.5-flash"
+  }
+]
