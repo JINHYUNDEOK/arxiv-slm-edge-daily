@@ -127,7 +127,30 @@ def is_duplicate(paper, processed):
                 return True
 
     return False
+def get_with_retry(url, timeout=90, retries=3, sleep_sec=10):
+    last_error = None
 
+    for attempt in range(1, retries + 1):
+        try:
+            print(f"요청 시도 {attempt}/{retries}: {url}")
+            res = requests.get(
+                url,
+                timeout=timeout,
+                headers={
+                    "User-Agent": "arxiv-slm-edge-daily/1.0 (personal research automation)"
+                },
+            )
+            res.raise_for_status()
+            return res
+
+        except requests.exceptions.RequestException as e:
+            last_error = e
+            print(f"요청 실패 {attempt}/{retries}: {e}")
+
+            if attempt < retries:
+                time.sleep(sleep_sec)
+
+    raise last_error
 
 def verify_pdf_exists(pdf_url):
     try:
