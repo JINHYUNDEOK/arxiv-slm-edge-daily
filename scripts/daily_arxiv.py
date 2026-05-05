@@ -18,7 +18,7 @@ KST = timezone(timedelta(hours=9))
 OUTPUT_DIR = "outputs"
 PROCESSED_PATH = "processed_ids.json"
 
-MAX_RESULTS = 50
+MAX_RESULTS = 30
 SELECT_LIMIT = 3
 RECENT_DAYS = 60
 
@@ -474,8 +474,33 @@ def safe_text(text):
 
     for src, dst in replacements.items():
         text = text.replace(src, dst)
+        
+        # Markdown 링크를 일반 URL로 변환
+    text = re.sub(r"\[(https?://[^\]]+)\]\((https?://[^)]+)\)", r"\1", text)
+    text = text.replace("](", " ")
 
     return text
+def break_long_words(text, max_len=60):
+    """
+    fpdf2는 공백 없는 긴 URL/토큰을 줄바꿈하지 못해서 오류가 날 수 있음.
+    긴 단어를 일정 길이마다 공백으로 끊어 PDF 렌더링 오류를 방지함.
+    """
+    new_lines = []
+
+    for line in text.splitlines():
+        words = line.split(" ")
+        fixed_words = []
+
+        for word in words:
+            if len(word) > max_len:
+                chunks = [word[i:i + max_len] for i in range(0, len(word), max_len)]
+                fixed_words.append(" ".join(chunks))
+            else:
+                fixed_words.append(word)
+
+        new_lines.append(" ".join(fixed_words))
+
+    return "\n".join(new_lines)
 
 
 def create_pdf(content, filename):
@@ -505,6 +530,7 @@ def create_pdf(content, filename):
 
     content = safe_text(content)
     content = content.replace("**", "")
+    content = break_long_words(content, max_len=60)
 
     for line in content.splitlines():
         stripped = line.strip()
