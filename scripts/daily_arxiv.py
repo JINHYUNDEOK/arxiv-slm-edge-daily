@@ -19,8 +19,21 @@ KST = timezone(timedelta(hours=9))
 OUTPUT_DIR = os.getenv("OUTPUT_DIR", "outputs")
 PROCESSED_PATH = "processed_ids.json"
 
-MAX_RESULTS = 30
-RECENT_DAYS = 60
+# arXiv에서 가져올 최대 후보 수
+# 3년까지 넓게 보려면 너무 작으면 과거 후보가 안 잡힐 수 있음
+MAX_RESULTS = 150
+
+# 최근 7일 -> 15일 -> 30일 -> 60일 -> 120일 -> 1년 -> 2년 -> 3년
+RECENT_WINDOWS = [7, 15, 30, 60, 120, 365, 730, 1095]
+
+# 최소 목표 논문 수
+MIN_TARGET_PAPERS = 3
+
+# Gemini에게 넘길 후보 수
+GEMINI_CANDIDATE_LIMIT = 10
+
+# 최종 PDF에 들어갈 최대 논문 수
+FINAL_PAPER_LIMIT = 3
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
@@ -52,6 +65,10 @@ KEYWORD_GROUPS = [
     "continual learning",
     "online learning",
     "federated learning",
+    "efficient LLM",
+    "efficient language model",
+    "model compression",
+    "edge AI",
 ]
 
 
@@ -223,7 +240,14 @@ def search_arxiv():
         published = datetime(*entry.published_parsed[:6], tzinfo=timezone.utc)
         updated = datetime(*entry.updated_parsed[:6], tzinfo=timezone.utc)
 
-        if (now - updated).days > RECENT_DAYS and (now - published).days > RECENT_DAYS:
+        # 제출일 또는 수정일 중 더 최근 것을 기준으로 age 계산
+        age_days = min(
+            (now - published).days,
+            (now - updated).days
+        )
+
+        # 최대 3년 범위를 벗어나면 제외
+        if age_days > max(RECENT_WINDOWS):
             continue
 
         title = html.unescape(entry.title).replace("\n", " ").strip()
@@ -239,6 +263,7 @@ def search_arxiv():
             "pdf_url": f"https://arxiv.org/pdf/{arxiv_id}.pdf",
             "published": published.isoformat(),
             "updated": updated.isoformat(),
+            "age_days": age_days,
         }
 
         papers.append(paper)
@@ -266,6 +291,9 @@ def local_score(paper):
         "peft",
         "adapter",
         "adapters",
+        "efficient llm",
+        "efficient language model",
+        "edge ai",
     ]
 
     bonus_terms = [
@@ -279,6 +307,7 @@ def local_score(paper):
         "continual",
         "online",
         "federated",
+        "model compression",
     ]
 
     for term in high_terms:
@@ -290,6 +319,48 @@ def local_score(paper):
             score += 1
 
     return score
+
+
+def select_candidates_by_windows(filtered):
+    """
+    최근 7일 -> 15일 -> 30일 -> 60일 -> 120일 -> 1년 -> 2년 -> 3년 순서로 확장.
+    최소 3개 후보가 확보되면 그 기간의 후보를 Gemini에 전달.
+    최종 출력은 Gemini 프롬프트에서 최대 3편으로 제한.
+    """
+    if not filtered:
+        return [], None
+
+    for window in RECENT_WINDOWS:
+        window_candidates = [
+            paper for paper in filtered
+            if paper.get("age_days", 999999) <= window
+        ]
+
+        window_candidates = sorted(
+            window_candidates,
+            key=lambda x: x["local_score"],
+            reverse=True
+        )
+
+        print(f"최근 {window}일 후보 수: {len(window_candidates)}")
+
+        if len(window_candidates) >= MIN_TARGET_PAPERS:
+            return window_candidates[:GEMINI_CANDIDATE_LIMIT], window
+
+    final_window = RECENT_WINDOWS[-1]
+
+    final_candidates = [
+        paper for paper in filtered
+        if paper.get("age_days", 999999) <= final_window
+    ]
+
+    final_candidates = sorted(
+        final_candidates,
+        key=lambda x: x["local_score"],
+        reverse=True
+    )
+
+    return final_candidates[:GEMINI_CANDIDATE_LIMIT], final_window
 
 
 # =========================================================
@@ -365,7 +436,7 @@ def call_gemini(prompt, max_output_tokens=4096):
     )
 
 
-def gemini_judge_and_summarize(papers):
+def gemini_judge_and_summarize(papers, selected_window):
     paper_blocks = []
 
     for i, p in enumerate(papers, start=1):
@@ -378,6 +449,7 @@ arXiv ID: {p['arxiv_id']}
 PDF: {p['pdf_url']}
 제출일: {p['published']}
 수정일: {p['updated']}
+최근성: 최근 {p.get('age_days', 'N/A')}일 이내
 초록:
 {p['abstract']}
 """
@@ -387,7 +459,10 @@ PDF: {p['pdf_url']}
 너는 AI/ML 연구자를 위한 arXiv 리서치 어시스턴트다.
 
 핵심 목표:
-SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adapter, quantization, compression, latency, memory efficiency와 직접 관련 있는 최신 논문만 선별한다.
+SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adapter, quantization, compression, latency, memory efficiency와 직접 관련 있는 논문만 선별한다.
+
+이번 검색 범위:
+최근 {selected_window}일 이내 후보 중에서 선별한다.
 
 절대 규칙:
 - 아래 제공된 후보 논문만 사용하라.
@@ -396,7 +471,7 @@ SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adap
 - PDF 링크는 제공된 arXiv PDF 링크만 사용하라.
 - 관련성이 낮으면 억지로 3편을 채우지 마라.
 - 적합한 논문이 없으면 정확히 "선정 논문 없음"이라고만 답하라.
-- 최대 3편만 선정하라.
+- 후보가 여러 개 제공되더라도 최종 출력은 반드시 최대 {FINAL_PAPER_LIMIT}편까지만 작성하라.
 - 한국어로 작성하라.
 - 초록 요약은 원문 번역/복사가 아니라 핵심 재구성으로 작성하라.
 
@@ -405,6 +480,7 @@ SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adap
 2. edge device, on-device, mobile, TinyML 환경과 직접 관련
 3. LoRA, MoE, PEFT, adapter, quantization, compression, latency, memory optimization 중 하나 이상과 관련
 4. 단순 대형 LLM 일반 논문, 순수 benchmark 논문, 주제와 무관한 CV/NLP 논문은 제외
+5. 최신 논문을 우선하되, 오래된 논문이라도 주제 관련성이 높으면 선정 가능
 
 출력 형식:
 
@@ -447,7 +523,7 @@ def translate_abstract_with_gemini(abstract):
     return call_gemini(prompt, max_output_tokens=2048)
 
 
-def create_candidate_fallback_summary(candidates, error_message):
+def create_candidate_fallback_summary(candidates, error_message, selected_window):
     lines = []
 
     lines.append("Gemini 전체 요약 실패")
@@ -457,16 +533,18 @@ def create_candidate_fallback_summary(candidates, error_message):
     lines.append("각 논문에 대해 초록 원문과 초록 한국어 번역을 함께 정리합니다.")
     lines.append("이 후보들은 pending 상태로 기록되므로 다음 실행 때 중복 후보로 반복 생성되지 않습니다.")
     lines.append("")
+    lines.append(f"선택된 검색 범위: 최근 {selected_window}일")
     lines.append(f"오류 메시지: {error_message}")
     lines.append("")
 
-    for idx, paper in enumerate(candidates[:3], start=1):
+    for idx, paper in enumerate(candidates[:FINAL_PAPER_LIMIT], start=1):
         lines.append(f"[논문 후보 {idx}]")
         lines.append(f"제목: {paper['title']}")
         lines.append(f"저자: {paper['authors']}")
         lines.append(f"arXiv ID: {paper['arxiv_id']}")
         lines.append(f"제출일: {paper['published']}")
         lines.append(f"수정일: {paper['updated']}")
+        lines.append(f"최근성: 최근 {paper.get('age_days', 'N/A')}일 이내")
         lines.append(f"arXiv PDF: {paper['pdf_url']}")
         lines.append("")
 
@@ -555,7 +633,7 @@ def pdf_write(pdf, text, h=7, bold=False):
     pdf.multi_cell(usable_width, h, str(text))
 
 
-def create_pdf(content, filename):
+def create_pdf(content, filename, selected_window):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     pdf = PDF()
@@ -581,6 +659,7 @@ def create_pdf(content, filename):
     today_kst = datetime.now(KST).strftime("%Y-%m-%d %H:%M KST")
     pdf_write(pdf, f"생성일: {today_kst}", h=8)
     pdf_write(pdf, f"Gemini 모델: {GEMINI_MODEL}", h=8)
+    pdf_write(pdf, f"검색 범위: 최근 {selected_window}일", h=8)
 
     pdf.ln(5)
 
@@ -689,8 +768,9 @@ def main():
 
     filtered = sorted(filtered, key=lambda x: x["local_score"], reverse=True)
 
-    candidates = filtered[:6]
+    candidates, selected_window = select_candidates_by_windows(filtered)
 
+    print(f"선택된 검색 기간: 최근 {selected_window}일")
     print(f"Gemini 검사용 후보 수: {len(candidates)}")
 
     if not candidates:
@@ -700,21 +780,22 @@ def main():
     gemini_success = True
 
     try:
-        summary = gemini_judge_and_summarize(candidates)
+        summary = gemini_judge_and_summarize(candidates, selected_window)
     except Exception as e:
         gemini_success = False
         print(f"Gemini 요약 실패. 후보 목록 PDF를 생성합니다: {e}")
-        summary = create_candidate_fallback_summary(candidates, str(e))
+        summary = create_candidate_fallback_summary(candidates, str(e), selected_window)
 
     if "선정 논문 없음" in summary:
         gemini_success = False
         print("Gemini가 적합한 논문을 선정하지 않았습니다. 후보 목록 PDF를 생성합니다.")
         summary = create_candidate_fallback_summary(
             candidates,
-            "Gemini가 적합한 논문을 선정하지 않았습니다."
+            "Gemini가 적합한 논문을 선정하지 않았습니다.",
+            selected_window
         )
 
-    output_path = create_pdf(summary, filename)
+    output_path = create_pdf(summary, filename, selected_window)
 
     if gemini_success:
         for paper in candidates:
@@ -725,7 +806,7 @@ def main():
     else:
         print("Gemini 요약 실패/미선정 상태이므로 후보 논문을 pending 상태로 기록합니다.")
 
-        for paper in candidates[:3]:
+        for paper in candidates[:FINAL_PAPER_LIMIT]:
             mark_pending(processed, paper, today)
 
         save_processed(processed)
