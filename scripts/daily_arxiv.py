@@ -9,17 +9,24 @@ import feedparser
 from datetime import datetime, timezone, timedelta
 from fpdf import FPDF
 
+# =========================================================
+# 기본 설정
+# =========================================================
+
 KST = timezone(timedelta(hours=9))
 
 OUTPUT_DIR = "outputs"
 PROCESSED_PATH = "processed_ids.json"
 
-MAX_RESULTS = 40
+MAX_RESULTS = 50
 SELECT_LIMIT = 3
 RECENT_DAYS = 60
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+
+# Gemini 3.1 Pro Preview
+# GitHub Actions YAML에서 GEMINI_MODEL을 지정하면 그 값을 우선 사용함.
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.1-pro-preview")
 
 KEYWORD_GROUPS = [
     "small language model",
@@ -28,6 +35,9 @@ KEYWORD_GROUPS = [
     "edge device",
     "edge devices",
     "on-device",
+    "on device",
+    "mobile LLM",
+    "mobile language model",
     "TinyML",
     "LoRA",
     "MoE",
@@ -48,17 +58,29 @@ KEYWORD_GROUPS = [
 ]
 
 
+# =========================================================
+# 파일 입출력
+# =========================================================
+
 def load_processed():
     if not os.path.exists(PROCESSED_PATH):
         return []
+
     with open(PROCESSED_PATH, "r", encoding="utf-8") as f:
-        return json.load(f)
+        try:
+            return json.load(f)
+        except json.JSONDecodeError:
+            return []
 
 
 def save_processed(processed):
     with open(PROCESSED_PATH, "w", encoding="utf-8") as f:
         json.dump(processed, f, ensure_ascii=False, indent=2)
 
+
+# =========================================================
+# 유틸
+# =========================================================
 
 def normalize_title(title: str) -> str:
     title = title.lower()
@@ -69,9 +91,15 @@ def normalize_title(title: str) -> str:
 def extract_arxiv_id(url: str) -> str | None:
     if not url:
         return None
-    match = re.search(r"arxiv\.org/(?:abs|pdf)/([0-9]{4}\.[0-9]{4,5})(v\d+)?", url)
+
+    match = re.search(
+        r"arxiv\.org/(?:abs|pdf)/([0-9]{4}\.[0-9]{4,5})(v\d+)?",
+        url
+    )
+
     if match:
         return match.group(1)
+
     return None
 
 
@@ -83,22 +111,47 @@ def is_duplicate(paper, processed):
         old_id = old.get("arxiv_id", "")
         old_title_norm = normalize_title(old.get("title", ""))
 
+        # 1차 기준: arXiv ID
         if old_id == paper_id:
             return True
 
+        # 2차 기준: 제목 유사도
         if old_title_norm:
-            sim = difflib.SequenceMatcher(None, paper_title_norm, old_title_norm).ratio()
+            sim = difflib.SequenceMatcher(
+                None,
+                paper_title_norm,
+                old_title_norm
+            ).ratio()
+
             if sim >= 0.95:
                 return True
 
     return False
 
 
+def verify_pdf_exists(pdf_url):
+    try:
+        res = requests.head(pdf_url, timeout=15, allow_redirects=True)
+        return res.status_code == 200
+    except Exception:
+        return False
+
+
+# =========================================================
+# arXiv 검색
+# =========================================================
+
 def build_arxiv_query():
-    # cs.AI, cs.LG, cs.CL, cs.CV 중심으로 검색
-    # 키워드는 title/abstract 전체에서 검색
     keyword_query = " OR ".join([f'all:"{kw}"' for kw in KEYWORD_GROUPS])
-    category_query = "cat:cs.AI OR cat:cs.LG OR cat:cs.CL OR cat:cs.CV"
+
+    category_query = (
+        "cat:cs.AI OR "
+        "cat:cs.LG OR "
+        "cat:cs.CL OR "
+        "cat:cs.CV OR "
+        "cat:cs.RO"
+    )
+
     return f"({keyword_query}) AND ({category_query})"
 
 
@@ -114,6 +167,8 @@ def search_arxiv():
         f"&sortBy=submittedDate"
         f"&sortOrder=descending"
     )
+
+    print(f"arXiv API 호출: {url}")
 
     res = requests.get(url, timeout=30)
     res.raise_for_status()
@@ -149,7 +204,6 @@ def search_arxiv():
             "pdf_url": f"https://arxiv.org/pdf/{arxiv_id}.pdf",
             "published": published.isoformat(),
             "updated": updated.isoformat(),
-            "categories": ", ".join(getattr(entry, "tags", [])) if False else "",
         }
 
         papers.append(paper)
@@ -164,14 +218,19 @@ def local_score(paper):
 
     high_terms = [
         "small language model",
+        "small language models",
         "slm",
         "edge",
         "on-device",
+        "on device",
+        "mobile llm",
+        "mobile language model",
         "tinyml",
         "lora",
         "moe",
         "peft",
         "adapter",
+        "adapters",
     ]
 
     bonus_terms = [
@@ -198,43 +257,59 @@ def local_score(paper):
     return score
 
 
-def verify_pdf_exists(pdf_url):
-    try:
-        res = requests.head(pdf_url, timeout=15, allow_redirects=True)
-        return res.status_code == 200
-    except Exception:
-        return False
-
+# =========================================================
+# Gemini 3.1 Pro 호출
+# =========================================================
 
 def call_gemini(prompt):
     if not GEMINI_API_KEY:
-        raise RuntimeError("GEMINI_API_KEY가 설정되지 않았습니다.")
+        raise RuntimeError(
+            "GEMINI_API_KEY가 설정되지 않았습니다. "
+            "GitHub Secrets에 GEMINI_API_KEY를 등록하세요."
+        )
 
     url = (
         f"https://generativelanguage.googleapis.com/v1beta/models/"
-        f"{GEMINI_MODEL}:generateContent?key={GEMINI_API_KEY}"
+        f"{GEMINI_MODEL}:generateContent"
     )
+
+    headers = {
+        "x-goog-api-key": GEMINI_API_KEY,
+        "Content-Type": "application/json",
+    }
 
     payload = {
         "contents": [
             {
                 "role": "user",
-                "parts": [{"text": prompt}],
+                "parts": [
+                    {
+                        "text": prompt
+                    }
+                ],
             }
         ],
         "generationConfig": {
             "temperature": 0.2,
             "topP": 0.8,
-            "maxOutputTokens": 4096,
+            "maxOutputTokens": 8192,
         },
     }
 
-    res = requests.post(url, json=payload, timeout=120)
+    res = requests.post(
+        url,
+        headers=headers,
+        json=payload,
+        timeout=180
+    )
 
     if res.status_code != 200:
-        raise RuntimeError(f"Gemini API error: {res.status_code}\n{res.text}")
+        raise RuntimeError(
+            f"Gemini API error: {res.status_code}\n{res.text}"
+        )
 
     data = res.json()
+
     try:
         return data["candidates"][0]["content"]["parts"][0]["text"].strip()
     except Exception as e:
@@ -252,6 +327,8 @@ arXiv ID: {p['arxiv_id']}
 제목: {p['title']}
 저자: {p['authors']}
 PDF: {p['pdf_url']}
+제출일: {p['published']}
+수정일: {p['updated']}
 초록:
 {p['abstract']}
 """
@@ -260,15 +337,27 @@ PDF: {p['pdf_url']}
     prompt = f"""
 너는 AI/ML 연구자를 위한 arXiv 리서치 어시스턴트다.
 
-중요 규칙:
-- 아래 제공된 후보 논문만 사용하라.
-- 새로운 논문을 검색하거나 만들어내지 마라.
-- PDF 링크는 제공된 arXiv PDF 링크만 사용하라.
-- SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adapter, quantization, compression, latency, memory efficiency와 직접 관련 있는 논문만 고르라.
-- 관련성이 낮으면 1편만 골라도 되고, 없으면 "선정 논문 없음"이라고 답하라.
-- 최대 3편만 선정하라.
+핵심 목표:
+SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adapter, quantization, compression, latency, memory efficiency와 직접 관련 있는 최신 논문만 선별한다.
 
-출력 형식은 반드시 아래 형식을 따른다.
+절대 규칙:
+- 아래 제공된 후보 논문만 사용하라.
+- 새로운 논문을 검색하거나 추가하지 마라.
+- 없는 논문 제목, 없는 저자, 없는 arXiv ID를 만들지 마라.
+- PDF 링크는 제공된 arXiv PDF 링크만 사용하라.
+- 관련성이 낮으면 억지로 3편을 채우지 마라.
+- 적합한 논문이 없으면 정확히 "선정 논문 없음"이라고만 답하라.
+- 최대 3편만 선정하라.
+- 한국어로 작성하라.
+- 초록 요약은 원문 번역/복사가 아니라 핵심 재구성으로 작성하라.
+
+선정 기준:
+1. SLM 또는 small language model과 직접 관련
+2. edge device, on-device, mobile, TinyML 환경과 직접 관련
+3. LoRA, MoE, PEFT, adapter, quantization, compression, latency, memory optimization 중 하나 이상과 관련
+4. 단순 대형 LLM 일반 논문, 순수 benchmark 논문, 주제와 무관한 CV/NLP 논문은 제외
+
+출력 형식:
 
 **📄 논문 1**
 1. **제목**:
@@ -292,14 +381,29 @@ PDF: {p['pdf_url']}
     return call_gemini(prompt)
 
 
+# =========================================================
+# PDF 생성
+# =========================================================
+
 class PDF(FPDF):
     pass
 
 
 def safe_text(text):
-    # 이모지 일부가 PDF 폰트에서 깨질 수 있어 제거
-    text = text.replace("📄", "[논문]")
-    text = text.replace("→", "->")
+    replacements = {
+        "📄": "[논문]",
+        "→": "->",
+        "–": "-",
+        "—": "-",
+        "“": '"',
+        "”": '"',
+        "‘": "'",
+        "’": "'",
+    }
+
+    for src, dst in replacements.items():
+        text = text.replace(src, dst)
+
     return text
 
 
@@ -309,6 +413,7 @@ def create_pdf(content, filename):
     pdf = PDF()
     pdf.set_auto_page_break(auto=True, margin=15)
 
+    # GitHub Actions Ubuntu 환경에서 설치되는 Nanum font 경로
     font_path = "/usr/share/fonts/truetype/nanum/NanumGothic.ttf"
     bold_font_path = "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf"
 
@@ -322,24 +427,33 @@ def create_pdf(content, filename):
     pdf.set_font("Nanum", "", 10)
     today_kst = datetime.now(KST).strftime("%Y-%m-%d %H:%M KST")
     pdf.multi_cell(0, 8, f"생성일: {today_kst}")
+    pdf.multi_cell(0, 8, f"Gemini 모델: {GEMINI_MODEL}")
     pdf.ln(5)
 
     pdf.set_font("Nanum", "", 10)
+
     content = safe_text(content)
     content = content.replace("**", "")
 
     for line in content.splitlines():
-        if line.strip().startswith("[논문]") or line.strip().startswith("논문"):
+        stripped = line.strip()
+
+        if stripped.startswith("[논문]") or stripped.startswith("논문"):
             pdf.set_font("Nanum", "B", 12)
-            pdf.multi_cell(0, 8, line)
+            pdf.multi_cell(0, 8, stripped)
             pdf.set_font("Nanum", "", 10)
         else:
             pdf.multi_cell(0, 7, line)
 
     output_path = os.path.join(OUTPUT_DIR, filename)
     pdf.output(output_path)
+
     return output_path
 
+
+# =========================================================
+# 메인 실행
+# =========================================================
 
 def main():
     today = datetime.now(KST)
@@ -349,31 +463,37 @@ def main():
     processed = load_processed()
     papers = search_arxiv()
 
-    print(f"arXiv 후보 수: {len(papers)}")
+    print(f"arXiv 전체 후보 수: {len(papers)}")
 
     filtered = []
+
     for paper in papers:
+        score = local_score(paper)
+
         if is_duplicate(paper, processed):
+            print(f"중복 제외: {paper['arxiv_id']} | {paper['title']}")
             continue
 
-        if local_score(paper) <= 0:
+        if score <= 0:
             continue
 
         if not verify_pdf_exists(paper["pdf_url"]):
+            print(f"PDF 확인 실패: {paper['pdf_url']}")
             continue
 
+        paper["local_score"] = score
         filtered.append(paper)
 
-    filtered = sorted(filtered, key=local_score, reverse=True)
+    filtered = sorted(filtered, key=lambda x: x["local_score"], reverse=True)
 
-    # Gemini에는 너무 많이 넣지 말고 상위 10개만 전달
-    candidates = filtered[:10]
+    # Gemini 3.1 Pro에는 상위 12개 후보만 전달
+    candidates = filtered[:12]
+
+    print(f"Gemini 검사용 후보 수: {len(candidates)}")
 
     if not candidates:
         print("새 후보 논문이 없습니다.")
         return
-
-    print(f"Gemini 검사용 후보 수: {len(candidates)}")
 
     summary = gemini_judge_and_summarize(candidates)
 
@@ -383,9 +503,7 @@ def main():
 
     output_path = create_pdf(summary, filename)
 
-    # 이번 Gemini 후보로 들어간 논문 중 요약에 포함된 arXiv ID만 processed에 기록
-    # 단순하게는 후보 전체를 처리 기록으로 넣어도 되지만,
-    # 여기서는 summary 안에 ID가 들어간 논문만 기록함.
+    # 요약 결과에 실제 포함된 arXiv ID만 processed에 기록
     already_ids = {x.get("arxiv_id") for x in processed}
 
     for paper in candidates:
@@ -395,6 +513,7 @@ def main():
                 "title": paper["title"],
                 "pdf_url": paper["pdf_url"],
                 "processed_at": today.isoformat(),
+                "model": GEMINI_MODEL,
             })
 
     save_processed(processed)
