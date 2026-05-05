@@ -9,23 +9,20 @@ import feedparser
 from datetime import datetime, timezone, timedelta
 from fpdf import FPDF
 
+
 # =========================================================
 # 기본 설정
 # =========================================================
 
 KST = timezone(timedelta(hours=9))
 
-OUTPUT_DIR = "outputs"
+OUTPUT_DIR = os.getenv("OUTPUT_DIR", "outputs")
 PROCESSED_PATH = "processed_ids.json"
 
 MAX_RESULTS = 30
-SELECT_LIMIT = 3
 RECENT_DAYS = 60
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-
-# Gemini 3.1 Pro Preview
-# GitHub Actions YAML에서 GEMINI_MODEL을 지정하면 그 값을 우선 사용함.
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 
 KEYWORD_GROUPS = [
@@ -127,7 +124,9 @@ def is_duplicate(paper, processed):
                 return True
 
     return False
-def get_with_retry(url, timeout=90, retries=4, sleep_sec=20):
+
+
+def get_with_retry(url, timeout=90, retries=4, sleep_sec=30):
     last_error = None
 
     for attempt in range(1, retries + 1):
@@ -138,18 +137,20 @@ def get_with_retry(url, timeout=90, retries=4, sleep_sec=20):
                 url,
                 timeout=timeout,
                 headers={
-                    "User-Agent": "arxiv-slm-edge-daily/1.0 (mailto:your-email@example.com)"
+                    "User-Agent": "arxiv-slm-edge-daily/1.0 (personal research automation)"
                 },
             )
 
             if res.status_code == 429:
                 wait_sec = 120 * attempt
+                last_error = RuntimeError(f"arXiv 429 Too Many Requests: {url}")
                 print(f"arXiv 429 Too Many Requests. {wait_sec}초 후 재시도합니다.")
                 time.sleep(wait_sec)
                 continue
 
             if res.status_code in [500, 502, 503, 504]:
                 wait_sec = 60 * attempt
+                last_error = RuntimeError(f"arXiv 서버 오류 {res.status_code}: {url}")
                 print(f"arXiv 서버 오류 {res.status_code}. {wait_sec}초 후 재시도합니다.")
                 time.sleep(wait_sec)
                 continue
@@ -166,14 +167,10 @@ def get_with_retry(url, timeout=90, retries=4, sleep_sec=20):
                 print(f"{wait_sec}초 후 재시도합니다.")
                 time.sleep(wait_sec)
 
-    raise last_error
-    
-def verify_pdf_exists(pdf_url):
-    try:
-        res = requests.head(pdf_url, timeout=15, allow_redirects=True)
-        return res.status_code == 200
-    except Exception:
-        return False
+    if last_error:
+        raise last_error
+
+    raise RuntimeError("arXiv 요청 실패")
 
 
 # =========================================================
@@ -296,24 +293,20 @@ def local_score(paper):
 
 
 # =========================================================
-# Gemini 3.1 Pro 호출
+# Gemini 호출
 # =========================================================
 
-def call_gemini(prompt):
+def call_gemini(prompt, max_output_tokens=4096):
     if not GEMINI_API_KEY:
         raise RuntimeError(
             "GEMINI_API_KEY가 설정되지 않았습니다. "
             "GitHub Secrets에 GEMINI_API_KEY를 등록하세요."
         )
 
-    # 1순위는 YAML에서 지정한 모델
-    # 2순위부터는 fallback 모델
-    model_candidates = [
-        
-    ]
-
-    # 중복 제거
-    model_candidates = list(dict.fromkeys(model_candidates))
+    url = (
+        f"https://generativelanguage.googleapis.com/v1beta/models/"
+        f"{GEMINI_MODEL}:generateContent"
+    )
 
     headers = {
         "x-goog-api-key": GEMINI_API_KEY,
@@ -330,60 +323,47 @@ def call_gemini(prompt):
         "generationConfig": {
             "temperature": 0.2,
             "topP": 0.8,
-            "maxOutputTokens": 3072,
+            "maxOutputTokens": max_output_tokens,
         },
     }
 
     last_error_text = ""
 
-    for model_name in model_candidates:
-        url = (
-            f"https://generativelanguage.googleapis.com/v1beta/models/"
-            f"{model_name}:generateContent"
+    for attempt in range(1, 4):
+        print(f"Gemini 호출 시도 {attempt}/3 - model: {GEMINI_MODEL}")
+
+        res = requests.post(
+            url,
+            headers=headers,
+            json=payload,
+            timeout=180
         )
 
-        for attempt in range(1, 4):
-            print(f"Gemini 호출 시도 {attempt}/3 - model: {model_name}")
+        if res.status_code == 200:
+            data = res.json()
+            try:
+                return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+            except Exception as e:
+                raise RuntimeError(f"Gemini 응답 파싱 실패: {data}") from e
 
-            res = requests.post(
-                url,
-                headers=headers,
-                json=payload,
-                timeout=180
-            )
+        last_error_text = res.text
+        print(f"Gemini API error {res.status_code}: {last_error_text}")
 
-            if res.status_code == 200:
-                data = res.json()
-                try:
-                    return data["candidates"][0]["content"]["parts"][0]["text"].strip()
-                except Exception as e:
-                    raise RuntimeError(f"Gemini 응답 파싱 실패: {data}") from e
+        if res.status_code in [429, 503]:
+            if attempt < 3:
+                wait_sec = 60 * attempt
+                print(f"{wait_sec}초 후 재시도합니다.")
+                time.sleep(wait_sec)
+            continue
 
-            last_error_text = res.text
-            print(f"Gemini API error {res.status_code}: {last_error_text}")
-
-            # 503: 서버 혼잡, 429: 사용량/속도 제한
-            if res.status_code in [429, 503]:
-                if attempt < 3:
-                    wait_sec = 30 * attempt
-                    print(f"{wait_sec}초 후 재시도합니다.")
-                    time.sleep(wait_sec)
-                continue
-
-            # 모델이 없으면 다음 fallback 모델로 넘어감
-            if res.status_code == 404:
-                print(f"{model_name} 모델 사용 불가. 다음 모델로 넘어갑니다.")
-                break
-
-            raise RuntimeError(
-                f"Gemini API error: {res.status_code}\n{res.text}"
-            )
-
-        print(f"{model_name} 실패. 다음 fallback 모델을 시도합니다.")
+        raise RuntimeError(
+            f"Gemini API error: {res.status_code}\n{res.text}"
+        )
 
     raise RuntimeError(
         f"모든 Gemini 모델 호출 실패:\n{last_error_text}"
     )
+
 
 def gemini_judge_and_summarize(papers):
     paper_blocks = []
@@ -447,7 +427,62 @@ SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adap
 {chr(10).join(paper_blocks)}
 """
 
-    return call_gemini(prompt)
+    return call_gemini(prompt, max_output_tokens=4096)
+
+
+def translate_abstract_with_gemini(abstract):
+    prompt = f"""
+아래 arXiv 논문 초록을 한국어로 번역하라.
+
+규칙:
+- 원문 내용을 빠뜨리지 마라.
+- 과도하게 요약하지 마라.
+- 자연스러운 한국어 논문체로 번역하라.
+- 없는 내용을 추가하지 마라.
+
+초록:
+{abstract}
+"""
+
+    return call_gemini(prompt, max_output_tokens=2048)
+
+
+def create_candidate_fallback_summary(candidates, error_message):
+    lines = []
+
+    lines.append("Gemini 전체 요약 실패")
+    lines.append("")
+    lines.append("오늘은 Gemini API 오류 또는 서버 혼잡으로 인해 전체 한국어 요약을 생성하지 못했습니다.")
+    lines.append("대신 arXiv API로 수집하고 중복 제거한 후보 논문 목록을 저장합니다.")
+    lines.append("각 논문에 대해 초록 원문과 초록 한국어 번역을 함께 정리합니다.")
+    lines.append("이 후보들은 pending 상태로 기록되므로 다음 실행 때 중복 후보로 반복 생성되지 않습니다.")
+    lines.append("")
+    lines.append(f"오류 메시지: {error_message}")
+    lines.append("")
+
+    for idx, paper in enumerate(candidates[:3], start=1):
+        lines.append(f"[논문 후보 {idx}]")
+        lines.append(f"제목: {paper['title']}")
+        lines.append(f"저자: {paper['authors']}")
+        lines.append(f"arXiv ID: {paper['arxiv_id']}")
+        lines.append(f"제출일: {paper['published']}")
+        lines.append(f"수정일: {paper['updated']}")
+        lines.append(f"arXiv PDF: {paper['pdf_url']}")
+        lines.append("")
+
+        lines.append("[초록 원문]")
+        lines.append(paper["abstract"])
+        lines.append("")
+
+        lines.append("[초록 번역]")
+        try:
+            translated = translate_abstract_with_gemini(paper["abstract"])
+            lines.append(translated)
+        except Exception as e:
+            lines.append(f"초록 번역 실패: {e}")
+        lines.append("")
+
+    return "\n".join(lines)
 
 
 # =========================================================
@@ -468,17 +503,20 @@ def safe_text(text):
         "”": '"',
         "‘": "'",
         "’": "'",
+        "\u00a0": " ",
     }
 
     for src, dst in replacements.items():
         text = text.replace(src, dst)
-        
-        # Markdown 링크를 일반 URL로 변환
+
+    # Markdown 링크를 일반 URL로 변환
     text = re.sub(r"\[(https?://[^\]]+)\]\((https?://[^)]+)\)", r"\1", text)
     text = text.replace("](", " ")
 
     return text
-def break_long_words(text, max_len=60):
+
+
+def break_long_words(text, max_len=50):
     """
     fpdf2는 공백 없는 긴 URL/토큰을 줄바꿈하지 못해서 오류가 날 수 있음.
     긴 단어를 일정 길이마다 공백으로 끊어 PDF 렌더링 오류를 방지함.
@@ -499,33 +537,7 @@ def break_long_words(text, max_len=60):
         new_lines.append(" ".join(fixed_words))
 
     return "\n".join(new_lines)
-    
-def create_candidate_fallback_summary(candidates, error_message):
-    lines = []
 
-    lines.append("Gemini 요약 실패")
-    lines.append("")
-    lines.append("오늘은 Gemini API 오류 또는 서버 혼잡으로 인해 한국어 요약을 생성하지 못했습니다.")
-    lines.append("대신 arXiv API로 수집하고 중복 제거한 후보 논문 목록을 저장합니다.")
-    lines.append("이 후보들은 processed_ids.json에 기록하지 않으므로 다음 실행 때 다시 요약 대상이 될 수 있습니다.")
-    lines.append("")
-    lines.append(f"오류 메시지: {error_message}")
-    lines.append("")
-
-    for idx, paper in enumerate(candidates[:3], start=1):
-        lines.append(f"[논문 후보 {idx}]")
-        lines.append(f"제목: {paper['title']}")
-        lines.append(f"저자: {paper['authors']}")
-        lines.append(f"arXiv ID: {paper['arxiv_id']}")
-        lines.append(f"제출일: {paper['published']}")
-        lines.append(f"수정일: {paper['updated']}")
-        lines.append(f"arXiv PDF: {paper['pdf_url']}")
-        lines.append("")
-        lines.append("초록:")
-        lines.append(paper["abstract"])
-        lines.append("")
-
-    return "\n".join(lines)
 
 def pdf_write(pdf, text, h=7, bold=False):
     """
@@ -587,7 +599,9 @@ def create_pdf(content, filename):
             stripped.startswith("[논문]")
             or stripped.startswith("논문")
             or stripped.startswith("[논문 후보")
-            or stripped.startswith("Gemini 요약 실패")
+            or stripped.startswith("Gemini 전체 요약 실패")
+            or stripped.startswith("[초록 원문]")
+            or stripped.startswith("[초록 번역]")
         ):
             pdf_write(pdf, stripped, h=8, bold=True)
         else:
@@ -597,6 +611,52 @@ def create_pdf(content, filename):
     pdf.output(output_path)
 
     return output_path
+
+
+# =========================================================
+# processed_ids 업데이트
+# =========================================================
+
+def mark_summarized(processed, paper, today):
+    for old in processed:
+        if old.get("arxiv_id") == paper["arxiv_id"]:
+            old["title"] = paper["title"]
+            old["pdf_url"] = paper["pdf_url"]
+            old["status"] = "summarized"
+            old["processed_at"] = today.isoformat()
+            old["model"] = GEMINI_MODEL
+            return
+
+    processed.append({
+        "arxiv_id": paper["arxiv_id"],
+        "title": paper["title"],
+        "pdf_url": paper["pdf_url"],
+        "status": "summarized",
+        "processed_at": today.isoformat(),
+        "model": GEMINI_MODEL,
+    })
+
+
+def mark_pending(processed, paper, today):
+    for old in processed:
+        if old.get("arxiv_id") == paper["arxiv_id"]:
+            old["last_attempt_at"] = today.isoformat()
+            old["attempts"] = old.get("attempts", 0) + 1
+            if "status" not in old:
+                old["status"] = "pending"
+            return
+
+    processed.append({
+        "arxiv_id": paper["arxiv_id"],
+        "title": paper["title"],
+        "pdf_url": paper["pdf_url"],
+        "status": "pending",
+        "first_seen_at": today.isoformat(),
+        "last_attempt_at": today.isoformat(),
+        "attempts": 1,
+        "model": GEMINI_MODEL,
+    })
+
 
 # =========================================================
 # 메인 실행
@@ -624,16 +684,11 @@ def main():
         if score <= 0:
             continue
 
-        if not verify_pdf_exists(paper["pdf_url"]):
-            print(f"PDF 확인 실패: {paper['pdf_url']}")
-            continue
-
         paper["local_score"] = score
         filtered.append(paper)
 
     filtered = sorted(filtered, key=lambda x: x["local_score"], reverse=True)
 
-        # Gemini에는 너무 많이 넣지 말고 상위 후보만 전달
     candidates = filtered[:6]
 
     print(f"Gemini 검사용 후보 수: {len(candidates)}")
@@ -661,24 +716,19 @@ def main():
 
     output_path = create_pdf(summary, filename)
 
-    # Gemini 요약이 성공한 경우에만 processed_ids.json에 기록
-    # 실패해서 후보 목록만 저장한 경우에는 기록하지 않음
     if gemini_success:
-        already_ids = {x.get("arxiv_id") for x in processed}
-
         for paper in candidates:
-            if paper["arxiv_id"] in summary and paper["arxiv_id"] not in already_ids:
-                processed.append({
-                    "arxiv_id": paper["arxiv_id"],
-                    "title": paper["title"],
-                    "pdf_url": paper["pdf_url"],
-                    "processed_at": today.isoformat(),
-                    "model": GEMINI_MODEL,
-                })
+            if paper["arxiv_id"] in summary:
+                mark_summarized(processed, paper, today)
 
         save_processed(processed)
     else:
-        print("Gemini 요약 실패/미선정 상태이므로 processed_ids.json은 업데이트하지 않습니다.")
+        print("Gemini 요약 실패/미선정 상태이므로 후보 논문을 pending 상태로 기록합니다.")
+
+        for paper in candidates[:3]:
+            mark_pending(processed, paper, today)
+
+        save_processed(processed)
 
     print(f"PDF 생성 완료: {output_path}")
     time.sleep(1)
