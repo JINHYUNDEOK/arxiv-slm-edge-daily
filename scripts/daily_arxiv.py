@@ -464,7 +464,7 @@ def enrich_candidates_with_intro_text(candidates):
 # Gemini 호출
 # =========================================================
 
-def call_gemini(prompt, max_output_tokens=4096):
+def call_gemini(prompt, max_output_tokens=20000):
     if not GEMINI_API_KEY:
         raise RuntimeError(
             "GEMINI_API_KEY가 설정되지 않았습니다. "
@@ -635,7 +635,7 @@ PDF 전체를 읽은 것이 아니라, 초록과 PDF 앞부분/서론 일부를 
 {chr(10).join(paper_blocks)}
 """
 
-    return call_gemini(prompt, max_output_tokens=6144)
+    return call_gemini(prompt, max_output_tokens=20000)
 
 
 def translate_abstract_with_gemini(abstract):
