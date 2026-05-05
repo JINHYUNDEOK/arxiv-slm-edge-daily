@@ -127,19 +127,33 @@ def is_duplicate(paper, processed):
                 return True
 
     return False
-def get_with_retry(url, timeout=90, retries=3, sleep_sec=10):
+def get_with_retry(url, timeout=90, retries=4, sleep_sec=20):
     last_error = None
 
     for attempt in range(1, retries + 1):
         try:
             print(f"요청 시도 {attempt}/{retries}: {url}")
+
             res = requests.get(
                 url,
                 timeout=timeout,
                 headers={
-                    "User-Agent": "arxiv-slm-edge-daily/1.0 (personal research automation)"
+                    "User-Agent": "arxiv-slm-edge-daily/1.0 (mailto:your-email@example.com)"
                 },
             )
+
+            if res.status_code == 429:
+                wait_sec = 120 * attempt
+                print(f"arXiv 429 Too Many Requests. {wait_sec}초 후 재시도합니다.")
+                time.sleep(wait_sec)
+                continue
+
+            if res.status_code in [500, 502, 503, 504]:
+                wait_sec = 60 * attempt
+                print(f"arXiv 서버 오류 {res.status_code}. {wait_sec}초 후 재시도합니다.")
+                time.sleep(wait_sec)
+                continue
+
             res.raise_for_status()
             return res
 
@@ -148,10 +162,12 @@ def get_with_retry(url, timeout=90, retries=3, sleep_sec=10):
             print(f"요청 실패 {attempt}/{retries}: {e}")
 
             if attempt < retries:
-                time.sleep(sleep_sec)
+                wait_sec = sleep_sec * attempt
+                print(f"{wait_sec}초 후 재시도합니다.")
+                time.sleep(wait_sec)
 
     raise last_error
-
+    
 def verify_pdf_exists(pdf_url):
     try:
         res = requests.head(pdf_url, timeout=15, allow_redirects=True)
@@ -193,7 +209,7 @@ def search_arxiv():
 
     print(f"arXiv API 호출: {url}")
 
-    res = get_with_retry(url, timeout=90, retries=3, sleep_sec=10)
+    res = get_with_retry(url, timeout=90, retries=4, sleep_sec=30)
 
     feed = feedparser.parse(res.text)
     now = datetime.now(timezone.utc)
