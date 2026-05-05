@@ -290,10 +290,16 @@ def call_gemini(prompt):
             "GitHub Secrets에 GEMINI_API_KEY를 등록하세요."
         )
 
-    url = (
-        f"https://generativelanguage.googleapis.com/v1beta/models/"
-        f"{GEMINI_MODEL}:generateContent"
-    )
+    # 1순위는 YAML에서 지정한 모델
+    # 2순위부터는 fallback 모델
+    model_candidates = [
+        GEMINI_MODEL,
+        "gemini-2.5-flash-lite",
+        "gemini-2.0-flash",
+    ]
+
+    # 중복 제거
+    model_candidates = list(dict.fromkeys(model_candidates))
 
     headers = {
         "x-goog-api-key": GEMINI_API_KEY,
@@ -310,46 +316,60 @@ def call_gemini(prompt):
         "generationConfig": {
             "temperature": 0.2,
             "topP": 0.8,
-            "maxOutputTokens": 4096,
+            "maxOutputTokens": 3072,
         },
     }
 
     last_error_text = ""
 
-    for attempt in range(1, 4):
-        print(f"Gemini 호출 시도 {attempt}/3 - model: {GEMINI_MODEL}")
-
-        res = requests.post(
-            url,
-            headers=headers,
-            json=payload,
-            timeout=180
+    for model_name in model_candidates:
+        url = (
+            f"https://generativelanguage.googleapis.com/v1beta/models/"
+            f"{model_name}:generateContent"
         )
 
-        if res.status_code == 200:
-            data = res.json()
-            try:
-                return data["candidates"][0]["content"]["parts"][0]["text"].strip()
-            except Exception as e:
-                raise RuntimeError(f"Gemini 응답 파싱 실패: {data}") from e
+        for attempt in range(1, 4):
+            print(f"Gemini 호출 시도 {attempt}/3 - model: {model_name}")
 
-        last_error_text = res.text
-        print(f"Gemini API error {res.status_code}: {last_error_text}")
+            res = requests.post(
+                url,
+                headers=headers,
+                json=payload,
+                timeout=180
+            )
 
-        if res.status_code in [429, 503]:
-            wait_sec = 60 * attempt
-            print(f"{wait_sec}초 후 재시도합니다.")
-            time.sleep(wait_sec)
-            continue
+            if res.status_code == 200:
+                data = res.json()
+                try:
+                    return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+                except Exception as e:
+                    raise RuntimeError(f"Gemini 응답 파싱 실패: {data}") from e
 
-        raise RuntimeError(
-            f"Gemini API error: {res.status_code}\n{res.text}"
-        )
+            last_error_text = res.text
+            print(f"Gemini API error {res.status_code}: {last_error_text}")
+
+            # 503: 서버 혼잡, 429: 사용량/속도 제한
+            if res.status_code in [429, 503]:
+                if attempt < 3:
+                    wait_sec = 30 * attempt
+                    print(f"{wait_sec}초 후 재시도합니다.")
+                    time.sleep(wait_sec)
+                continue
+
+            # 모델이 없으면 다음 fallback 모델로 넘어감
+            if res.status_code == 404:
+                print(f"{model_name} 모델 사용 불가. 다음 모델로 넘어갑니다.")
+                break
+
+            raise RuntimeError(
+                f"Gemini API error: {res.status_code}\n{res.text}"
+            )
+
+        print(f"{model_name} 실패. 다음 fallback 모델을 시도합니다.")
 
     raise RuntimeError(
-        f"Gemini API error after retries:\n{last_error_text}"
+        f"모든 Gemini 모델 호출 실패:\n{last_error_text}"
     )
-
 
 def gemini_judge_and_summarize(papers):
     paper_blocks = []
