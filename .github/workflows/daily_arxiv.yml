@@ -1,42 +1,45 @@
-name: Daily arXiv SLM & Edge Digest
+name: Daily SLM Edge arXiv Summary
 
 on:
   schedule:
-    # Runs every day at 09:00 UTC
-    - cron: "0 9 * * *"
+    # KST 오전 9시 = UTC 0시
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  fetch-papers:
+  run-daily-arxiv:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install Korean fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-nanum
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.11"
 
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run daily arXiv script
+      - name: Run arXiv summary script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3.1-pro-preview
         run: python scripts/daily_arxiv.py
 
-      - name: Commit and push changes
+      - name: Commit generated outputs
         run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add outputs/ processed_ids.json
-          # Only commit when there are actual changes
-          if git diff --cached --quiet; then
-            echo "No new papers today — nothing to commit."
-          else
-            git commit -m "chore: daily arXiv digest $(date -u +'%Y-%m-%d')"
-            git push
-          fi
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add outputs processed_ids.json
+          git commit -m "Add daily arXiv summary" || echo "No changes to commit"
+          git push
