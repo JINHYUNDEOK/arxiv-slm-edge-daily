@@ -1,3 +1,4 @@
 requests
 feedparser
 fpdf2
+pypdf
