@@ -26,7 +26,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Gemini 3.1 Pro Preview
 # GitHub Actions YAML에서 GEMINI_MODEL을 지정하면 그 값을 우선 사용함.
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-3.1-pro-preview")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 
 KEYWORD_GROUPS = [
     "small language model",
@@ -479,8 +479,8 @@ def create_pdf(content, filename):
 
 def main():
     today = datetime.now(KST)
-    date_token = today.strftime("%y%m%d")
-    filename = f"SLM_Edge_arXiv_({date_token}).pdf"
+    date_token = today.strftime("%Y%m%d")
+    filename = f"{date_token}.pdf"
 
     processed = load_processed()
     papers = search_arxiv()
