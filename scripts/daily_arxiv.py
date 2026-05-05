@@ -309,9 +309,7 @@ def call_gemini(prompt):
     # 1순위는 YAML에서 지정한 모델
     # 2순위부터는 fallback 모델
     model_candidates = [
-        GEMINI_MODEL,
-        "gemini-2.5-flash-lite",
-        "gemini-2.0-flash",
+        
     ]
 
     # 중복 제거
@@ -501,7 +499,33 @@ def break_long_words(text, max_len=60):
         new_lines.append(" ".join(fixed_words))
 
     return "\n".join(new_lines)
+    
+def create_candidate_fallback_summary(candidates, error_message):
+    lines = []
 
+    lines.append("Gemini 요약 실패")
+    lines.append("")
+    lines.append("오늘은 Gemini API 오류 또는 서버 혼잡으로 인해 한국어 요약을 생성하지 못했습니다.")
+    lines.append("대신 arXiv API로 수집하고 중복 제거한 후보 논문 목록을 저장합니다.")
+    lines.append("이 후보들은 processed_ids.json에 기록하지 않으므로 다음 실행 때 다시 요약 대상이 될 수 있습니다.")
+    lines.append("")
+    lines.append(f"오류 메시지: {error_message}")
+    lines.append("")
+
+    for idx, paper in enumerate(candidates[:3], start=1):
+        lines.append(f"[논문 후보 {idx}]")
+        lines.append(f"제목: {paper['title']}")
+        lines.append(f"저자: {paper['authors']}")
+        lines.append(f"arXiv ID: {paper['arxiv_id']}")
+        lines.append(f"제출일: {paper['published']}")
+        lines.append(f"수정일: {paper['updated']}")
+        lines.append(f"arXiv PDF: {paper['pdf_url']}")
+        lines.append("")
+        lines.append("초록:")
+        lines.append(paper["abstract"])
+        lines.append("")
+
+    return "\n".join(lines)
 
 def create_pdf(content, filename):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -592,15 +616,28 @@ def main():
         print("새 후보 논문이 없습니다.")
         return
 
+gemini_success = True
+
+try:
     summary = gemini_judge_and_summarize(candidates)
+except Exception as e:
+    gemini_success = False
+    print(f"Gemini 요약 실패. 후보 목록 PDF를 생성합니다: {e}")
+    summary = create_candidate_fallback_summary(candidates, str(e))
 
-    if "선정 논문 없음" in summary:
-        print("Gemini가 선정한 논문이 없습니다.")
-        return
+if "선정 논문 없음" in summary:
+    gemini_success = False
+    print("Gemini가 적합한 논문을 선정하지 않았습니다. 후보 목록 PDF를 생성합니다.")
+    summary = create_candidate_fallback_summary(
+        candidates,
+        "Gemini가 적합한 논문을 선정하지 않았습니다."
+    )
 
-    output_path = create_pdf(summary, filename)
+output_path = create_pdf(summary, filename)
 
-    # 요약 결과에 실제 포함된 arXiv ID만 processed에 기록
+# Gemini 요약이 성공한 경우에만 processed_ids.json에 기록
+# 실패해서 후보 목록만 저장한 경우에는 기록하지 않음
+if gemini_success:
     already_ids = {x.get("arxiv_id") for x in processed}
 
     for paper in candidates:
@@ -614,9 +651,11 @@ def main():
             })
 
     save_processed(processed)
+else:
+    print("Gemini 요약 실패/미선정 상태이므로 processed_ids.json은 업데이트하지 않습니다.")
 
-    print(f"PDF 생성 완료: {output_path}")
-    time.sleep(1)
+print(f"PDF 생성 완료: {output_path}")
+time.sleep(1)
 
 
 if __name__ == "__main__":
