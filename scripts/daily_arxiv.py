@@ -6,6 +6,8 @@ import time
 import difflib
 import requests
 import feedparser
+from io import BytesIO
+from pypdf import PdfReader
 from datetime import datetime, timezone, timedelta
 from fpdf import FPDF
 
@@ -34,6 +36,13 @@ GEMINI_CANDIDATE_LIMIT = 10
 
 # 최종 PDF에 들어갈 최대 논문 수
 FINAL_PAPER_LIMIT = 3
+
+# PDF 앞부분 파싱 설정
+# 후보 10개 중 상위 5개만 PDF 앞부분/서론 일부를 읽고,
+# 최종 결과는 FINAL_PAPER_LIMIT에 따라 최대 3편만 PDF에 정리됨
+PDF_PARSE_CANDIDATE_LIMIT = 5
+PDF_INTRO_PAGES = 3
+INTRO_TEXT_CHAR_LIMIT = 6000
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
@@ -364,6 +373,94 @@ def select_candidates_by_windows(filtered):
 
 
 # =========================================================
+# PDF 앞부분/서론 일부 추출
+# =========================================================
+
+def clean_extracted_pdf_text(text):
+    """
+    PDF에서 추출한 텍스트는 줄바꿈, 하이픈, 공백이 깨지는 경우가 많으므로
+    Gemini에 넘기기 전에 가볍게 정리한다.
+    """
+    if not text:
+        return ""
+
+    text = text.replace("\x00", " ")
+    text = re.sub(r"-\s*\n\s*", "", text)
+    text = re.sub(r"\s*\n\s*", " ", text)
+    text = re.sub(r"\s+", " ", text)
+
+    return text.strip()
+
+
+def extract_intro_text_from_pdf(pdf_url, max_pages=PDF_INTRO_PAGES):
+    """
+    arXiv PDF를 다운로드한 뒤 앞 max_pages 페이지만 텍스트로 추출한다.
+    논문 전체 요약용이 아니라, 초록만으로 부족한 선별 품질을 보완하기 위한 용도.
+    """
+    try:
+        print(f"PDF 앞부분 추출 시도: {pdf_url}")
+
+        res = requests.get(
+            pdf_url,
+            timeout=90,
+            headers={
+                "User-Agent": "arxiv-slm-edge-daily/1.0 (personal research automation)"
+            },
+        )
+        res.raise_for_status()
+
+        reader = PdfReader(BytesIO(res.content))
+        texts = []
+
+        page_count = min(len(reader.pages), max_pages)
+
+        for i in range(page_count):
+            try:
+                page_text = reader.pages[i].extract_text() or ""
+                texts.append(page_text)
+            except Exception as e:
+                print(f"PDF {i + 1}페이지 텍스트 추출 실패: {e}")
+
+        intro_text = clean_extracted_pdf_text("\n".join(texts))
+
+        if len(intro_text) > INTRO_TEXT_CHAR_LIMIT:
+            intro_text = intro_text[:INTRO_TEXT_CHAR_LIMIT] + " ... [앞부분 텍스트 일부 생략]"
+
+        return intro_text
+
+    except Exception as e:
+        print(f"PDF 앞부분 추출 실패: {pdf_url} | {e}")
+        return ""
+
+
+def enrich_candidates_with_intro_text(candidates):
+    """
+    Gemini에 넘기기 전에 상위 후보 일부에 대해서만 PDF 앞부분을 추출한다.
+    모든 후보를 파싱하면 arXiv 요청/시간/비용이 늘어나므로 제한한다.
+    """
+    enriched = []
+
+    for idx, paper in enumerate(candidates):
+        paper = dict(paper)
+
+        if idx < PDF_PARSE_CANDIDATE_LIMIT:
+            intro_text = extract_intro_text_from_pdf(
+                paper["pdf_url"],
+                max_pages=PDF_INTRO_PAGES
+            )
+        else:
+            intro_text = ""
+
+        paper["intro_text"] = intro_text
+        enriched.append(paper)
+
+        # arXiv에 너무 연속 요청하지 않도록 짧게 쉼
+        time.sleep(2)
+
+    return enriched
+
+
+# =========================================================
 # Gemini 호출
 # =========================================================
 
@@ -440,6 +537,19 @@ def gemini_judge_and_summarize(papers, selected_window):
     paper_blocks = []
 
     for i, p in enumerate(papers, start=1):
+        intro_text = p.get("intro_text", "")
+
+        if intro_text:
+            intro_block = f"""
+PDF 앞부분/서론 일부:
+{intro_text}
+"""
+        else:
+            intro_block = """
+PDF 앞부분/서론 일부:
+추출 실패 또는 미추출. 제목과 초록을 중심으로 판단할 것.
+"""
+
         paper_blocks.append(
             f"""
 [후보 {i}]
@@ -450,8 +560,11 @@ PDF: {p['pdf_url']}
 제출일: {p['published']}
 수정일: {p['updated']}
 최근성: 최근 {p.get('age_days', 'N/A')}일 이내
+
 초록:
 {p['abstract']}
+
+{intro_block}
 """
         )
 
@@ -464,6 +577,19 @@ SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adap
 이번 검색 범위:
 최근 {selected_window}일 이내 후보 중에서 선별한다.
 
+너에게 제공되는 정보:
+- 제목
+- 저자
+- arXiv ID
+- PDF 링크
+- 초록
+- PDF 앞부분/서론 일부 텍스트
+
+중요:
+PDF 전체를 읽은 것이 아니라, 초록과 PDF 앞부분/서론 일부를 기반으로 판단하는 것이다.
+따라서 실험 결과가 초록이나 서론 일부에 명확히 없으면 추측하지 말고
+"제공된 정보 기준으로는 구체적 실험 결과가 명시되지 않음"이라고 써라.
+
 절대 규칙:
 - 아래 제공된 후보 논문만 사용하라.
 - 새로운 논문을 검색하거나 추가하지 마라.
@@ -474,13 +600,16 @@ SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adap
 - 후보가 여러 개 제공되더라도 최종 출력은 반드시 최대 {FINAL_PAPER_LIMIT}편까지만 작성하라.
 - 한국어로 작성하라.
 - 초록 요약은 원문 번역/복사가 아니라 핵심 재구성으로 작성하라.
+- PDF 앞부분/서론에서 확인되는 연구 동기와 문제의식을 반영하라.
+- 논문 전체를 읽은 것처럼 단정하지 마라.
 
 선정 기준:
 1. SLM 또는 small language model과 직접 관련
 2. edge device, on-device, mobile, TinyML 환경과 직접 관련
 3. LoRA, MoE, PEFT, adapter, quantization, compression, latency, memory optimization 중 하나 이상과 관련
-4. 단순 대형 LLM 일반 논문, 순수 benchmark 논문, 주제와 무관한 CV/NLP 논문은 제외
-5. 최신 논문을 우선하되, 오래된 논문이라도 주제 관련성이 높으면 선정 가능
+4. 실제 엣지 배포, 메모리 절감, 추론 지연시간, 전력 효율, 경량화와 관련 있으면 우선
+5. 단순 대형 LLM 일반 논문, 순수 benchmark 논문, 주제와 무관한 CV/NLP 논문은 제외
+6. 최신 논문을 우선하되, 오래된 논문이라도 주제 관련성이 높으면 선정 가능
 
 출력 형식:
 
@@ -489,9 +618,12 @@ SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adap
 2. **저자**:
 3. **관련성 판단**:
 4. **초록 요약** (3-4문장):
-5. **핵심 기여사항**:
-6. **실험 결과**:
-7. **arXiv PDF**:
+5. **서론/앞부분 기반 판단**:
+6. **핵심 기여사항**:
+7. **실험 결과**:
+8. **내 연구와의 관련성**:
+9. **확인해야 할 부분**:
+10. **arXiv PDF**:
 
 **📄 논문 2**
 동일 형식 반복
@@ -503,7 +635,7 @@ SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adap
 {chr(10).join(paper_blocks)}
 """
 
-    return call_gemini(prompt, max_output_tokens=4096)
+    return call_gemini(prompt, max_output_tokens=6144)
 
 
 def translate_abstract_with_gemini(abstract):
@@ -530,7 +662,7 @@ def create_candidate_fallback_summary(candidates, error_message, selected_window
     lines.append("")
     lines.append("오늘은 Gemini API 오류 또는 서버 혼잡으로 인해 전체 한국어 요약을 생성하지 못했습니다.")
     lines.append("대신 arXiv API로 수집하고 중복 제거한 후보 논문 목록을 저장합니다.")
-    lines.append("각 논문에 대해 초록 원문과 초록 한국어 번역을 함께 정리합니다.")
+    lines.append("각 논문에 대해 초록 원문, PDF 앞부분/서론 일부, 초록 한국어 번역을 함께 정리합니다.")
     lines.append("이 후보들은 pending 상태로 기록되므로 다음 실행 때 중복 후보로 반복 생성되지 않습니다.")
     lines.append("")
     lines.append(f"선택된 검색 범위: 최근 {selected_window}일")
@@ -550,6 +682,14 @@ def create_candidate_fallback_summary(candidates, error_message, selected_window
 
         lines.append("[초록 원문]")
         lines.append(paper["abstract"])
+        lines.append("")
+
+        lines.append("[PDF 앞부분/서론 일부]")
+        intro_text = paper.get("intro_text", "")
+        if intro_text:
+            lines.append(intro_text)
+        else:
+            lines.append("PDF 앞부분/서론 일부 텍스트를 추출하지 못했습니다.")
         lines.append("")
 
         lines.append("[초록 번역]")
@@ -681,6 +821,7 @@ def create_pdf(content, filename, selected_window):
             or stripped.startswith("Gemini 전체 요약 실패")
             or stripped.startswith("[초록 원문]")
             or stripped.startswith("[초록 번역]")
+            or stripped.startswith("[PDF 앞부분/서론 일부]")
         ):
             pdf_write(pdf, stripped, h=8, bold=True)
         else:
@@ -776,6 +917,9 @@ def main():
     if not candidates:
         print("새 후보 논문이 없습니다.")
         return
+
+    print(f"PDF 앞부분 추출 대상 후보 수: {min(len(candidates), PDF_PARSE_CANDIDATE_LIMIT)}")
+    candidates = enrich_candidates_with_intro_text(candidates)
 
     gemini_success = True
 
