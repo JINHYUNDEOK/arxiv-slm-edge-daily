@@ -304,38 +304,51 @@ def call_gemini(prompt):
         "contents": [
             {
                 "role": "user",
-                "parts": [
-                    {
-                        "text": prompt
-                    }
-                ],
+                "parts": [{"text": prompt}],
             }
         ],
         "generationConfig": {
             "temperature": 0.2,
             "topP": 0.8,
-            "maxOutputTokens": 8192,
+            "maxOutputTokens": 4096,
         },
     }
 
-    res = requests.post(
-        url,
-        headers=headers,
-        json=payload,
-        timeout=180
-    )
+    last_error_text = ""
 
-    if res.status_code != 200:
+    for attempt in range(1, 4):
+        print(f"Gemini 호출 시도 {attempt}/3 - model: {GEMINI_MODEL}")
+
+        res = requests.post(
+            url,
+            headers=headers,
+            json=payload,
+            timeout=180
+        )
+
+        if res.status_code == 200:
+            data = res.json()
+            try:
+                return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+            except Exception as e:
+                raise RuntimeError(f"Gemini 응답 파싱 실패: {data}") from e
+
+        last_error_text = res.text
+        print(f"Gemini API error {res.status_code}: {last_error_text}")
+
+        if res.status_code in [429, 503]:
+            wait_sec = 60 * attempt
+            print(f"{wait_sec}초 후 재시도합니다.")
+            time.sleep(wait_sec)
+            continue
+
         raise RuntimeError(
             f"Gemini API error: {res.status_code}\n{res.text}"
         )
 
-    data = res.json()
-
-    try:
-        return data["candidates"][0]["content"]["parts"][0]["text"].strip()
-    except Exception as e:
-        raise RuntimeError(f"Gemini 응답 파싱 실패: {data}") from e
+    raise RuntimeError(
+        f"Gemini API error after retries:\n{last_error_text}"
+    )
 
 
 def gemini_judge_and_summarize(papers):
@@ -508,8 +521,8 @@ def main():
 
     filtered = sorted(filtered, key=lambda x: x["local_score"], reverse=True)
 
-    # Gemini 3.1 Pro에는 상위 12개 후보만 전달
-    candidates = filtered[:12]
+    # Gemini 2.5 Flash에는 상위 6개 후보만 전달
+    candidates = filtered[:6]
 
     print(f"Gemini 검사용 후보 수: {len(candidates)}")
 
