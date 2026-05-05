@@ -32,7 +32,7 @@ RECENT_WINDOWS = [7, 15, 30, 60, 120, 365, 730, 1095]
 MIN_TARGET_PAPERS = 3
 
 # Gemini에게 넘길 후보 수
-GEMINI_CANDIDATE_LIMIT = 10
+GEMINI_CANDIDATE_LIMIT = 7
 
 # 최종 PDF에 들어갈 최대 논문 수
 FINAL_PAPER_LIMIT = 3
@@ -41,7 +41,7 @@ FINAL_PAPER_LIMIT = 3
 # 후보 10개 중 상위 5개만 PDF 앞부분/서론 일부를 읽고,
 # 최종 결과는 FINAL_PAPER_LIMIT에 따라 최대 3편만 PDF에 정리됨
 PDF_PARSE_CANDIDATE_LIMIT = 5
-PDF_INTRO_PAGES = 3
+PDF_INTRO_PAGES = 2
 INTRO_TEXT_CHAR_LIMIT = 6000
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
@@ -510,9 +510,24 @@ def call_gemini(prompt, max_output_tokens=20000):
         if res.status_code == 200:
             data = res.json()
             try:
-                return data["candidates"][0]["content"]["parts"][0]["text"].strip()
-            except Exception as e:
-                raise RuntimeError(f"Gemini 응답 파싱 실패: {data}") from e
+                candidate = data["candidates"][0]
+                finish_reason = candidate.get("finishReason", "")
+
+                text = candidate["content"]["parts"][0]["text"].strip()
+
+                if finish_reason == "MAX_TOKENS":
+                    raise RuntimeError(
+                "Gemini 응답이 maxOutputTokens 제한으로 중간에 잘렸습니다. "
+                "요약 PDF 대신 후보 목록 PDF로 처리합니다."
+            )
+
+                if not text:
+                    raise RuntimeError(f"Gemini 응답 텍스트가 비어 있습니다: {data}")
+
+                return text
+
+        except Exception as e:
+            raise RuntimeError(f"Gemini 응답 파싱 실패 또는 응답 불완전: {data}") from e
 
         last_error_text = res.text
         print(f"Gemini API error {res.status_code}: {last_error_text}")
