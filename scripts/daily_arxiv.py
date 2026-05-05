@@ -517,17 +517,17 @@ def call_gemini(prompt, max_output_tokens=20000):
 
                 if finish_reason == "MAX_TOKENS":
                     raise RuntimeError(
-                "Gemini 응답이 maxOutputTokens 제한으로 중간에 잘렸습니다. "
-                "요약 PDF 대신 후보 목록 PDF로 처리합니다."
-            )
+                        "Gemini 응답이 maxOutputTokens 제한으로 중간에 잘렸습니다. "
+                        "요약 PDF 대신 후보 목록 PDF로 처리합니다."
+                    )
 
                 if not text:
                     raise RuntimeError(f"Gemini 응답 텍스트가 비어 있습니다: {data}")
 
                 return text
 
-        except Exception as e:
-            raise RuntimeError(f"Gemini 응답 파싱 실패 또는 응답 불완전: {data}") from e
+            except Exception as e:
+                raise RuntimeError(f"Gemini 응답 파싱 실패 또는 응답 불완전: {data}") from e
 
         last_error_text = res.text
         print(f"Gemini API error {res.status_code}: {last_error_text}")
