@@ -607,7 +607,7 @@ def main():
 
     filtered = sorted(filtered, key=lambda x: x["local_score"], reverse=True)
 
-    # Gemini 2.5 Flash에는 상위 6개 후보만 전달
+        # Gemini에는 너무 많이 넣지 말고 상위 후보만 전달
     candidates = filtered[:6]
 
     print(f"Gemini 검사용 후보 수: {len(candidates)}")
@@ -616,46 +616,46 @@ def main():
         print("새 후보 논문이 없습니다.")
         return
 
-gemini_success = True
+    gemini_success = True
 
-try:
-    summary = gemini_judge_and_summarize(candidates)
-except Exception as e:
-    gemini_success = False
-    print(f"Gemini 요약 실패. 후보 목록 PDF를 생성합니다: {e}")
-    summary = create_candidate_fallback_summary(candidates, str(e))
+    try:
+        summary = gemini_judge_and_summarize(candidates)
+    except Exception as e:
+        gemini_success = False
+        print(f"Gemini 요약 실패. 후보 목록 PDF를 생성합니다: {e}")
+        summary = create_candidate_fallback_summary(candidates, str(e))
 
-if "선정 논문 없음" in summary:
-    gemini_success = False
-    print("Gemini가 적합한 논문을 선정하지 않았습니다. 후보 목록 PDF를 생성합니다.")
-    summary = create_candidate_fallback_summary(
-        candidates,
-        "Gemini가 적합한 논문을 선정하지 않았습니다."
-    )
+    if "선정 논문 없음" in summary:
+        gemini_success = False
+        print("Gemini가 적합한 논문을 선정하지 않았습니다. 후보 목록 PDF를 생성합니다.")
+        summary = create_candidate_fallback_summary(
+            candidates,
+            "Gemini가 적합한 논문을 선정하지 않았습니다."
+        )
 
-output_path = create_pdf(summary, filename)
+    output_path = create_pdf(summary, filename)
 
-# Gemini 요약이 성공한 경우에만 processed_ids.json에 기록
-# 실패해서 후보 목록만 저장한 경우에는 기록하지 않음
-if gemini_success:
-    already_ids = {x.get("arxiv_id") for x in processed}
+    # Gemini 요약이 성공한 경우에만 processed_ids.json에 기록
+    # 실패해서 후보 목록만 저장한 경우에는 기록하지 않음
+    if gemini_success:
+        already_ids = {x.get("arxiv_id") for x in processed}
 
-    for paper in candidates:
-        if paper["arxiv_id"] in summary and paper["arxiv_id"] not in already_ids:
-            processed.append({
-                "arxiv_id": paper["arxiv_id"],
-                "title": paper["title"],
-                "pdf_url": paper["pdf_url"],
-                "processed_at": today.isoformat(),
-                "model": GEMINI_MODEL,
-            })
+        for paper in candidates:
+            if paper["arxiv_id"] in summary and paper["arxiv_id"] not in already_ids:
+                processed.append({
+                    "arxiv_id": paper["arxiv_id"],
+                    "title": paper["title"],
+                    "pdf_url": paper["pdf_url"],
+                    "processed_at": today.isoformat(),
+                    "model": GEMINI_MODEL,
+                })
 
-    save_processed(processed)
-else:
-    print("Gemini 요약 실패/미선정 상태이므로 processed_ids.json은 업데이트하지 않습니다.")
+        save_processed(processed)
+    else:
+        print("Gemini 요약 실패/미선정 상태이므로 processed_ids.json은 업데이트하지 않습니다.")
 
-print(f"PDF 생성 완료: {output_path}")
-time.sleep(1)
+    print(f"PDF 생성 완료: {output_path}")
+    time.sleep(1)
 
 
 if __name__ == "__main__":
