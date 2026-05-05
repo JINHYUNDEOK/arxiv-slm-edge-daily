@@ -527,13 +527,28 @@ def create_candidate_fallback_summary(candidates, error_message):
 
     return "\n".join(lines)
 
+def pdf_write(pdf, text, h=7, bold=False):
+    """
+    fpdf2에서 multi_cell 이후 x 위치가 오른쪽으로 남아
+    'Not enough horizontal space' 오류가 나는 것을 방지하는 안전 출력 함수
+    """
+    pdf.set_x(pdf.l_margin)
+
+    if bold:
+        pdf.set_font("Nanum", "B", 10)
+    else:
+        pdf.set_font("Nanum", "", 10)
+
+    usable_width = pdf.w - pdf.l_margin - pdf.r_margin
+    pdf.multi_cell(usable_width, h, str(text))
+
+
 def create_pdf(content, filename):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     pdf = PDF()
     pdf.set_auto_page_break(auto=True, margin=15)
 
-    # GitHub Actions Ubuntu 환경에서 설치되는 Nanum font 경로
     font_path = "/usr/share/fonts/truetype/nanum/NanumGothic.ttf"
     bold_font_path = "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf"
 
@@ -541,36 +556,47 @@ def create_pdf(content, filename):
     pdf.add_font("Nanum", "B", bold_font_path)
 
     pdf.add_page()
+
+    # 제목
     pdf.set_font("Nanum", "B", 16)
-    pdf.multi_cell(0, 10, "SLM / Edge Device arXiv Daily Summary")
+    pdf.set_x(pdf.l_margin)
+    usable_width = pdf.w - pdf.l_margin - pdf.r_margin
+    pdf.multi_cell(usable_width, 10, "SLM / Edge Device arXiv Daily Summary")
 
-    pdf.set_font("Nanum", "", 10)
+    pdf.ln(2)
+
+    # 생성 정보
     today_kst = datetime.now(KST).strftime("%Y-%m-%d %H:%M KST")
-    pdf.multi_cell(0, 8, f"생성일: {today_kst}")
-    pdf.multi_cell(0, 8, f"Gemini 모델: {GEMINI_MODEL}")
-    pdf.ln(5)
+    pdf_write(pdf, f"생성일: {today_kst}", h=8)
+    pdf_write(pdf, f"Gemini 모델: {GEMINI_MODEL}", h=8)
 
-    pdf.set_font("Nanum", "", 10)
+    pdf.ln(5)
 
     content = safe_text(content)
     content = content.replace("**", "")
-    content = break_long_words(content, max_len=60)
+    content = break_long_words(content, max_len=50)
 
     for line in content.splitlines():
         stripped = line.strip()
 
-        if stripped.startswith("[논문]") or stripped.startswith("논문"):
-            pdf.set_font("Nanum", "B", 12)
-            pdf.multi_cell(0, 8, stripped)
-            pdf.set_font("Nanum", "", 10)
+        if not stripped:
+            pdf.ln(3)
+            continue
+
+        if (
+            stripped.startswith("[논문]")
+            or stripped.startswith("논문")
+            or stripped.startswith("[논문 후보")
+            or stripped.startswith("Gemini 요약 실패")
+        ):
+            pdf_write(pdf, stripped, h=8, bold=True)
         else:
-            pdf.multi_cell(0, 7, line)
+            pdf_write(pdf, stripped, h=7, bold=False)
 
     output_path = os.path.join(OUTPUT_DIR, filename)
     pdf.output(output_path)
 
     return output_path
-
 
 # =========================================================
 # 메인 실행
