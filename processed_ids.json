@@ -22,5 +22,29 @@
     "status": "summarized",
     "processed_at": "2026-05-05T23:41:09.011903+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.03465",
+    "title": "FINER-SQL: Boosting Small Language Models for Text-to-SQL",
+    "pdf_url": "https://arxiv.org/pdf/2605.03465.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-06T11:25:08.856797+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.03301",
+    "title": "SHIELD: A Diverse Clinical Note Dataset and Distilled Small Language Models for Enterprise-Scale De-identification",
+    "pdf_url": "https://arxiv.org/pdf/2605.03301.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-06T11:25:08.856797+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.03884",
+    "title": "QKVShare: Quantized KV-Cache Handoff for Multi-Agent On-Device LLMs",
+    "pdf_url": "https://arxiv.org/pdf/2605.03884.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-06T11:25:08.856797+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
