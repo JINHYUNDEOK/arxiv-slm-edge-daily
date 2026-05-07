@@ -46,5 +46,29 @@
     "status": "summarized",
     "processed_at": "2026-05-06T11:25:08.856797+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.04948",
+    "title": "Adapting Large Language Models to a Low-Resource Agglutinative Language: A Comparative Study of LoRA and QLoRA for Bashkir",
+    "pdf_url": "https://arxiv.org/pdf/2605.04948.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-07T11:27:39.698376+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.04221",
+    "title": "Self-Prompting Small Language Models for Privacy-Sensitive Clinical Information Extraction",
+    "pdf_url": "https://arxiv.org/pdf/2605.04221.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-07T11:27:39.698376+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.03804",
+    "title": "ScrapMem: A Bio-inspired Framework for On-device Personalized Agent Memory via Optical Forgetting",
+    "pdf_url": "https://arxiv.org/pdf/2605.03804.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-07T11:27:39.698376+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
