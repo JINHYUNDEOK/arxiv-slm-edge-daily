@@ -70,5 +70,29 @@
     "status": "summarized",
     "processed_at": "2026-05-07T11:27:39.698376+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.06330",
+    "title": "Fine-Tuning Small Language Models for Solution-Oriented Windows Event Log Analysis",
+    "pdf_url": "https://arxiv.org/pdf/2605.06330.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-08T11:34:45.954358+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.06247",
+    "title": "CKT-WAM: Parameter-Efficient Context Knowledge Transfer Between World Action Models",
+    "pdf_url": "https://arxiv.org/pdf/2605.06247.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-08T11:34:45.954358+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.06183",
+    "title": "Rethinking Adapter Placement: A Dominant Adaptation Module Perspective",
+    "pdf_url": "https://arxiv.org/pdf/2605.06183.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-08T11:34:45.954358+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
