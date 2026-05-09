@@ -94,5 +94,29 @@
     "status": "summarized",
     "processed_at": "2026-05-08T11:34:45.954358+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.06175",
+    "title": "VLA-GSE: Boosting Parameter-Efficient Fine-Tuning in VLA with Generalized and Specialized Experts",
+    "pdf_url": "https://arxiv.org/pdf/2605.06175.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-09T11:27:26.941921+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.05914",
+    "title": "Quantum-enhanced Large Language Models on Quantum Hardware via Cayley Unitary Adapters",
+    "pdf_url": "https://arxiv.org/pdf/2605.05914.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-09T11:27:26.941921+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.06663",
+    "title": "EMO: Pretraining Mixture of Experts for Emergent Modularity",
+    "pdf_url": "https://arxiv.org/pdf/2605.06663.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-09T11:27:26.941921+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
