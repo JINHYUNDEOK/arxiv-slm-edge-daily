@@ -118,5 +118,29 @@
     "status": "summarized",
     "processed_at": "2026-05-09T11:27:26.941921+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.06047",
+    "title": "TFM-Retouche: A Lightweight Input-Space Adapter for Tabular Foundation Models",
+    "pdf_url": "https://arxiv.org/pdf/2605.06047.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-10T11:30:22.692918+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.05896",
+    "title": "VARS-FL: Validation-Aligned Client Selection for Non-IID Federated Learning in IoT Systems",
+    "pdf_url": "https://arxiv.org/pdf/2605.05896.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-10T11:30:22.692918+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.05979",
+    "title": "Prompt-Free and Efficient SAM2 Adaptation for Biomedical Semantic Segmentation via Dual Adapters",
+    "pdf_url": "https://arxiv.org/pdf/2605.05979.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-10T11:30:22.692918+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
