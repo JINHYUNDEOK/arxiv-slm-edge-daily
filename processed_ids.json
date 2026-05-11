@@ -142,5 +142,29 @@
     "status": "summarized",
     "processed_at": "2026-05-10T11:30:22.692918+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.07783",
+    "title": "Chain-based Distillation for Effective Initialization of Variable-Sized Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2605.07783.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-11T11:39:53.016339+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.07505",
+    "title": "LiteGUI: Distilling Compact GUI Agents with Reinforcement Learning",
+    "pdf_url": "https://arxiv.org/pdf/2605.07505.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-11T11:39:53.016339+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.07182",
+    "title": "Star Elastic: Many-in-One Reasoning LLMs with Efficient Budget Control",
+    "pdf_url": "https://arxiv.org/pdf/2605.07182.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-11T11:39:53.016339+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
