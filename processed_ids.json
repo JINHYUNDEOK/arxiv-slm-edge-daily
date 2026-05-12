@@ -166,5 +166,21 @@
     "status": "summarized",
     "processed_at": "2026-05-11T11:39:53.016339+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.09656",
+    "title": "ORICF -- Open Robotics Inference and Control Framework",
+    "pdf_url": "https://arxiv.org/pdf/2605.09656.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-12T11:32:55.784209+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.10124",
+    "title": "GELATO: Generative Entropy- and Lyapunov-based Adaptive Token Offloading for Device-Edge Speculative LLM Inference",
+    "pdf_url": "https://arxiv.org/pdf/2605.10124.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-12T11:32:55.784209+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
