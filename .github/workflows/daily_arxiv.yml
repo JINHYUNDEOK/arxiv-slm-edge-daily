@@ -2,8 +2,9 @@ name: Daily SLM Edge arXiv Summary
 
 on:
   schedule:
-    # KST 오전 9시 = UTC 0시
-    - cron: "0 0 * * *"
+    # KST 오전 9시 37분 = UTC 0시 37분
+    # 정각에는 arXiv와 GitHub Actions 양쪽 요청이 몰릴 수 있어 조금 늦게 실행
+    - cron: "37 0 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -39,6 +40,10 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-2.5-flash
           OUTPUT_DIR: outputs
+          ARXIV_MAX_RESULTS: 100
+          ARXIV_RETRIES: 5
+          ARXIV_BASE_SLEEP_SEC: 90
+          ARXIV_INITIAL_JITTER_SEC: 180
         run: python scripts/daily_arxiv.py
 
       - name: Commit generated outputs

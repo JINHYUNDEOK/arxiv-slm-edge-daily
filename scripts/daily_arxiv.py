@@ -3,6 +3,7 @@ import re
 import json
 import html
 import time
+import random
 import difflib
 import requests
 import feedparser
@@ -23,7 +24,13 @@ PROCESSED_PATH = "processed_ids.json"
 
 # arXiv에서 가져올 최대 후보 수
 # 3년까지 넓게 보려면 너무 작으면 과거 후보가 안 잡힐 수 있음
-MAX_RESULTS = 150
+MAX_RESULTS = int(os.getenv("ARXIV_MAX_RESULTS", "100"))
+
+# GitHub Actions 공유 IP에서 arXiv 429/503이 날 수 있으므로 넉넉하게 재시도
+ARXIV_RETRIES = int(os.getenv("ARXIV_RETRIES", "5"))
+ARXIV_BASE_SLEEP_SEC = int(os.getenv("ARXIV_BASE_SLEEP_SEC", "90"))
+ARXIV_MAX_SLEEP_SEC = int(os.getenv("ARXIV_MAX_SLEEP_SEC", "600"))
+ARXIV_INITIAL_JITTER_SEC = int(os.getenv("ARXIV_INITIAL_JITTER_SEC", "180"))
 
 # 최근 7일 -> 15일 -> 30일 -> 60일 -> 120일 -> 1년 -> 2년 -> 3년
 RECENT_WINDOWS = [7, 15, 30, 60, 120, 365, 730, 1095]
@@ -105,6 +112,9 @@ def save_processed(processed):
 # 유틸
 # =========================================================
 
+class ArxivTemporarilyUnavailable(RuntimeError):
+    pass
+
 def normalize_title(title: str) -> str:
     title = title.lower()
     title = re.sub(r"[^a-z0-9가-힣]", "", title)
@@ -152,7 +162,27 @@ def is_duplicate(paper, processed):
     return False
 
 
-def get_with_retry(url, timeout=90, retries=4, sleep_sec=30):
+def get_retry_after_seconds(res, fallback):
+    retry_after = res.headers.get("Retry-After")
+
+    if retry_after:
+        try:
+            return max(1, min(int(retry_after), ARXIV_MAX_SLEEP_SEC))
+        except ValueError:
+            pass
+
+    return fallback
+
+
+def sleep_before_retry(wait_sec):
+    wait_sec = min(wait_sec, ARXIV_MAX_SLEEP_SEC)
+    jitter = random.randint(0, 15)
+    total_wait = wait_sec + jitter
+    print(f"{total_wait}초 후 재시도합니다.")
+    time.sleep(total_wait)
+
+
+def get_with_retry(url, timeout=90, retries=ARXIV_RETRIES, sleep_sec=ARXIV_BASE_SLEEP_SEC):
     last_error = None
 
     for attempt in range(1, retries + 1):
@@ -168,17 +198,19 @@ def get_with_retry(url, timeout=90, retries=4, sleep_sec=30):
             )
 
             if res.status_code == 429:
-                wait_sec = 120 * attempt
+                wait_sec = get_retry_after_seconds(res, sleep_sec * attempt)
                 last_error = RuntimeError(f"arXiv 429 Too Many Requests: {url}")
-                print(f"arXiv 429 Too Many Requests. {wait_sec}초 후 재시도합니다.")
-                time.sleep(wait_sec)
+                print("arXiv 429 Too Many Requests.")
+                if attempt < retries:
+                    sleep_before_retry(wait_sec)
                 continue
 
             if res.status_code in [500, 502, 503, 504]:
-                wait_sec = 60 * attempt
+                wait_sec = get_retry_after_seconds(res, sleep_sec * attempt)
                 last_error = RuntimeError(f"arXiv 서버 오류 {res.status_code}: {url}")
-                print(f"arXiv 서버 오류 {res.status_code}. {wait_sec}초 후 재시도합니다.")
-                time.sleep(wait_sec)
+                print(f"arXiv 서버 오류 {res.status_code}.")
+                if attempt < retries:
+                    sleep_before_retry(wait_sec)
                 continue
 
             res.raise_for_status()
@@ -190,13 +222,12 @@ def get_with_retry(url, timeout=90, retries=4, sleep_sec=30):
 
             if attempt < retries:
                 wait_sec = sleep_sec * attempt
-                print(f"{wait_sec}초 후 재시도합니다.")
-                time.sleep(wait_sec)
+                sleep_before_retry(wait_sec)
 
     if last_error:
-        raise last_error
+        raise ArxivTemporarilyUnavailable(str(last_error)) from last_error
 
-    raise RuntimeError("arXiv 요청 실패")
+    raise ArxivTemporarilyUnavailable("arXiv 요청 실패")
 
 
 # =========================================================
@@ -903,7 +934,18 @@ def main():
     filename = f"{date_token}.pdf"
 
     processed = load_processed()
-    papers = search_arxiv()
+
+    if ARXIV_INITIAL_JITTER_SEC > 0:
+        initial_wait = random.randint(0, ARXIV_INITIAL_JITTER_SEC)
+        print(f"arXiv 혼잡 완화를 위해 시작 전 {initial_wait}초 대기합니다.")
+        time.sleep(initial_wait)
+
+    try:
+        papers = search_arxiv()
+    except ArxivTemporarilyUnavailable as e:
+        print(f"arXiv 임시 오류로 오늘 실행을 건너뜁니다: {e}")
+        print("GitHub Actions 실패로 처리하지 않고, 다음 스케줄에서 다시 시도합니다.")
+        return
 
     print(f"arXiv 전체 후보 수: {len(papers)}")
 
