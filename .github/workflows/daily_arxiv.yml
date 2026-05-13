@@ -5,6 +5,12 @@ on:
     # KST 오전 9시 37분 = UTC 0시 37분
     # 정각에는 arXiv와 GitHub Actions 양쪽 요청이 몰릴 수 있어 조금 늦게 실행
     - cron: "37 0 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/daily_arxiv.yml"
+      - "scripts/daily_arxiv.py"
   workflow_dispatch:
 
 concurrency:
