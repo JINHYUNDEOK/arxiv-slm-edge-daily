@@ -70,6 +70,21 @@ KEYWORD_GROUPS = [
     "PEFT",
     "adapter",
     "adapters",
+    "adapter routing",
+    "adapter selection",
+    "dynamic adapter",
+    "conditional adapter",
+    "mixture of adapters",
+    "LoRA router",
+    "LoRA routing",
+    "LoRA gating",
+    "dynamic LoRA",
+    "conditional LoRA",
+    "mixture of LoRA experts",
+    "PEFT routing",
+    "gating network",
+    "expert routing",
+    "conditional computation",
     "quantization",
     "pruning",
     "compression",
@@ -331,6 +346,21 @@ def local_score(paper):
         "peft",
         "adapter",
         "adapters",
+        "adapter routing",
+        "adapter selection",
+        "dynamic adapter",
+        "conditional adapter",
+        "mixture of adapters",
+        "lora router",
+        "lora routing",
+        "lora gating",
+        "dynamic lora",
+        "conditional lora",
+        "mixture of lora experts",
+        "peft routing",
+        "gating network",
+        "expert routing",
+        "conditional computation",
         "efficient llm",
         "efficient language model",
         "edge ai",
@@ -618,7 +648,7 @@ PDF: {p['pdf_url']}
 너는 AI/ML 연구자를 위한 arXiv 리서치 어시스턴트다.
 
 핵심 목표:
-SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adapter, quantization, compression, latency, memory efficiency와 직접 관련 있는 논문만 선별한다.
+SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adapter, adapter routing, adapter selection, dynamic LoRA, LoRA gating, gating network, quantization, compression, latency, memory efficiency와 직접 관련 있는 논문만 선별한다.
 
 이번 검색 범위:
 최근 {selected_window}일 이내 후보 중에서 선별한다.
@@ -653,9 +683,10 @@ PDF 전체를 읽은 것이 아니라, 초록과 PDF 앞부분/서론 일부를 
 1. SLM 또는 small language model과 직접 관련
 2. edge device, on-device, mobile, TinyML 환경과 직접 관련
 3. LoRA, MoE, PEFT, adapter, quantization, compression, latency, memory optimization 중 하나 이상과 관련
-4. 실제 엣지 배포, 메모리 절감, 추론 지연시간, 전력 효율, 경량화와 관련 있으면 우선
-5. 단순 대형 LLM 일반 논문, 순수 benchmark 논문, 주제와 무관한 CV/NLP 논문은 제외
-6. 최신 논문을 우선하되, 오래된 논문이라도 주제 관련성이 높으면 선정 가능
+4. 입력별 LoRA/adapter/expert 선택, adapter routing, gating network, conditional computation과 관련 있으면 우선
+5. 실제 엣지 배포, 메모리 절감, 추론 지연시간, 전력 효율, 경량화와 관련 있으면 우선
+6. 단순 대형 LLM 일반 논문, 순수 benchmark 논문, 주제와 무관한 CV/NLP 논문은 제외
+7. 최신 논문을 우선하되, 오래된 논문이라도 주제 관련성이 높으면 선정 가능
 
 출력 형식:
 
