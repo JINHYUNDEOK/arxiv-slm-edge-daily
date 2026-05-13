@@ -182,5 +182,29 @@
     "status": "summarized",
     "processed_at": "2026-05-12T11:32:55.784209+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.12129",
+    "title": "It's Not the Size: Harness Design Determines Operational Stability in Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2605.12129.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-13T15:22:56.239371+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.12001",
+    "title": "CR^2: Cost-Aware Risk-Controlled Routing for Wireless Device-Edge LLM Inference",
+    "pdf_url": "https://arxiv.org/pdf/2605.12001.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-13T15:22:56.239371+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.12207",
+    "title": "Not How Many, But Which: Parameter Placement in Low-Rank Adaptation",
+    "pdf_url": "https://arxiv.org/pdf/2605.12207.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-13T15:22:56.239371+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
