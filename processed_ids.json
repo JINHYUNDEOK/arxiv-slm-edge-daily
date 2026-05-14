@@ -206,5 +206,29 @@
     "status": "summarized",
     "processed_at": "2026-05-13T15:22:56.239371+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.13162",
+    "title": "Continual Fine-Tuning of Large Language Models via Program Memory",
+    "pdf_url": "https://arxiv.org/pdf/2605.13162.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-14T13:31:10.240609+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.13538",
+    "title": "Locale-Conditioned Few-Shot Prompting Mitigates Demonstration Regurgitation in On-Device PII Substitution with Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2605.13538.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-14T13:31:10.240609+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.13779",
+    "title": "MinT: Managed Infrastructure for Training and Serving Millions of LLMs",
+    "pdf_url": "https://arxiv.org/pdf/2605.13779.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-14T13:31:10.240609+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
