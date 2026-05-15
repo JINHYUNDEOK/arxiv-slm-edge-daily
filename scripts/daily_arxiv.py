@@ -278,7 +278,7 @@ def search_arxiv():
 
     print(f"arXiv API 호출: {url}")
 
-    res = get_with_retry(url, timeout=90, retries=4, sleep_sec=30)
+    res = get_with_retry(url, timeout=90)
 
     feed = feedparser.parse(res.text)
     now = datetime.now(timezone.utc)
