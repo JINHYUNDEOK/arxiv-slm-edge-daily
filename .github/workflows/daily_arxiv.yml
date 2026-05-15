@@ -2,9 +2,9 @@ name: Daily SLM Edge arXiv Summary
 
 on:
   schedule:
-    # KST 오전 9시 37분 = UTC 0시 37분
-    # 정각에는 arXiv와 GitHub Actions 양쪽 요청이 몰릴 수 있어 조금 늦게 실행
-    - cron: "37 0 * * *"
+    # KST 오전 6시 = UTC 전날 21시
+    # arXiv 임시 오류가 나면 workflow 내부에서 KST 오전 10시까지 15~30분 랜덤 간격으로 재시도
+    - cron: "0 21 * * *"
   push:
     branches:
       - main
@@ -41,16 +41,59 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run arXiv summary script
+      - name: Run arXiv summary script with retry window
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-2.5-flash
           OUTPUT_DIR: outputs
           ARXIV_MAX_RESULTS: 100
-          ARXIV_RETRIES: 5
-          ARXIV_BASE_SLEEP_SEC: 90
-          ARXIV_INITIAL_JITTER_SEC: 180
-        run: python scripts/daily_arxiv.py
+          ARXIV_RETRIES: 1
+          ARXIV_BASE_SLEEP_SEC: 30
+          ARXIV_INITIAL_JITTER_SEC: 0
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          deadline_epoch=$(TZ=Asia/Seoul date -d "$(TZ=Asia/Seoul date +%F) 10:00" +%s)
+          attempt=1
+
+          while true; do
+            today_kst=$(TZ=Asia/Seoul date +%Y%m%d)
+            output_file="${OUTPUT_DIR}/${today_kst}.pdf"
+
+            echo "Attempt ${attempt}: target output ${output_file}"
+
+            set +e
+            python scripts/daily_arxiv.py
+            exit_code=$?
+            set -e
+
+            if [ "${exit_code}" -eq 0 ]; then
+              echo "Script completed successfully."
+              break
+            fi
+
+            if [ "${exit_code}" -ne 75 ]; then
+              echo "Script failed with non-retryable exit code ${exit_code}."
+              exit "${exit_code}"
+            fi
+
+            now_epoch=$(TZ=Asia/Seoul date +%s)
+            if [ "${now_epoch}" -ge "${deadline_epoch}" ]; then
+              echo "arXiv temporary error persisted until the 10:00 KST retry deadline. Ending without failing the workflow."
+              break
+            fi
+
+            wait_sec=$((900 + RANDOM % 901))
+            next_epoch=$((now_epoch + wait_sec))
+            if [ "${next_epoch}" -gt "${deadline_epoch}" ]; then
+              wait_sec=$((deadline_epoch - now_epoch))
+            fi
+
+            echo "arXiv temporary error. Waiting ${wait_sec} seconds before retrying."
+            sleep "${wait_sec}"
+            attempt=$((attempt + 1))
+          done
 
       - name: Commit generated outputs
         run: |

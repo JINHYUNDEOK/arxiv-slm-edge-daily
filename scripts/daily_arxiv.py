@@ -975,8 +975,8 @@ def main():
         papers = search_arxiv()
     except ArxivTemporarilyUnavailable as e:
         print(f"arXiv 임시 오류로 오늘 실행을 건너뜁니다: {e}")
-        print("GitHub Actions 실패로 처리하지 않고, 다음 스케줄에서 다시 시도합니다.")
-        return
+        print("GitHub Actions 재시도 루프에서 다시 시도할 수 있도록 임시 오류 종료코드로 종료합니다.")
+        raise SystemExit(75)
 
     print(f"arXiv 전체 후보 수: {len(papers)}")
 
