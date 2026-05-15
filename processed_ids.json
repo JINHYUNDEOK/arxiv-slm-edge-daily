@@ -230,5 +230,13 @@
     "status": "summarized",
     "processed_at": "2026-05-14T13:31:10.240609+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.15015",
+    "title": "Small, Private Language Models as Teammates for Educational Assessment Design",
+    "pdf_url": "https://arxiv.org/pdf/2605.15015.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-15T18:09:46.101622+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
