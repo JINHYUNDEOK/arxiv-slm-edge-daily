@@ -238,5 +238,13 @@
     "status": "summarized",
     "processed_at": "2026-05-15T18:09:46.101622+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.14844",
+    "title": "XFP: Quality-Targeted Adaptive Codebook Quantization with Sparse Outlier Separation for LLM Inference",
+    "pdf_url": "https://arxiv.org/pdf/2605.14844.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-16T09:16:20.543178+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
