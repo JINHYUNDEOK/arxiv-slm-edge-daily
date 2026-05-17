@@ -246,5 +246,29 @@
     "status": "summarized",
     "processed_at": "2026-05-16T09:16:20.543178+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.13163",
+    "title": "LoREnc: Low-Rank Encryption for Securing Foundation Models and LoRA Adapters",
+    "pdf_url": "https://arxiv.org/pdf/2605.13163.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-18T05:56:14.691387+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.11317",
+    "title": "SOMA: Efficient Multi-turn LLM Serving via Small Language Model",
+    "pdf_url": "https://arxiv.org/pdf/2605.11317.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-18T05:56:14.691387+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.11260",
+    "title": "Curriculum Learning-Guided Progressive Distillation in Large Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2605.11260.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-18T05:56:14.691387+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
