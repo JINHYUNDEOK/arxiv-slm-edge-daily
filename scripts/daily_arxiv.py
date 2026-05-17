@@ -157,6 +157,12 @@ ARXIV_QUERY_GROUPS = {
     ],
 }
 
+ARXIV_CATEGORY_LABELS = {
+    "core_edge": "SLM/Edge/On-device",
+    "adapter_router": "LoRA/Adapter/Router",
+    "compression_learning": "Compression/Quantization/Learning",
+}
+
 
 # =========================================================
 # 파일 입출력
@@ -382,7 +388,12 @@ def fetch_arxiv_query(group_name, keywords):
 
     res = get_with_retry(url, timeout=90)
 
-    return parse_arxiv_feed(res.text)
+    papers = parse_arxiv_feed(res.text)
+
+    for paper in papers:
+        paper["search_categories"] = [ARXIV_CATEGORY_LABELS.get(group_name, group_name)]
+
+    return papers
 
 
 def search_arxiv():
@@ -393,7 +404,15 @@ def search_arxiv():
         print(f"arXiv 그룹 후보 수 [{group_name}]: {len(group_papers)}")
 
         for paper in group_papers:
-            papers_by_id[paper["arxiv_id"]] = paper
+            arxiv_id = paper["arxiv_id"]
+
+            if arxiv_id in papers_by_id:
+                existing_categories = papers_by_id[arxiv_id].setdefault("search_categories", [])
+                for category in paper.get("search_categories", []):
+                    if category not in existing_categories:
+                        existing_categories.append(category)
+            else:
+                papers_by_id[arxiv_id] = paper
 
         if idx < len(ARXIV_QUERY_GROUPS) and ARXIV_QUERY_PAUSE_SEC > 0:
             print(f"다음 arXiv 그룹 쿼리 전 {ARXIV_QUERY_PAUSE_SEC}초 대기합니다.")
@@ -698,6 +717,9 @@ def gemini_judge_and_summarize(papers, selected_window):
 
     for i, p in enumerate(papers, start=1):
         intro_text = p.get("intro_text", "")
+        search_categories = ", ".join(
+            p.get("search_categories") or ["Uncategorized"]
+        )
 
         if intro_text:
             intro_block = f"""
@@ -716,6 +738,7 @@ PDF 앞부분/서론 일부:
 arXiv ID: {p['arxiv_id']}
 제목: {p['title']}
 저자: {p['authors']}
+카테고리: {search_categories}
 PDF: {p['pdf_url']}
 제출일: {p['published']}
 수정일: {p['updated']}
@@ -740,6 +763,7 @@ SLM, small language model, edge device, on-device, TinyML, LoRA, MoE, PEFT, adap
 너에게 제공되는 정보:
 - 제목
 - 저자
+- 검색 카테고리
 - arXiv ID
 - PDF 링크
 - 초록
@@ -762,6 +786,7 @@ PDF 전체를 읽은 것이 아니라, 초록과 PDF 앞부분/서론 일부를 
 - 초록 요약은 원문 번역/복사가 아니라 핵심 재구성으로 작성하라.
 - PDF 앞부분/서론에서 확인되는 연구 동기와 문제의식을 반영하라.
 - 논문 전체를 읽은 것처럼 단정하지 마라.
+- 3번 카테고리는 제공된 검색 카테고리 중 가장 적합한 카테고리를 쓰되, 둘 이상이면 쉼표로 함께 써라.
 
 선정 기준:
 1. SLM 또는 small language model과 직접 관련
@@ -777,14 +802,15 @@ PDF 전체를 읽은 것이 아니라, 초록과 PDF 앞부분/서론 일부를 
 **📄 논문 1**
 1. **제목**:
 2. **저자**:
-3. **관련성 판단**:
-4. **초록 요약** (3-4문장):
-5. **서론/앞부분 기반 판단**:
-6. **핵심 기여사항**:
-7. **실험 결과**:
-8. **내 연구와의 관련성**:
-9. **확인해야 할 부분**:
-10. **arXiv PDF**:
+3. **카테고리**:
+4. **관련성 판단**:
+5. **초록 요약** (3-4문장):
+6. **서론/앞부분 기반 판단**:
+7. **핵심 기여사항**:
+8. **실험 결과**:
+9. **내 연구와의 관련성**:
+10. **확인해야 할 부분**:
+11. **arXiv PDF**:
 
 **📄 논문 2**
 동일 형식 반복
@@ -834,6 +860,7 @@ def create_candidate_fallback_summary(candidates, error_message, selected_window
         lines.append(f"[논문 후보 {idx}]")
         lines.append(f"제목: {paper['title']}")
         lines.append(f"저자: {paper['authors']}")
+        lines.append(f"카테고리: {', '.join(paper.get('search_categories') or ['Uncategorized'])}")
         lines.append(f"arXiv ID: {paper['arxiv_id']}")
         lines.append(f"제출일: {paper['published']}")
         lines.append(f"수정일: {paper['updated']}")
