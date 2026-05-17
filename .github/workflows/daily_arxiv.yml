@@ -2,10 +2,10 @@ name: Daily SLM Edge arXiv Summary
 
 on:
   schedule:
-    # KST 오전 5시 = UTC 전날 20시
-    # arXiv 임시 오류는 KST 오전 10시까지 재시도하고, 429 rate limit은 더 길게 쉰 뒤 재시도
+    # KST 오전 4시 30분 = UTC 전날 19시 30분
+    # arXiv 오류가 나면 workflow 내부에서 KST 정오까지 60~90분 랜덤 간격으로 재시도
     # Manual trigger marker: 2026-05-17
-    - cron: "0 20 * * *"
+    - cron: "30 19 * * *"
   push:
     branches:
       - main
@@ -57,8 +57,8 @@ jobs:
           set -euo pipefail
 
           if [ "${GITHUB_EVENT_NAME}" = "schedule" ]; then
-            deadline_epoch=$(TZ=Asia/Seoul date -d "$(TZ=Asia/Seoul date +%F) 10:00" +%s)
-            echo "Scheduled run retry deadline: 10:00 KST."
+            deadline_epoch=$(TZ=Asia/Seoul date -d "$(TZ=Asia/Seoul date +%F) 12:00" +%s)
+            echo "Scheduled run retry deadline: 12:00 KST."
           else
             deadline_epoch=$(( $(TZ=Asia/Seoul date +%s) + 14400 ))
             echo "Manual/push run retry deadline: 4 hours from now."
@@ -92,13 +92,8 @@ jobs:
               exit "${exit_code}"
             fi
 
-            if [ "${exit_code}" -eq 76 ]; then
-              wait_sec=$((3600 + RANDOM % 1801))
-              echo "arXiv rate limit. Waiting ${wait_sec} seconds before retrying."
-            else
-              wait_sec=$((900 + RANDOM % 901))
-              echo "arXiv temporary server error. Waiting ${wait_sec} seconds before retrying."
-            fi
+            wait_sec=$((3600 + RANDOM % 1801))
+            echo "arXiv retryable error ${exit_code}. Waiting ${wait_sec} seconds before retrying."
 
             next_epoch=$((now_epoch + wait_sec))
             if [ "${next_epoch}" -gt "${deadline_epoch}" ]; then
