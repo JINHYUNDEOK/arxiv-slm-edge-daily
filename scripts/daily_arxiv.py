@@ -31,6 +31,7 @@ ARXIV_RETRIES = int(os.getenv("ARXIV_RETRIES", "5"))
 ARXIV_BASE_SLEEP_SEC = int(os.getenv("ARXIV_BASE_SLEEP_SEC", "90"))
 ARXIV_MAX_SLEEP_SEC = int(os.getenv("ARXIV_MAX_SLEEP_SEC", "600"))
 ARXIV_INITIAL_JITTER_SEC = int(os.getenv("ARXIV_INITIAL_JITTER_SEC", "180"))
+ARXIV_QUERY_PAUSE_SEC = int(os.getenv("ARXIV_QUERY_PAUSE_SEC", "7"))
 
 # 최근 7일 -> 15일 -> 30일 -> 60일 -> 120일 -> 1년 -> 2년 -> 3년
 RECENT_WINDOWS = [7, 15, 30, 60, 120, 365, 730, 1095]
@@ -101,6 +102,60 @@ KEYWORD_GROUPS = [
     "model compression",
     "edge AI",
 ]
+
+ARXIV_QUERY_GROUPS = {
+    "core_edge": [
+        "small language model",
+        "small language models",
+        "SLM",
+        "edge device",
+        "edge devices",
+        "on-device",
+        "on device",
+        "mobile LLM",
+        "mobile language model",
+        "TinyML",
+        "efficient LLM",
+        "efficient language model",
+        "edge AI",
+    ],
+    "adapter_router": [
+        "LoRA",
+        "MoE",
+        "PEFT",
+        "adapter",
+        "adapters",
+        "adapter routing",
+        "adapter selection",
+        "dynamic adapter",
+        "conditional adapter",
+        "mixture of adapters",
+        "LoRA router",
+        "LoRA routing",
+        "LoRA gating",
+        "dynamic LoRA",
+        "conditional LoRA",
+        "mixture of LoRA experts",
+        "PEFT routing",
+        "gating network",
+        "expert routing",
+        "conditional computation",
+    ],
+    "compression_learning": [
+        "quantization",
+        "pruning",
+        "compression",
+        "memory optimization",
+        "inference latency",
+        "power efficiency",
+        "knowledge distillation",
+        "prompt distillation",
+        "continual learning",
+        "online learning",
+        "federated learning",
+        "model compression",
+    ],
+}
 
 
 # =========================================================
@@ -249,8 +304,8 @@ def get_with_retry(url, timeout=90, retries=ARXIV_RETRIES, sleep_sec=ARXIV_BASE_
 # arXiv 검색
 # =========================================================
 
-def build_arxiv_query():
-    keyword_query = " OR ".join([f'all:"{kw}"' for kw in KEYWORD_GROUPS])
+def build_arxiv_query(keywords):
+    keyword_query = " OR ".join([f'all:"{kw}"' for kw in keywords])
 
     category_query = (
         "cat:cs.AI OR "
@@ -263,24 +318,8 @@ def build_arxiv_query():
     return f"({keyword_query}) AND ({category_query})"
 
 
-def search_arxiv():
-    query = build_arxiv_query()
-    encoded_query = requests.utils.quote(query)
-
-    url = (
-        "https://export.arxiv.org/api/query?"
-        f"search_query={encoded_query}"
-        f"&start=0"
-        f"&max_results={MAX_RESULTS}"
-        f"&sortBy=submittedDate"
-        f"&sortOrder=descending"
-    )
-
-    print(f"arXiv API 호출: {url}")
-
-    res = get_with_retry(url, timeout=90)
-
-    feed = feedparser.parse(res.text)
+def parse_arxiv_feed(feed_text):
+    feed = feedparser.parse(feed_text)
     now = datetime.now(timezone.utc)
 
     papers = []
@@ -322,6 +361,51 @@ def search_arxiv():
         }
 
         papers.append(paper)
+
+    return papers
+
+
+def fetch_arxiv_query(group_name, keywords):
+    query = build_arxiv_query(keywords)
+    encoded_query = requests.utils.quote(query)
+
+    url = (
+        "https://export.arxiv.org/api/query?"
+        f"search_query={encoded_query}"
+        f"&start=0"
+        f"&max_results={MAX_RESULTS}"
+        f"&sortBy=submittedDate"
+        f"&sortOrder=descending"
+    )
+
+    print(f"arXiv API 호출 [{group_name}]: {url}")
+
+    res = get_with_retry(url, timeout=90)
+
+    return parse_arxiv_feed(res.text)
+
+
+def search_arxiv():
+    papers_by_id = {}
+
+    for idx, (group_name, keywords) in enumerate(ARXIV_QUERY_GROUPS.items(), start=1):
+        group_papers = fetch_arxiv_query(group_name, keywords)
+        print(f"arXiv 그룹 후보 수 [{group_name}]: {len(group_papers)}")
+
+        for paper in group_papers:
+            papers_by_id[paper["arxiv_id"]] = paper
+
+        if idx < len(ARXIV_QUERY_GROUPS) and ARXIV_QUERY_PAUSE_SEC > 0:
+            print(f"다음 arXiv 그룹 쿼리 전 {ARXIV_QUERY_PAUSE_SEC}초 대기합니다.")
+            time.sleep(ARXIV_QUERY_PAUSE_SEC)
+
+    papers = sorted(
+        papers_by_id.values(),
+        key=lambda paper: paper["updated"],
+        reverse=True,
+    )
+
+    print(f"arXiv 중복 제거 후 후보 수: {len(papers)}")
 
     return papers
 

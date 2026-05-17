@@ -2,9 +2,9 @@ name: Daily SLM Edge arXiv Summary
 
 on:
   schedule:
-    # KST 오전 6시 = UTC 전날 21시
+    # KST 오전 5시 = UTC 전날 20시
     # arXiv 임시 오류가 나면 workflow 내부에서 KST 오전 10시까지 15~30분 랜덤 간격으로 재시도
-    - cron: "0 21 * * *"
+    - cron: "0 20 * * *"
   push:
     branches:
       - main
@@ -50,6 +50,7 @@ jobs:
           ARXIV_RETRIES: 1
           ARXIV_BASE_SLEEP_SEC: 30
           ARXIV_INITIAL_JITTER_SEC: 0
+          ARXIV_QUERY_PAUSE_SEC: 7
         shell: bash
         run: |
           set -euo pipefail
