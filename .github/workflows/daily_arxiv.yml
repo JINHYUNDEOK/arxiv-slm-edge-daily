@@ -56,7 +56,13 @@ jobs:
         run: |
           set -euo pipefail
 
-          deadline_epoch=$(TZ=Asia/Seoul date -d "$(TZ=Asia/Seoul date +%F) 10:00" +%s)
+          if [ "${GITHUB_EVENT_NAME}" = "schedule" ]; then
+            deadline_epoch=$(TZ=Asia/Seoul date -d "$(TZ=Asia/Seoul date +%F) 10:00" +%s)
+            echo "Scheduled run retry deadline: 10:00 KST."
+          else
+            deadline_epoch=$(( $(TZ=Asia/Seoul date +%s) + 14400 ))
+            echo "Manual/push run retry deadline: 4 hours from now."
+          fi
           attempt=1
 
           while true; do
