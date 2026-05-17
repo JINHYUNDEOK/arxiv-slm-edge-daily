@@ -80,8 +80,8 @@ jobs:
 
             now_epoch=$(TZ=Asia/Seoul date +%s)
             if [ "${now_epoch}" -ge "${deadline_epoch}" ]; then
-              echo "arXiv temporary error persisted until the 10:00 KST retry deadline. Ending without failing the workflow."
-              break
+              echo "arXiv temporary error persisted until the 10:00 KST retry deadline. Failing the workflow."
+              exit 75
             fi
 
             wait_sec=$((900 + RANDOM % 901))
