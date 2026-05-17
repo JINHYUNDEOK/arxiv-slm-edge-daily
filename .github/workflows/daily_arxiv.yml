@@ -3,7 +3,7 @@ name: Daily SLM Edge arXiv Summary
 on:
   schedule:
     # KST 오전 5시 = UTC 전날 20시
-    # arXiv 임시 오류가 나면 workflow 내부에서 KST 오전 10시까지 15~30분 랜덤 간격으로 재시도
+    # arXiv 임시 오류는 KST 오전 10시까지 재시도하고, 429 rate limit은 더 길게 쉰 뒤 재시도
     # Manual trigger marker: 2026-05-17
     - cron: "0 20 * * *"
   push:
@@ -47,11 +47,11 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-2.5-flash
           OUTPUT_DIR: outputs
-          ARXIV_MAX_RESULTS: 100
+          ARXIV_MAX_RESULTS: 50
           ARXIV_RETRIES: 1
           ARXIV_BASE_SLEEP_SEC: 30
           ARXIV_INITIAL_JITTER_SEC: 0
-          ARXIV_QUERY_PAUSE_SEC: 7
+          ARXIV_QUERY_PAUSE_SEC: 10
         shell: bash
         run: |
           set -euo pipefail
@@ -81,24 +81,30 @@ jobs:
               break
             fi
 
-            if [ "${exit_code}" -ne 75 ]; then
+            if [ "${exit_code}" -ne 75 ] && [ "${exit_code}" -ne 76 ]; then
               echo "Script failed with non-retryable exit code ${exit_code}."
               exit "${exit_code}"
             fi
 
             now_epoch=$(TZ=Asia/Seoul date +%s)
             if [ "${now_epoch}" -ge "${deadline_epoch}" ]; then
-              echo "arXiv temporary error persisted until the 10:00 KST retry deadline. Failing the workflow."
-              exit 75
+              echo "arXiv retry deadline reached. Failing the workflow."
+              exit "${exit_code}"
             fi
 
-            wait_sec=$((900 + RANDOM % 901))
+            if [ "${exit_code}" -eq 76 ]; then
+              wait_sec=$((3600 + RANDOM % 1801))
+              echo "arXiv rate limit. Waiting ${wait_sec} seconds before retrying."
+            else
+              wait_sec=$((900 + RANDOM % 901))
+              echo "arXiv temporary server error. Waiting ${wait_sec} seconds before retrying."
+            fi
+
             next_epoch=$((now_epoch + wait_sec))
             if [ "${next_epoch}" -gt "${deadline_epoch}" ]; then
               wait_sec=$((deadline_epoch - now_epoch))
             fi
 
-            echo "arXiv temporary error. Waiting ${wait_sec} seconds before retrying."
             sleep "${wait_sec}"
             attempt=$((attempt + 1))
           done

@@ -191,6 +191,11 @@ def save_processed(processed):
 class ArxivTemporarilyUnavailable(RuntimeError):
     pass
 
+
+class ArxivRateLimited(ArxivTemporarilyUnavailable):
+    pass
+
+
 def normalize_title(title: str) -> str:
     title = title.lower()
     title = re.sub(r"[^a-z0-9가-힣]", "", title)
@@ -275,7 +280,7 @@ def get_with_retry(url, timeout=90, retries=ARXIV_RETRIES, sleep_sec=ARXIV_BASE_
 
             if res.status_code == 429:
                 wait_sec = get_retry_after_seconds(res, sleep_sec * attempt)
-                last_error = RuntimeError(f"arXiv 429 Too Many Requests: {url}")
+                last_error = ArxivRateLimited(f"arXiv 429 Too Many Requests: {url}")
                 print("arXiv 429 Too Many Requests.")
                 if attempt < retries:
                     sleep_before_retry(wait_sec)
@@ -283,7 +288,7 @@ def get_with_retry(url, timeout=90, retries=ARXIV_RETRIES, sleep_sec=ARXIV_BASE_
 
             if res.status_code in [500, 502, 503, 504]:
                 wait_sec = get_retry_after_seconds(res, sleep_sec * attempt)
-                last_error = RuntimeError(f"arXiv 서버 오류 {res.status_code}: {url}")
+                last_error = ArxivTemporarilyUnavailable(f"arXiv 서버 오류 {res.status_code}: {url}")
                 print(f"arXiv 서버 오류 {res.status_code}.")
                 if attempt < retries:
                     sleep_before_retry(wait_sec)
@@ -301,6 +306,8 @@ def get_with_retry(url, timeout=90, retries=ARXIV_RETRIES, sleep_sec=ARXIV_BASE_
                 sleep_before_retry(wait_sec)
 
     if last_error:
+        if isinstance(last_error, ArxivTemporarilyUnavailable):
+            raise last_error
         raise ArxivTemporarilyUnavailable(str(last_error)) from last_error
 
     raise ArxivTemporarilyUnavailable("arXiv 요청 실패")
@@ -1084,6 +1091,10 @@ def main():
 
     try:
         papers = search_arxiv()
+    except ArxivRateLimited as e:
+        print(f"arXiv rate limit으로 오늘 실행을 건너뜁니다: {e}")
+        print("GitHub Actions 재시도 루프에서 긴 대기 후 다시 시도할 수 있도록 rate limit 종료코드로 종료합니다.")
+        raise SystemExit(76)
     except ArxivTemporarilyUnavailable as e:
         print(f"arXiv 임시 오류로 오늘 실행을 건너뜁니다: {e}")
         print("GitHub Actions 재시도 루프에서 다시 시도할 수 있도록 임시 오류 종료코드로 종료합니다.")
