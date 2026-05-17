@@ -849,6 +849,158 @@ def translate_abstract_with_gemini(abstract):
     return call_gemini(prompt, max_output_tokens=2048)
 
 
+SUMMARY_FIELD_NUMBERS = {
+    "제목": 1,
+    "저자": 2,
+    "카테고리": 3,
+    "관련성 판단": 4,
+    "초록 요약": 5,
+    "서론/앞부분 기반 판단": 6,
+    "핵심 기여사항": 7,
+    "실험 결과": 8,
+    "내 연구와의 관련성": 9,
+    "확인해야 할 부분": 10,
+    "arXiv PDF": 11,
+}
+
+SUMMARY_FIELD_ALIASES = {
+    "PDF": "arXiv PDF",
+    "PDF 링크": "arXiv PDF",
+    "arXiv 링크": "arXiv PDF",
+}
+
+
+def strip_markdown(text):
+    return re.sub(r"[*_`]", "", text).strip()
+
+
+def extract_field_value(line, field_name):
+    clean = strip_markdown(line)
+    match = re.match(rf"^\s*\d+\.\s*{re.escape(field_name)}\s*:\s*(.*)$", clean)
+    if match:
+        return match.group(1).strip()
+    return ""
+
+
+def find_matching_candidate(section_lines, candidates):
+    title_value = ""
+
+    for line in section_lines:
+        title_value = extract_field_value(line, "제목")
+        if title_value:
+            break
+
+    if not title_value:
+        return None
+
+    title_norm = normalize_title(title_value)
+    best_candidate = None
+    best_score = 0.0
+
+    for candidate in candidates:
+        candidate_norm = normalize_title(candidate["title"])
+
+        if title_norm and (title_norm in candidate_norm or candidate_norm in title_norm):
+            return candidate
+
+        score = difflib.SequenceMatcher(None, title_norm, candidate_norm).ratio()
+        if score > best_score:
+            best_score = score
+            best_candidate = candidate
+
+    if best_score >= 0.6:
+        return best_candidate
+
+    return None
+
+
+def normalize_summary_field_line(line):
+    for label, number in SUMMARY_FIELD_NUMBERS.items():
+        pattern = rf"^(\s*)\d+\.\s*(?:\*\*)?{re.escape(label)}(?:\*\*)?\s*:(.*)$"
+        match = re.match(pattern, line)
+        if match:
+            return f"{match.group(1)}{number}. **{label}**:{match.group(2)}"
+
+    for alias, label in SUMMARY_FIELD_ALIASES.items():
+        number = SUMMARY_FIELD_NUMBERS[label]
+        pattern = rf"^(\s*)\d+\.\s*(?:\*\*)?{re.escape(alias)}(?:\*\*)?\s*:(.*)$"
+        match = re.match(pattern, line)
+        if match:
+            return f"{match.group(1)}{number}. **{label}**:{match.group(2)}"
+
+    return line
+
+
+def repair_summary_section(section_lines, candidates):
+    candidate = find_matching_candidate(section_lines, candidates)
+    repaired_lines = [normalize_summary_field_line(line) for line in section_lines]
+
+    if not candidate:
+        return repaired_lines
+
+    categories = ", ".join(candidate.get("search_categories") or ["Uncategorized"])
+    pdf_url = candidate["pdf_url"]
+
+    has_category = any("카테고리" in strip_markdown(line) for line in repaired_lines)
+    has_pdf = any("arXiv PDF" in strip_markdown(line) for line in repaired_lines)
+
+    if not has_category:
+        insert_at = 1
+        for idx, line in enumerate(repaired_lines):
+            if re.match(r"^\s*2\.\s*(?:\*\*)?저자", line):
+                insert_at = idx + 1
+                break
+        repaired_lines.insert(insert_at, f"3. **카테고리**: {categories}")
+        repaired_lines = [normalize_summary_field_line(line) for line in repaired_lines]
+
+    updated_lines = []
+    for line in repaired_lines:
+        clean = strip_markdown(line)
+
+        if re.match(r"^\s*3\.\s*카테고리\s*:\s*$", clean):
+            updated_lines.append(f"3. **카테고리**: {categories}")
+            continue
+
+        if re.match(r"^\s*11\.\s*arXiv PDF\s*:\s*$", clean):
+            updated_lines.append(f"11. **arXiv PDF**: {pdf_url}")
+            has_pdf = True
+            continue
+
+        updated_lines.append(line)
+
+    if not has_pdf:
+        updated_lines.append(f"11. **arXiv PDF**: {pdf_url}")
+
+    return updated_lines
+
+
+def repair_summary_metadata(content, candidates):
+    lines = content.splitlines()
+    sections = []
+    current = []
+
+    for line in lines:
+        if re.match(r"^\s*(?:\*\*)?📄\s*논문\s+\d+", line):
+            if current:
+                sections.append(current)
+            current = [line]
+        else:
+            current.append(line)
+
+    if current:
+        sections.append(current)
+
+    repaired_sections = []
+
+    for section in sections:
+        if section and re.match(r"^\s*(?:\*\*)?📄\s*논문\s+\d+", section[0]):
+            repaired_sections.extend(repair_summary_section(section, candidates))
+        else:
+            repaired_sections.extend(section)
+
+    return "\n".join(repaired_sections)
+
+
 def create_candidate_fallback_summary(candidates, error_message, selected_window):
     lines = []
 
@@ -1148,6 +1300,8 @@ def main():
             "Gemini가 적합한 논문을 선정하지 않았습니다.",
             selected_window
         )
+
+    summary = repair_summary_metadata(summary, candidates)
 
     output_path = create_pdf(summary, filename, selected_window)
 
