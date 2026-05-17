@@ -4,6 +4,7 @@ on:
   schedule:
     # KST 오전 5시 = UTC 전날 20시
     # arXiv 임시 오류가 나면 workflow 내부에서 KST 오전 10시까지 15~30분 랜덤 간격으로 재시도
+    # Manual trigger marker: 2026-05-17
     - cron: "0 20 * * *"
   push:
     branches:
