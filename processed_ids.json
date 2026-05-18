@@ -270,5 +270,29 @@
     "status": "summarized",
     "processed_at": "2026-05-18T05:56:14.691387+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.15647",
+    "title": "Perforated Neural Networks for Keyword Spotting",
+    "pdf_url": "https://arxiv.org/pdf/2605.15647.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-19T05:53:16.690026+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.16138",
+    "title": "Surrogate Neural Architecture Codesign Package (SNAC-Pack)",
+    "pdf_url": "https://arxiv.org/pdf/2605.16138.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-19T05:53:16.690026+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.13981",
+    "title": "Towards Resource-Efficient LLMs: End-to-End Energy Accounting of Distillation Pipelines",
+    "pdf_url": "https://arxiv.org/pdf/2605.13981.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-19T05:53:16.690026+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
