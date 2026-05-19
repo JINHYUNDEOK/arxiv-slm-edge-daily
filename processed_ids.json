@@ -294,5 +294,21 @@
     "status": "summarized",
     "processed_at": "2026-05-19T05:53:16.690026+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.17774",
+    "title": "Internalizing Tool Knowledge in Small Language Models via QLoRA Fine-Tuning",
+    "pdf_url": "https://arxiv.org/pdf/2605.17774.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-20T06:02:33.078887+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.17653",
+    "title": "LLMForge: Multi-Backend Hardware-Aware Neural Architecture Search with Infinite-Head Attention for Edge Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2605.17653.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-20T06:02:33.078887+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
