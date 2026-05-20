@@ -310,5 +310,29 @@
     "status": "summarized",
     "processed_at": "2026-05-20T06:02:33.078887+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.19767",
+    "title": "AR1-ZO: Topology-Aware Rank-1 Zeroth-Order Queries for High-Rank LoRA Fine-Tuning",
+    "pdf_url": "https://arxiv.org/pdf/2605.19767.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-21T06:19:11.321974+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.19321",
+    "title": "Exploring and Developing a Pre-Model Safeguard with Draft Models",
+    "pdf_url": "https://arxiv.org/pdf/2605.19321.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-21T06:19:11.321974+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.16630",
+    "title": "PrivScope: Task-scoped Disclosure Control for Hybrid Agentic Systems",
+    "pdf_url": "https://arxiv.org/pdf/2605.16630.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-21T06:19:11.321974+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
