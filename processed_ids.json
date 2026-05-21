@@ -334,5 +334,29 @@
     "status": "summarized",
     "processed_at": "2026-05-21T06:19:11.321974+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.21147",
+    "title": "SMoA: Spectrum Modulation Adapter for Parameter-Efficient Fine-Tuning",
+    "pdf_url": "https://arxiv.org/pdf/2605.21147.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-22T08:42:15.193231+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.20723",
+    "title": "Memory-Efficient Partitioned DNN Inference on Resource-Constrained Android Crowds",
+    "pdf_url": "https://arxiv.org/pdf/2605.20723.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-22T08:42:15.193231+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.20670",
+    "title": "LT2: Linear-Time Looped Transformers",
+    "pdf_url": "https://arxiv.org/pdf/2605.20670.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-22T08:42:15.193231+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
