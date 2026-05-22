@@ -358,5 +358,29 @@
     "status": "summarized",
     "processed_at": "2026-05-22T08:42:15.193231+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.22487",
+    "title": "Polite on the Surface, Wrong in Practice: A Curated Dataset for Fixing Honorific Failures in Multilingual Bangla Generation",
+    "pdf_url": "https://arxiv.org/pdf/2605.22487.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-23T05:54:54.000716+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.22205",
+    "title": "Skill Weaving: Efficient LLM Improvement via Modular Skillpacks",
+    "pdf_url": "https://arxiv.org/pdf/2605.22205.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-23T05:54:54.000716+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.22064",
+    "title": "Hy-MT2: A Family of Fast, Efficient and Powerful Multilingual Translation Models in the Wild",
+    "pdf_url": "https://arxiv.org/pdf/2605.22064.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-23T05:54:54.000716+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
