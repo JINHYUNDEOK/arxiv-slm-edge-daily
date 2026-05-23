@@ -382,5 +382,29 @@
     "status": "summarized",
     "processed_at": "2026-05-23T05:54:54.000716+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.21171",
+    "title": "FTerViT: Fully Ternary Vision Transformer",
+    "pdf_url": "https://arxiv.org/pdf/2605.21171.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-24T05:26:36.690942+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.20717",
+    "title": "E-ReCON: An Energy- and Resource-Efficient Precision-Configurable Sparse nvCIM Macro for Conventional and Spiking Neural Edge Inference",
+    "pdf_url": "https://arxiv.org/pdf/2605.20717.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-24T05:26:36.690942+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.21421",
+    "title": "AIGaitor: Privacy-preserving and cloud-free motion analysis for everyone, using edge computing",
+    "pdf_url": "https://arxiv.org/pdf/2605.21421.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-24T05:26:36.690942+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
