@@ -406,5 +406,21 @@
     "status": "summarized",
     "processed_at": "2026-05-24T05:26:36.690942+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.21951",
+    "title": "Dynamic Mixture of Latent Memories for Self-Evolving Agents",
+    "pdf_url": "https://arxiv.org/pdf/2605.21951.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-25T05:31:47.319986+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.21560",
+    "title": "AutoMCU: Feasibility-First MCU Neural Network Customization via LLM-based Multi-Agent Systems",
+    "pdf_url": "https://arxiv.org/pdf/2605.21560.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-25T05:31:47.319986+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
