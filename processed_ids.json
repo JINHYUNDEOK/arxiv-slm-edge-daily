@@ -422,5 +422,21 @@
     "status": "summarized",
     "processed_at": "2026-05-25T05:31:47.319986+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.23572",
+    "title": "HARNESS-LM: A Three-Phase Training Recipe for Harnessing SLMs in Sponsored Search Retrieval",
+    "pdf_url": "https://arxiv.org/pdf/2605.23572.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-26T05:50:05.218649+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.23296",
+    "title": "Parallel Context Compaction for Long-Horizon LLM Agent Serving",
+    "pdf_url": "https://arxiv.org/pdf/2605.23296.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-26T05:50:05.218649+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
