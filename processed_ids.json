@@ -438,5 +438,29 @@
     "status": "summarized",
     "processed_at": "2026-05-26T05:50:05.218649+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.25835",
+    "title": "Context-Instrumental Data Distillation for Kubernetes Manifest Generation: Method and Experimental Evaluation",
+    "pdf_url": "https://arxiv.org/pdf/2605.25835.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-27T08:36:53.893636+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.24058",
+    "title": "Signs Beat Floats: Low-Rank Double-Binary Adaptation for On-Device Fine-Tuning",
+    "pdf_url": "https://arxiv.org/pdf/2605.24058.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-27T08:36:53.893636+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.24737",
+    "title": "Who judges the judges? Governance from metrics: a runtime framework for continuous LLM compliance monitoring",
+    "pdf_url": "https://arxiv.org/pdf/2605.24737.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-27T08:36:53.893636+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
