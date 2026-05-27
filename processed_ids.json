@@ -462,5 +462,29 @@
     "status": "summarized",
     "processed_at": "2026-05-27T08:36:53.893636+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.26496",
+    "title": "Dense2MoE: Pushing the Pareto Frontier of On-Device LLMs via Unified Pruning and Upcycling",
+    "pdf_url": "https://arxiv.org/pdf/2605.26496.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-28T07:30:04.479580+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.27358",
+    "title": "MobileMoE: Scaling On-Device Mixture of Experts",
+    "pdf_url": "https://arxiv.org/pdf/2605.27358.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-28T07:30:04.479580+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.26785",
+    "title": "EmoDistill: Offline Emotion Skill Distillation for Language Model Agents in Adversarial Negotiation",
+    "pdf_url": "https://arxiv.org/pdf/2605.26785.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-28T07:30:04.479580+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
