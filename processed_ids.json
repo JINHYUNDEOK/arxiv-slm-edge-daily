@@ -486,5 +486,29 @@
     "status": "summarized",
     "processed_at": "2026-05-28T07:30:04.479580+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.28302",
+    "title": "How Far Can Disaggregation Go? A Design-Space Exploration of Attention-FFN Disaggregation for Efficient MoE LLM Serving",
+    "pdf_url": "https://arxiv.org/pdf/2605.28302.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-29T06:32:13.370776+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.28222",
+    "title": "Analyzing Quality-Latency-Resource Trade-offs in a Technical Documentation RAG Assistant Using LoRA Adaptation",
+    "pdf_url": "https://arxiv.org/pdf/2605.28222.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-29T06:32:13.370776+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.28207",
+    "title": "Pruning and Distilling Mixture-of-Experts into Dense Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2605.28207.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-29T06:32:13.370776+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
