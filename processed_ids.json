@@ -510,5 +510,29 @@
     "status": "summarized",
     "processed_at": "2026-05-29T06:32:13.370776+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.30102",
+    "title": "When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems",
+    "pdf_url": "https://arxiv.org/pdf/2605.30102.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-30T06:23:26.128273+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.29726",
+    "title": "SLAD : Shared LoRA Adapters for Task Specific Distillation",
+    "pdf_url": "https://arxiv.org/pdf/2605.29726.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-30T06:23:26.128273+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.28066",
+    "title": "PromptEmbedder:: Efficient and Transferable Text Embedding via Dual-LLM Soft Prompting",
+    "pdf_url": "https://arxiv.org/pdf/2605.28066.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-30T06:23:26.128273+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
