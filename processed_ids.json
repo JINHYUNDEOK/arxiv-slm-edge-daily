@@ -534,5 +534,29 @@
     "status": "summarized",
     "processed_at": "2026-05-30T06:23:26.128273+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.29712",
+    "title": "Teaching Language Models to Check Grounded Claim Factuality with Human Test-Taking Strategies",
+    "pdf_url": "https://arxiv.org/pdf/2605.29712.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-31T05:33:45.914862+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.29534",
+    "title": "UI-KOBE: Knowledge-Oriented Behavior Exploration for Lightweight Graph-Guided GUI Agents",
+    "pdf_url": "https://arxiv.org/pdf/2605.29534.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-31T05:33:45.914862+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.28642",
+    "title": "Bandwidth-Efficient and Privacy-Preserving Edge-Cloud Many-to-Many Speech Translation",
+    "pdf_url": "https://arxiv.org/pdf/2605.28642.pdf",
+    "status": "summarized",
+    "processed_at": "2026-05-31T05:33:45.914862+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
