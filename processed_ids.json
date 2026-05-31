@@ -558,5 +558,29 @@
     "status": "summarized",
     "processed_at": "2026-05-31T05:33:45.914862+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.26546",
+    "title": "MobileExplorer: Accelerating On-Device Inference for Mobile GUI Agents via Online Exploration",
+    "pdf_url": "https://arxiv.org/pdf/2605.26546.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-01T05:38:10.345809+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.26523",
+    "title": "StreamSplit: Continuous Audio Representation Learning via Uncertainty-Guided Adaptive Splitting",
+    "pdf_url": "https://arxiv.org/pdf/2605.26523.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-01T05:38:10.345809+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.28387",
+    "title": "CLANE: Continual Learning of Actions on Neuromorphic Hardware from Event Cameras",
+    "pdf_url": "https://arxiv.org/pdf/2605.28387.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-01T05:38:10.345809+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
