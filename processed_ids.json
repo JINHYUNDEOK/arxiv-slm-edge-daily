@@ -582,5 +582,21 @@
     "status": "summarized",
     "processed_at": "2026-06-01T05:38:10.345809+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.30478",
+    "title": "Improving Small Language Models for Code Generation with Reinforcement Learning from Verification Feedback",
+    "pdf_url": "https://arxiv.org/pdf/2605.30478.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-02T07:21:42.082708+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2605.30544",
+    "title": "On-Device Generative AI for GDPR-Compliant Visual Monitoring: Natural Language Alerts from Local Object Detection",
+    "pdf_url": "https://arxiv.org/pdf/2605.30544.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-02T07:21:42.082708+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
