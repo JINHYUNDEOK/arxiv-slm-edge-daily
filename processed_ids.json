@@ -598,5 +598,29 @@
     "status": "summarized",
     "processed_at": "2026-06-02T07:21:42.082708+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.01806",
+    "title": "ProbeScale: Probing Analysis to Optimize Neural Scaling Laws for Efficient Small Language Model Inference",
+    "pdf_url": "https://arxiv.org/pdf/2606.01806.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-03T08:26:18.786198+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.00204",
+    "title": "APE: Agentic Prompt Enhancer for Image Generation and Editing",
+    "pdf_url": "https://arxiv.org/pdf/2606.00204.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-03T08:26:18.786198+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.02576",
+    "title": "ProtoAda: Prototype-Guided Adaptive Adapter Expansion and Geometric Consolidation for Multimodal Continual Instruction Tuning",
+    "pdf_url": "https://arxiv.org/pdf/2606.02576.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-03T08:26:18.786198+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
