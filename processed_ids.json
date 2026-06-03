@@ -622,5 +622,29 @@
     "status": "summarized",
     "processed_at": "2026-06-03T08:26:18.786198+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.02862",
+    "title": "Toward a Modular Architecture for Embedded AI Agent Systems at the Edge",
+    "pdf_url": "https://arxiv.org/pdf/2606.02862.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-04T07:12:20.776836+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.02951",
+    "title": "SCOPE: Real-Time Natural Language Camera Agent at the Edge",
+    "pdf_url": "https://arxiv.org/pdf/2606.02951.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-04T07:12:20.776836+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.03128",
+    "title": "Decoupled Smart Contract Audits: Lightweight LLM Framework via Distillation and Aggregation",
+    "pdf_url": "https://arxiv.org/pdf/2606.03128.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-04T07:12:20.776836+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
