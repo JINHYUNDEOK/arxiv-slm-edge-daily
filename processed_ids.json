@@ -646,5 +646,29 @@
     "status": "summarized",
     "processed_at": "2026-06-04T07:12:20.776836+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.04238",
+    "title": "Recover-LoRA for Aggressive Quantization: Reclaiming Accuracy in 2-Bit Language Models via Low-Rank Adaptation with Knowledge Distillation on Synthetic Data",
+    "pdf_url": "https://arxiv.org/pdf/2606.04238.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-06T06:08:51.066790+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.04581",
+    "title": "Multi-SPIN: Multi-Access Speculative Inference for Cooperative Token Generation at the Edge",
+    "pdf_url": "https://arxiv.org/pdf/2606.04581.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-06T06:08:51.066790+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.05698",
+    "title": "Rethinking LoRA Memory Through the Lens of KV Cache Compression",
+    "pdf_url": "https://arxiv.org/pdf/2606.05698.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-06T06:08:51.066790+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
