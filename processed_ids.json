@@ -670,5 +670,29 @@
     "status": "summarized",
     "processed_at": "2026-06-06T06:08:51.066790+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.06492",
+    "title": "Code2LoRA: Hypernetwork-Generated Adapters for Code Language Models under Software Evolution",
+    "pdf_url": "https://arxiv.org/pdf/2606.06492.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-07T05:41:45.370063+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.06087",
+    "title": "LatentSkill: From In-Context Textual Skills to In-Weight Latent Skills for LLM Agents",
+    "pdf_url": "https://arxiv.org/pdf/2606.06087.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-07T05:41:45.370063+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.05538",
+    "title": "Less is MoE: Trimming Experts in Domain-Specialist Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2606.05538.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-07T05:41:45.370063+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
