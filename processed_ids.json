@@ -694,5 +694,13 @@
     "status": "summarized",
     "processed_at": "2026-06-07T05:41:45.370063+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.05781",
+    "title": "Domain-Adapted Small Language Models with Hybrid Post-Processing: Achieving Cost-Efficient, Low-Latency Multi-Label Structured Prediction via LoRA Fine-Tuning on Scarce Data",
+    "pdf_url": "https://arxiv.org/pdf/2606.05781.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-08T05:47:35.657972+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
