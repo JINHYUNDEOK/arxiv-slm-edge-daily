@@ -732,5 +732,35 @@
     "last_attempt_at": "2026-06-09T06:22:44.532142+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.09388",
+    "title": "Distilling Safe LLM Systems via Soft Prompts for On Device Settings",
+    "pdf_url": "https://arxiv.org/pdf/2606.09388.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-06-10T06:19:50.452749+09:00",
+    "last_attempt_at": "2026-06-10T06:19:50.452749+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.09767",
+    "title": "Data Synthesis and Parameter-Efficient Fine-Tuning for Low-Resource NMT: A Case Study on Q'eqchi' Mayan",
+    "pdf_url": "https://arxiv.org/pdf/2606.09767.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-06-10T06:19:50.452749+09:00",
+    "last_attempt_at": "2026-06-10T06:19:50.452749+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.07857",
+    "title": "Model Multiplicity for Adversarial Detection in Small Language Model Training on Edge Devices",
+    "pdf_url": "https://arxiv.org/pdf/2606.07857.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-06-10T06:19:50.452749+09:00",
+    "last_attempt_at": "2026-06-10T06:19:50.452749+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
