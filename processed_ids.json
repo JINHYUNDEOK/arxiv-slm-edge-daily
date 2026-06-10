@@ -762,5 +762,29 @@
     "last_attempt_at": "2026-06-10T06:19:50.452749+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.10875",
+    "title": "Pushing the Limits of LLM Tool Calling via Experiential Knowledge Integration and Activation",
+    "pdf_url": "https://arxiv.org/pdf/2606.10875.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-11T06:35:57.698906+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.09157",
+    "title": "SEF-CLGC at SemEval-2026 Task 11: Logical Notation Impact on Language Model Performance",
+    "pdf_url": "https://arxiv.org/pdf/2606.09157.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-11T06:35:57.698906+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.07999",
+    "title": "Efficient Skill Grounding via Code Refactoring with Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2606.07999.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-11T06:35:57.698906+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
