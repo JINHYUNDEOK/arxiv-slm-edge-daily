@@ -167,6 +167,121 @@ ARXIV_CATEGORY_LABELS = {
     "deployment_efficiency": "Deployment/Quantization/Efficiency",
 }
 
+ARXIV_FALLBACK_QUERY_GROUPS = {
+    "core_edge": [
+        {
+            "name": "slm_core",
+            "keywords": [
+                "small language model",
+                "small language models",
+                "SLM",
+            ],
+            "max_results": 35,
+        },
+        {
+            "name": "edge_on_device",
+            "keywords": [
+                "edge device",
+                "edge devices",
+                "on-device",
+                "on device",
+            ],
+            "max_results": 35,
+        },
+        {
+            "name": "mobile_tiny_efficient",
+            "keywords": [
+                "mobile LLM",
+                "mobile language model",
+                "TinyML",
+                "efficient LLM",
+                "efficient language model",
+                "edge AI",
+            ],
+            "max_results": 30,
+        },
+    ],
+    "format_lora": [
+        {
+            "name": "lora_adapter_core",
+            "keywords": [
+                "LoRA",
+                "QLoRA",
+                "PEFT",
+                "adapter",
+                "adapters",
+            ],
+            "max_results": 40,
+        },
+        {
+            "name": "format_following",
+            "keywords": [
+                "format following",
+                "format adherence",
+                "output format",
+                "response format",
+                "prompt format",
+                "instruction format",
+                "chat template",
+            ],
+            "max_results": 40,
+        },
+        {
+            "name": "structured_json_schema",
+            "keywords": [
+                "structured output",
+                "structured generation",
+                "JSON output",
+                "JSON schema",
+                "schema following",
+            ],
+            "max_results": 40,
+        },
+        {
+            "name": "tool_function_calling",
+            "keywords": [
+                "function calling",
+                "tool calling",
+            ],
+            "max_results": 30,
+        },
+        {
+            "name": "format_finetuning",
+            "keywords": [
+                "supervised fine-tuning",
+                "instruction tuning",
+                "format-specific LoRA",
+                "format-specific adapter",
+                "task-specific LoRA",
+                "multi-task LoRA",
+            ],
+            "max_results": 35,
+        },
+    ],
+    "deployment_efficiency": [
+        {
+            "name": "quantized_runtime",
+            "keywords": [
+                "quantization",
+                "GGUF",
+                "ONNX",
+            ],
+            "max_results": 20,
+        },
+        {
+            "name": "memory_latency_deployment",
+            "keywords": [
+                "memory optimization",
+                "memory efficiency",
+                "inference latency",
+                "CPU deployment",
+                "edge deployment",
+            ],
+            "max_results": 20,
+        },
+    ],
+}
+
 
 # =========================================================
 # 파일 입출력
@@ -351,6 +466,23 @@ def chunk_keywords(keywords, chunk_size=ARXIV_FALLBACK_CHUNK_SIZE):
         yield keywords[start:start + chunk_size]
 
 
+def get_fallback_queries(group_name, keywords):
+    configured_queries = ARXIV_FALLBACK_QUERY_GROUPS.get(group_name)
+
+    if configured_queries:
+        return configured_queries
+
+    max_results = max(1, min(MAX_RESULTS, ARXIV_FALLBACK_MAX_RESULTS))
+    return [
+        {
+            "name": f"chunk_{idx}",
+            "keywords": keyword_chunk,
+            "max_results": max_results,
+        }
+        for idx, keyword_chunk in enumerate(chunk_keywords(keywords), start=1)
+    ]
+
+
 def parse_arxiv_feed(feed_text):
     feed = feedparser.parse(feed_text)
     now = datetime.now(timezone.utc)
@@ -426,21 +558,24 @@ def fetch_arxiv_query_once(group_name, keywords, max_results=MAX_RESULTS, label=
 
 def fetch_arxiv_query_fallback(group_name, keywords):
     papers_by_id = {}
-    chunks = list(chunk_keywords(keywords))
-    max_results = max(1, min(MAX_RESULTS, ARXIV_FALLBACK_MAX_RESULTS))
+    fallback_queries = get_fallback_queries(group_name, keywords)
 
     print(
         f"arXiv 그룹 [{group_name}] 큰 쿼리가 거절되어 "
-        f"{len(chunks)}개 작은 쿼리로 fallback합니다."
+        f"{len(fallback_queries)}개 의미 단위 쿼리로 fallback합니다."
     )
 
-    for idx, keyword_chunk in enumerate(chunks, start=1):
-        label = f"{group_name}:fallback:{idx}/{len(chunks)}"
+    for idx, fallback_query in enumerate(fallback_queries, start=1):
+        label = (
+            f"{group_name}:fallback:{idx}/{len(fallback_queries)}:"
+            f"{fallback_query['name']}"
+        )
+        max_results = max(1, min(MAX_RESULTS, fallback_query["max_results"]))
 
         try:
             chunk_papers = fetch_arxiv_query_once(
                 group_name,
-                keyword_chunk,
+                fallback_query["keywords"],
                 max_results=max_results,
                 label=label,
             )
@@ -461,7 +596,7 @@ def fetch_arxiv_query_fallback(group_name, keywords):
             else:
                 papers_by_id[arxiv_id] = paper
 
-        if idx < len(chunks) and ARXIV_FALLBACK_QUERY_PAUSE_SEC > 0:
+        if idx < len(fallback_queries) and ARXIV_FALLBACK_QUERY_PAUSE_SEC > 0:
             print(f"다음 fallback arXiv 쿼리 전 {ARXIV_FALLBACK_QUERY_PAUSE_SEC}초 대기합니다.")
             time.sleep(ARXIV_FALLBACK_QUERY_PAUSE_SEC)
 
