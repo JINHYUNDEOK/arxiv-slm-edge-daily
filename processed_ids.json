@@ -810,5 +810,29 @@
     "status": "summarized",
     "processed_at": "2026-06-12T07:43:17.985650+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.13115",
+    "title": "G-Long: Graph-Enhanced Memory Management for Efficient Long-Term Dialogue Agents",
+    "pdf_url": "https://arxiv.org/pdf/2606.13115.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-13T13:23:47.912888+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.11357",
+    "title": "TileFuse: A Fused Mixed-Precision Kernel Library for Efficient Quantized LLM Inference on AMD NPUs",
+    "pdf_url": "https://arxiv.org/pdf/2606.11357.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-13T13:23:47.912888+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.11257",
+    "title": "Energy-Efficient On-Device RAG on a Mobile NPU: System Design and Benchmark on Snapdragon X Elite",
+    "pdf_url": "https://arxiv.org/pdf/2606.11257.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-13T13:23:47.912888+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
