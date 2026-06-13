@@ -32,6 +32,9 @@ ARXIV_BASE_SLEEP_SEC = int(os.getenv("ARXIV_BASE_SLEEP_SEC", "90"))
 ARXIV_MAX_SLEEP_SEC = int(os.getenv("ARXIV_MAX_SLEEP_SEC", "600"))
 ARXIV_INITIAL_JITTER_SEC = int(os.getenv("ARXIV_INITIAL_JITTER_SEC", "180"))
 ARXIV_QUERY_PAUSE_SEC = int(os.getenv("ARXIV_QUERY_PAUSE_SEC", "7"))
+ARXIV_FALLBACK_CHUNK_SIZE = int(os.getenv("ARXIV_FALLBACK_CHUNK_SIZE", "5"))
+ARXIV_FALLBACK_MAX_RESULTS = int(os.getenv("ARXIV_FALLBACK_MAX_RESULTS", "20"))
+ARXIV_FALLBACK_QUERY_PAUSE_SEC = int(os.getenv("ARXIV_FALLBACK_QUERY_PAUSE_SEC", "5"))
 
 # 최근 7일 -> 15일 -> 30일 -> 60일 -> 120일 -> 1년 -> 2년 -> 3년
 RECENT_WINDOWS = [7, 15, 30, 60, 120, 365, 730, 1095]
@@ -197,6 +200,10 @@ class ArxivRateLimited(ArxivTemporarilyUnavailable):
     pass
 
 
+class ArxivQueryNotAccepted(ArxivTemporarilyUnavailable):
+    pass
+
+
 def normalize_title(title: str) -> str:
     title = title.lower()
     title = re.sub(r"[^a-z0-9가-힣]", "", title)
@@ -287,6 +294,11 @@ def get_with_retry(url, timeout=90, retries=ARXIV_RETRIES, sleep_sec=ARXIV_BASE_
                     sleep_before_retry(wait_sec)
                 continue
 
+            if res.status_code == 406:
+                last_error = ArxivQueryNotAccepted(f"arXiv 406 Not Acceptable: {url}")
+                print("arXiv 406 Not Acceptable. 큰 검색 쿼리를 더 작은 쿼리로 나눠야 합니다.")
+                break
+
             if res.status_code in [500, 502, 503, 504]:
                 wait_sec = get_retry_after_seconds(res, sleep_sec * attempt)
                 last_error = ArxivTemporarilyUnavailable(f"arXiv 서버 오류 {res.status_code}: {url}")
@@ -330,6 +342,13 @@ def build_arxiv_query(keywords):
     )
 
     return f"({keyword_query}) AND ({category_query})"
+
+
+def chunk_keywords(keywords, chunk_size=ARXIV_FALLBACK_CHUNK_SIZE):
+    chunk_size = max(1, chunk_size)
+
+    for start in range(0, len(keywords), chunk_size):
+        yield keywords[start:start + chunk_size]
 
 
 def parse_arxiv_feed(feed_text):
@@ -379,7 +398,7 @@ def parse_arxiv_feed(feed_text):
     return papers
 
 
-def fetch_arxiv_query(group_name, keywords):
+def fetch_arxiv_query_once(group_name, keywords, max_results=MAX_RESULTS, label=None):
     query = build_arxiv_query(keywords)
     encoded_query = requests.utils.quote(query)
 
@@ -387,12 +406,13 @@ def fetch_arxiv_query(group_name, keywords):
         "https://export.arxiv.org/api/query?"
         f"search_query={encoded_query}"
         f"&start=0"
-        f"&max_results={MAX_RESULTS}"
+        f"&max_results={max_results}"
         f"&sortBy=submittedDate"
         f"&sortOrder=descending"
     )
 
-    print(f"arXiv API 호출 [{group_name}]: {url}")
+    query_label = label or group_name
+    print(f"arXiv API 호출 [{query_label}]: {url}")
 
     res = get_with_retry(url, timeout=90)
 
@@ -402,6 +422,68 @@ def fetch_arxiv_query(group_name, keywords):
         paper["search_categories"] = [ARXIV_CATEGORY_LABELS.get(group_name, group_name)]
 
     return papers
+
+
+def fetch_arxiv_query_fallback(group_name, keywords):
+    papers_by_id = {}
+    chunks = list(chunk_keywords(keywords))
+    max_results = max(1, min(MAX_RESULTS, ARXIV_FALLBACK_MAX_RESULTS))
+
+    print(
+        f"arXiv 그룹 [{group_name}] 큰 쿼리가 거절되어 "
+        f"{len(chunks)}개 작은 쿼리로 fallback합니다."
+    )
+
+    for idx, keyword_chunk in enumerate(chunks, start=1):
+        label = f"{group_name}:fallback:{idx}/{len(chunks)}"
+
+        try:
+            chunk_papers = fetch_arxiv_query_once(
+                group_name,
+                keyword_chunk,
+                max_results=max_results,
+                label=label,
+            )
+        except ArxivQueryNotAccepted as e:
+            print(f"fallback 쿼리도 arXiv에서 거절되었습니다 [{label}]: {e}")
+            continue
+
+        print(f"arXiv fallback 후보 수 [{label}]: {len(chunk_papers)}")
+
+        for paper in chunk_papers:
+            arxiv_id = paper["arxiv_id"]
+
+            if arxiv_id in papers_by_id:
+                existing_categories = papers_by_id[arxiv_id].setdefault("search_categories", [])
+                for category in paper.get("search_categories", []):
+                    if category not in existing_categories:
+                        existing_categories.append(category)
+            else:
+                papers_by_id[arxiv_id] = paper
+
+        if idx < len(chunks) and ARXIV_FALLBACK_QUERY_PAUSE_SEC > 0:
+            print(f"다음 fallback arXiv 쿼리 전 {ARXIV_FALLBACK_QUERY_PAUSE_SEC}초 대기합니다.")
+            time.sleep(ARXIV_FALLBACK_QUERY_PAUSE_SEC)
+
+    papers = sorted(
+        papers_by_id.values(),
+        key=lambda paper: paper["updated"],
+        reverse=True,
+    )
+
+    if not papers:
+        raise ArxivQueryNotAccepted(
+            f"arXiv 그룹 [{group_name}] fallback 쿼리에서도 후보를 가져오지 못했습니다."
+        )
+
+    return papers
+
+
+def fetch_arxiv_query(group_name, keywords):
+    try:
+        return fetch_arxiv_query_once(group_name, keywords)
+    except ArxivQueryNotAccepted:
+        return fetch_arxiv_query_fallback(group_name, keywords)
 
 
 def search_arxiv():

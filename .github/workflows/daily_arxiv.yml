@@ -52,6 +52,9 @@ jobs:
           ARXIV_BASE_SLEEP_SEC: 30
           ARXIV_INITIAL_JITTER_SEC: 0
           ARXIV_QUERY_PAUSE_SEC: 10
+          ARXIV_FALLBACK_CHUNK_SIZE: 5
+          ARXIV_FALLBACK_MAX_RESULTS: 20
+          ARXIV_FALLBACK_QUERY_PAUSE_SEC: 5
         shell: bash
         run: |
           set -euo pipefail
