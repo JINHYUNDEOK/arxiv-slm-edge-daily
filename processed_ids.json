@@ -834,5 +834,29 @@
     "status": "summarized",
     "processed_at": "2026-06-13T13:23:47.912888+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.13267",
+    "title": "TimeLens: On-Device Artifact Recognition with Retrieval-Augmented Question Answering for the Grand Egyptian Museum",
+    "pdf_url": "https://arxiv.org/pdf/2606.13267.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-13T13:49:37.142720+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.11652",
+    "title": "IAPO: Input Attribution-Aware Policy Optimization for Tool Use in Small Multimodal Agents",
+    "pdf_url": "https://arxiv.org/pdf/2606.11652.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-13T13:49:37.142720+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.11106",
+    "title": "FADA: Accessible fetal ultrasound interpretation and annotation with a selectively distilled unified vision-language model",
+    "pdf_url": "https://arxiv.org/pdf/2606.11106.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-13T13:49:37.142720+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
