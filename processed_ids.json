@@ -888,5 +888,35 @@
     "last_attempt_at": "2026-06-14T05:49:13.872975+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.13194",
+    "title": "WHAR Arena: Benchmarking the State of the Art in Efficient Wearable Human Activity Recognition",
+    "pdf_url": "https://arxiv.org/pdf/2606.13194.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-06-15T05:48:42.286791+09:00",
+    "last_attempt_at": "2026-06-15T05:48:42.286791+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.12806",
+    "title": "Quantum Reservoir Computing for Short-Term Power Load Forecasting in Resource-Constrained Energy Systems",
+    "pdf_url": "https://arxiv.org/pdf/2606.12806.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-06-15T05:48:42.286791+09:00",
+    "last_attempt_at": "2026-06-15T05:48:42.286791+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.11556",
+    "title": "Privacy-Preserving Federated Autoencoder for ECG Anomaly Detection on Edge Devices",
+    "pdf_url": "https://arxiv.org/pdf/2606.11556.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-06-15T05:48:42.286791+09:00",
+    "last_attempt_at": "2026-06-15T05:48:42.286791+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
