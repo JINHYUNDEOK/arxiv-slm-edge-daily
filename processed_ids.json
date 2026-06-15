@@ -918,5 +918,29 @@
     "last_attempt_at": "2026-06-15T05:48:42.286791+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.14668",
+    "title": "When to Write and When to Suppress: Route-Specialized Dual Adapters for Memory-Assisted Knowledge Editing",
+    "pdf_url": "https://arxiv.org/pdf/2606.14668.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-16T07:01:05.210427+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.14507",
+    "title": "Dense Coordinate-List Fine-Tuning Induces a Controllable Interference Surface in Vision-Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2606.14507.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-16T07:01:05.210427+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.14357",
+    "title": "No Accidental Software Agent First Canonical Code for Human Code Entropy Reduction and 30 to 500 times Lower Frontier Model Requirements",
+    "pdf_url": "https://arxiv.org/pdf/2606.14357.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-16T07:01:05.210427+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
