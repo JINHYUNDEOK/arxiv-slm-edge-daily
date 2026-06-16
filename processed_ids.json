@@ -942,5 +942,13 @@
     "status": "summarized",
     "processed_at": "2026-06-16T07:01:05.210427+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.16769",
+    "title": "Skill-to-LoRA: From Using Skills to Learning Behaviors for Token-Efficient LLM Agents",
+    "pdf_url": "https://arxiv.org/pdf/2606.16769.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-17T07:01:34.511789+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
