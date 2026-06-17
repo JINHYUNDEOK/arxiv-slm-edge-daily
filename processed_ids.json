@@ -950,5 +950,29 @@
     "status": "summarized",
     "processed_at": "2026-06-17T07:01:34.511789+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.18190",
+    "title": "Multi-Source Cybersecurity Logs: An ATT&CK-Labeled Dataset and SLM Evaluation",
+    "pdf_url": "https://arxiv.org/pdf/2606.18190.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-18T06:29:45.798646+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.15980",
+    "title": "Do Safety Monitors Stay Reliable After an Update? Benchmarking and Predicting Activation-Monitor Staleness",
+    "pdf_url": "https://arxiv.org/pdf/2606.15980.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-18T06:29:45.798646+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.15199",
+    "title": "CogGuard: Cognitive and Operational Profiling for Proactive Warning in Edge Intelligent Services",
+    "pdf_url": "https://arxiv.org/pdf/2606.15199.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-18T06:29:45.798646+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
