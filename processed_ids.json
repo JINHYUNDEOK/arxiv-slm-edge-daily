@@ -974,5 +974,21 @@
     "status": "summarized",
     "processed_at": "2026-06-18T06:29:45.798646+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.19079",
+    "title": "ARIADNE: Agnostic Routing for Inference-time Adapter DyNamic sElection",
+    "pdf_url": "https://arxiv.org/pdf/2606.19079.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-19T06:34:12.411419+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.18780",
+    "title": "SAMA: Semantic Anchor-aligned Augmentation for Unified Low-Resource Multimodal Information Extraction",
+    "pdf_url": "https://arxiv.org/pdf/2606.18780.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-19T06:34:12.411419+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
