@@ -990,5 +990,29 @@
     "status": "summarized",
     "processed_at": "2026-06-19T06:34:12.411419+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.19700",
+    "title": "TerraMARS: A Domain-Adapted Small-Language-Model Pipeline for Mars Terraforming Literature",
+    "pdf_url": "https://arxiv.org/pdf/2606.19700.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-20T05:53:08.751429+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.16140",
+    "title": "VibeThinker-3B: Exploring the Frontier of Verifiable Reasoning in Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2606.16140.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-20T05:53:08.751429+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.19528",
+    "title": "Techniques for Peak Memory Reduction for LoRA Fine-tuning of LLMs on Edge Devices",
+    "pdf_url": "https://arxiv.org/pdf/2606.19528.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-20T05:53:08.751429+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
