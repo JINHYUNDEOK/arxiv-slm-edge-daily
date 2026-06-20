@@ -1014,5 +1014,29 @@
     "status": "summarized",
     "processed_at": "2026-06-20T05:53:08.751429+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.16152",
+    "title": "The Quality-Utility Paradox: Why High-Reward Data Impairs Small Model Mathematical Reasoning",
+    "pdf_url": "https://arxiv.org/pdf/2606.16152.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-21T05:50:51.905036+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.18096",
+    "title": "S4oP: Operator-level Pruning of Structured State Space Models for Resource-Constrained Devices",
+    "pdf_url": "https://arxiv.org/pdf/2606.18096.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-21T05:50:51.905036+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.20515",
+    "title": "S-Agent: Spatial Tool-Use Elicits Reasoning for Spatial Intelligence",
+    "pdf_url": "https://arxiv.org/pdf/2606.20515.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-21T05:50:51.905036+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
