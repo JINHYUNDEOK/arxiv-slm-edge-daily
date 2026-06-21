@@ -1038,5 +1038,29 @@
     "status": "summarized",
     "processed_at": "2026-06-21T05:50:51.905036+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.19989",
+    "title": "Online Dynamic Batching with Formal Guarantees for LLM Training",
+    "pdf_url": "https://arxiv.org/pdf/2606.19989.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-22T05:53:28.412205+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.17107",
+    "title": "Models Take Notes at Prefill: KV Cache Can Be Editable and Composable",
+    "pdf_url": "https://arxiv.org/pdf/2606.17107.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-22T05:53:28.412205+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.20359",
+    "title": "Train, Retrieve, or Both? A Four-Arm Head-to-Head for Correct Statutory Citation on the Ontario Residential Tenancies Act",
+    "pdf_url": "https://arxiv.org/pdf/2606.20359.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-22T05:53:28.412205+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
