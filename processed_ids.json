@@ -1062,5 +1062,35 @@
     "status": "summarized",
     "processed_at": "2026-06-22T05:53:28.412205+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.19727",
+    "title": "NRITYAM: Language Models Meet Art and Heritage of Dance",
+    "pdf_url": "https://arxiv.org/pdf/2606.19727.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-06-23T06:38:25.347898+09:00",
+    "last_attempt_at": "2026-06-23T06:38:25.347898+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.18122",
+    "title": "Embedded Machine Learning for Microcontroller-Class Edge Devices: Data, Feature, Evaluation, and Deployment Pipelines",
+    "pdf_url": "https://arxiv.org/pdf/2606.18122.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-06-23T06:38:25.347898+09:00",
+    "last_attempt_at": "2026-06-23T06:38:25.347898+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.17241",
+    "title": "Beyond Benchmarks: Continuous Edge Inference for Fine-Grained Roadside Perception",
+    "pdf_url": "https://arxiv.org/pdf/2606.17241.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-06-23T06:38:25.347898+09:00",
+    "last_attempt_at": "2026-06-23T06:38:25.347898+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
