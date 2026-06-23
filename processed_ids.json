@@ -1092,5 +1092,29 @@
     "last_attempt_at": "2026-06-23T06:38:25.347898+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.22606",
+    "title": "Sub-Billion, Super-Frontier: Small Language Models Rival Zero-Shot Frontier LLMs on General and Literary Relation Extraction",
+    "pdf_url": "https://arxiv.org/pdf/2606.22606.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-24T06:14:45.720718+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.22296",
+    "title": "SCENIC: Semantic-Conditioned Edge-Aware Neural Framework for Structured IoT Command Generation",
+    "pdf_url": "https://arxiv.org/pdf/2606.22296.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-24T06:14:45.720718+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.21689",
+    "title": "Clinical Term Extraction using Open-Source Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2606.21689.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-24T06:14:45.720718+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
