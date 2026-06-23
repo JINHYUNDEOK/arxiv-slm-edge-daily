@@ -53,6 +53,8 @@ jobs:
           ARXIV_INITIAL_JITTER_SEC: 0
           ARXIV_QUERY_PAUSE_SEC: 10
           ARXIV_FALLBACK_QUERY_PAUSE_SEC: 5
+          MIN_SEARCH_WINDOW_DAYS: 30
+          GEMINI_CANDIDATE_LIMIT: 10
         shell: bash
         run: |
           set -euo pipefail

@@ -38,12 +38,13 @@ ARXIV_FALLBACK_QUERY_PAUSE_SEC = int(os.getenv("ARXIV_FALLBACK_QUERY_PAUSE_SEC",
 
 # 최근 7일 -> 15일 -> 30일 -> 60일 -> 120일 -> 1년 -> 2년 -> 3년
 RECENT_WINDOWS = [7, 15, 30, 60, 120, 365, 730, 1095]
+MIN_SEARCH_WINDOW_DAYS = int(os.getenv("MIN_SEARCH_WINDOW_DAYS", "30"))
 
 # 최소 목표 논문 수
 MIN_TARGET_PAPERS = 3
 
 # Gemini에게 넘길 후보 수
-GEMINI_CANDIDATE_LIMIT = 7
+GEMINI_CANDIDATE_LIMIT = int(os.getenv("GEMINI_CANDIDATE_LIMIT", "10"))
 
 # 최종 PDF에 들어갈 최대 논문 수
 FINAL_PAPER_LIMIT = 3
@@ -723,7 +724,7 @@ def local_score(paper):
 def select_candidates_by_windows(filtered):
     """
     최근 7일 -> 15일 -> 30일 -> 60일 -> 120일 -> 1년 -> 2년 -> 3년 순서로 확장.
-    최소 3개 후보가 확보되면 그 기간의 후보를 Gemini에 전달.
+    최소 검색 범위까지는 후보가 충분해도 확장하고, 이후 최소 후보 수가 확보되면 Gemini에 전달.
     최종 출력은 Gemini 프롬프트에서 최대 3편으로 제한.
     """
     if not filtered:
@@ -742,6 +743,9 @@ def select_candidates_by_windows(filtered):
         )
 
         print(f"최근 {window}일 후보 수: {len(window_candidates)}")
+
+        if window < MIN_SEARCH_WINDOW_DAYS:
+            continue
 
         if len(window_candidates) >= MIN_TARGET_PAPERS:
             return window_candidates[:GEMINI_CANDIDATE_LIMIT], window
