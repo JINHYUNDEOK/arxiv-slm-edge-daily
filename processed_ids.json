@@ -1116,5 +1116,29 @@
     "status": "summarized",
     "processed_at": "2026-06-24T06:14:45.720718+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.23395",
+    "title": "Automated Semantic Fault Localization in SysML v2: A Human-in-the-Loop Framework Using Knowledge-Graph Augmented LLMs",
+    "pdf_url": "https://arxiv.org/pdf/2606.23395.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-25T06:10:37.529680+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.22992",
+    "title": "Predicate Importance Estimation and Decoupled Rationale-Score Distillation for Entity Alignment",
+    "pdf_url": "https://arxiv.org/pdf/2606.22992.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-25T06:10:37.529680+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.24747",
+    "title": "Scaling Laws for Task-Specific LLM Distillation",
+    "pdf_url": "https://arxiv.org/pdf/2606.24747.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-25T06:10:37.529680+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
