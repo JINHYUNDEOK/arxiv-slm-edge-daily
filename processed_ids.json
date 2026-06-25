@@ -1140,5 +1140,29 @@
     "status": "summarized",
     "processed_at": "2026-06-25T06:10:37.529680+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.25605",
+    "title": "Constraint Tax in Open-Weight LLMs: An Empirical Study of Tool Calling Suppression Under Structured Output Constraints",
+    "pdf_url": "https://arxiv.org/pdf/2606.25605.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-26T06:13:23.491684+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.26027",
+    "title": "Why Multi-Step Tool-Use Reinforcement Learning Collapses and How Supervisory Signals Fix It",
+    "pdf_url": "https://arxiv.org/pdf/2606.26027.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-26T06:13:23.491684+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.25964",
+    "title": "WinDOM: Self-Family Distillation for Small-Model GUI Grounding",
+    "pdf_url": "https://arxiv.org/pdf/2606.25964.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-26T06:13:23.491684+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
