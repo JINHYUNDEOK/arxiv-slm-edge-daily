@@ -1164,5 +1164,13 @@
     "status": "summarized",
     "processed_at": "2026-06-26T06:13:23.491684+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.27069",
+    "title": "Towards Explainable Adjudicative Variance: Quantifying Judicial Discretion via Gated Multi-Task Learning",
+    "pdf_url": "https://arxiv.org/pdf/2606.27069.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-27T06:07:16.844125+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
