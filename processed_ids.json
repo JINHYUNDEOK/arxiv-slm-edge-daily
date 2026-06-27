@@ -1172,5 +1172,13 @@
     "status": "summarized",
     "processed_at": "2026-06-27T06:07:16.844125+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.26787",
+    "title": "AIGP: An LLM-Based Framework for Long-Term Value Alignment in E-Commerce Pricing",
+    "pdf_url": "https://arxiv.org/pdf/2606.26787.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-28T05:38:42.795298+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
