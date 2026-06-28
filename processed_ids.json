@@ -1180,5 +1180,35 @@
     "status": "summarized",
     "processed_at": "2026-06-28T05:38:42.795298+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.26452",
+    "title": "AnySimLite: A Lightweight Few-Shot Similarity Encoder for On-Device Speech-Adjacent Classification",
+    "pdf_url": "https://arxiv.org/pdf/2606.26452.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-06-29T05:42:33.953781+09:00",
+    "last_attempt_at": "2026-06-29T05:42:33.953781+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.26382",
+    "title": "Charting the Growth of Social-Physical HRI (spHRI): A Systematic Review Pipeline Augmented by Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2606.26382.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-06-29T05:42:33.953781+09:00",
+    "last_attempt_at": "2026-06-29T05:42:33.953781+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.26861",
+    "title": "Cascaded Multi-Granularity Pruning for On-Device LLM Inference in Industrial IoT",
+    "pdf_url": "https://arxiv.org/pdf/2606.26861.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-06-29T05:42:33.953781+09:00",
+    "last_attempt_at": "2026-06-29T05:42:33.953781+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
