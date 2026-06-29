@@ -1210,5 +1210,21 @@
     "last_attempt_at": "2026-06-29T05:42:33.953781+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.27634",
+    "title": "Continual Learning for Sequential Personalization of Small Language Models: A Stability Monitoring Analysis",
+    "pdf_url": "https://arxiv.org/pdf/2606.27634.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-30T06:09:43.077971+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.27871",
+    "title": "LocalNav: Distilling Frontier VLMs and Embodied RL for On-Device Object Goal Navigation",
+    "pdf_url": "https://arxiv.org/pdf/2606.27871.pdf",
+    "status": "summarized",
+    "processed_at": "2026-06-30T06:09:43.077971+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
