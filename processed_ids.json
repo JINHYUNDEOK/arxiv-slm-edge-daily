@@ -1226,5 +1226,29 @@
     "status": "summarized",
     "processed_at": "2026-06-30T06:09:43.077971+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.29961",
+    "title": "DuoMem: Towards Capable On-Device Memory Agents via Dual-Space Distillation",
+    "pdf_url": "https://arxiv.org/pdf/2606.29961.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-01T06:15:16.626796+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.30151",
+    "title": "AERIS: Aerial-Edge Role-Driven Intelligence at Runtime via Orchestrated Language-Model Swarm",
+    "pdf_url": "https://arxiv.org/pdf/2606.30151.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-01T06:15:16.626796+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.29580",
+    "title": "MAM-AI: An On-Device Medical Retrieval-Augmented Generation System for Nurses and Midwives in Zanzibar",
+    "pdf_url": "https://arxiv.org/pdf/2606.29580.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-01T06:15:16.626796+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
