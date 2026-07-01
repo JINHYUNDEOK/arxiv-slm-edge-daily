@@ -1250,5 +1250,29 @@
     "status": "summarized",
     "processed_at": "2026-07-01T06:15:16.626796+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.28479",
+    "title": "Decomposing Memorization Reduction in Privacy-Preserving Fine-Tuning of SLMs for CSIRTs",
+    "pdf_url": "https://arxiv.org/pdf/2606.28479.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-02T07:24:58.875475+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.31432",
+    "title": "Clinically Structured Rank-Gated LoRA for Cross-Benchmark Medical Question Answering",
+    "pdf_url": "https://arxiv.org/pdf/2606.31432.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-02T07:24:58.875475+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.31413",
+    "title": "Learning to Select, Not Relearn: Hard-Routed Mixtures of Reasoning LoRAs",
+    "pdf_url": "https://arxiv.org/pdf/2606.31413.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-02T07:24:58.875475+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
