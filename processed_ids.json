@@ -1274,5 +1274,35 @@
     "status": "summarized",
     "processed_at": "2026-07-02T07:24:58.875475+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.30062",
+    "title": "Little Brains, Big Feats: Exploring Compact Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2606.30062.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-07-03T05:42:10.911179+09:00",
+    "last_attempt_at": "2026-07-03T05:42:10.911179+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.28823",
+    "title": "Labeling Training Data for Entity Matching Using Large Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2606.28823.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-07-03T05:42:10.911179+09:00",
+    "last_attempt_at": "2026-07-03T05:42:10.911179+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.00501",
+    "title": "BaseRT: Best-in-Class LLM Inference on Apple Silicon via Native Metal",
+    "pdf_url": "https://arxiv.org/pdf/2607.00501.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-07-03T05:42:10.911179+09:00",
+    "last_attempt_at": "2026-07-03T05:42:10.911179+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
