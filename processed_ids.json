@@ -1304,5 +1304,29 @@
     "last_attempt_at": "2026-07-03T05:42:10.911179+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.02158",
+    "title": "Efficient PEFT Methods with Adaptive Checkpointing for Vision Models and VLMs on Resource Constrained Consumer-GPUs",
+    "pdf_url": "https://arxiv.org/pdf/2607.02158.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-04T09:45:08.807040+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.02214",
+    "title": "Unlocking Speech-Text Compositional Powers: Instruction-Following Speech Language Models without Instruction Tuning",
+    "pdf_url": "https://arxiv.org/pdf/2607.02214.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-04T09:45:08.807040+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.02512",
+    "title": "Program-as-Weights: A Programming Paradigm for Fuzzy Functions",
+    "pdf_url": "https://arxiv.org/pdf/2607.02512.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-04T09:45:08.807040+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
