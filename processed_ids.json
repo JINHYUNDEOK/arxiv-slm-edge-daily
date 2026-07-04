@@ -1328,5 +1328,29 @@
     "status": "summarized",
     "processed_at": "2026-07-04T09:45:08.807040+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.01927",
+    "title": "TUDUM: A Turkish-Thinking Reasoning Pipeline for Qwen3.5-27B",
+    "pdf_url": "https://arxiv.org/pdf/2607.01927.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-05T05:30:22.323706+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.02010",
+    "title": "InduceKV: Fixed-Footprint Continual Adaptation of Multimodal LLMs via Inducing KV Memories",
+    "pdf_url": "https://arxiv.org/pdf/2607.02010.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-05T05:30:22.323706+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.02479",
+    "title": "EAGLE-360: Embodied Active Global-to-Local Exploration in 360$^\\circ$",
+    "pdf_url": "https://arxiv.org/pdf/2607.02479.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-05T05:30:22.323706+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
