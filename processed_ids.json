@@ -1352,5 +1352,13 @@
     "status": "summarized",
     "processed_at": "2026-07-05T05:30:22.323706+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2606.31648",
+    "title": "Think in English, Answer in Korean: Efficient Adaptation of Multilingual Tool-Using Agents",
+    "pdf_url": "https://arxiv.org/pdf/2606.31648.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-06T05:36:29.881915+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
