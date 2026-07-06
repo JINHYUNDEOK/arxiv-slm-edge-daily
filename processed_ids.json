@@ -1360,5 +1360,35 @@
     "status": "summarized",
     "processed_at": "2026-07-06T05:36:29.881915+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.02501",
+    "title": "Embodied.cpp: A Portable Inference Runtime of Embodied AI Models on Heterogeneous Robots",
+    "pdf_url": "https://arxiv.org/pdf/2607.02501.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-07-07T06:11:35.031473+09:00",
+    "last_attempt_at": "2026-07-07T06:11:35.031473+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.01972",
+    "title": "Object Aligner: A Configurable JSON Schema Similarity Score for Graphs, Applied to LLM Prompt Optimization",
+    "pdf_url": "https://arxiv.org/pdf/2607.01972.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-07-07T06:11:35.031473+09:00",
+    "last_attempt_at": "2026-07-07T06:11:35.031473+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.01773",
+    "title": "Verifiable Knowledge Expansion through Retrieval-Grounded Formal Concept Analysis",
+    "pdf_url": "https://arxiv.org/pdf/2607.01773.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-07-07T06:11:35.031473+09:00",
+    "last_attempt_at": "2026-07-07T06:11:35.031473+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
