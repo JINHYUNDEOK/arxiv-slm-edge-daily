@@ -1414,5 +1414,35 @@
     "status": "summarized",
     "processed_at": "2026-07-09T05:44:31.166610+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.05571",
+    "title": "CSTutorBench: Benchmarking Small Language Models as Tutors for Block-Based Programming",
+    "pdf_url": "https://arxiv.org/pdf/2607.05571.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-07-10T06:05:08.584493+09:00",
+    "last_attempt_at": "2026-07-10T06:05:08.584493+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.07388",
+    "title": "TF-Engram: A Train-Free Engram with SSD-Backed Memory for Large Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2607.07388.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-07-10T06:05:08.584493+09:00",
+    "last_attempt_at": "2026-07-10T06:05:08.584493+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.05240",
+    "title": "Optimizing ML Workload Partitioning between CPUs and CIM Accelerators for Heterogeneous Computing",
+    "pdf_url": "https://arxiv.org/pdf/2607.05240.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-07-10T06:05:08.584493+09:00",
+    "last_attempt_at": "2026-07-10T06:05:08.584493+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
