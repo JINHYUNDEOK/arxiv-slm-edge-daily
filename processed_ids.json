@@ -1468,5 +1468,21 @@
     "status": "summarized",
     "processed_at": "2026-07-11T05:50:36.040991+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.08643",
+    "title": "BiSCo-LLM: Lookup-Free Binary Spherical Coding for Extreme Low-Bit Large Language Model Compression",
+    "pdf_url": "https://arxiv.org/pdf/2607.08643.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-12T05:23:59.337322+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.08208",
+    "title": "Diarization-Guided Qwen-ASR Adaptation for Multilingual Two-Speaker Conversational Speech",
+    "pdf_url": "https://arxiv.org/pdf/2607.08208.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-12T05:23:59.337322+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
