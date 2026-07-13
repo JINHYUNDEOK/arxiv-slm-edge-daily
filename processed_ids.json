@@ -1492,5 +1492,21 @@
     "status": "summarized",
     "processed_at": "2026-07-13T05:21:57.040289+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.09611",
+    "title": "Toward Real-Time Sentence-Level Sign Language Translation",
+    "pdf_url": "https://arxiv.org/pdf/2607.09611.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-14T05:39:31.261667+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.09259",
+    "title": "Blockchain-Linked Auditable Decision Management for Telecom/IoT Fraud-Control Requests",
+    "pdf_url": "https://arxiv.org/pdf/2607.09259.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-14T05:39:31.261667+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
