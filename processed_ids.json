@@ -1508,5 +1508,29 @@
     "status": "summarized",
     "processed_at": "2026-07-14T05:39:31.261667+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.09885",
+    "title": "Index SLM Technical Report",
+    "pdf_url": "https://arxiv.org/pdf/2607.09885.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-15T05:38:54.336358+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.09957",
+    "title": "Workload-Driven Optimization for On-Device Real-Time Subtitle Translation",
+    "pdf_url": "https://arxiv.org/pdf/2607.09957.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-15T05:38:54.336358+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.11106",
+    "title": "Beyond the Eye: Efficient Multimodal Reasoning via Self-Regulated Implicit Visual Tools",
+    "pdf_url": "https://arxiv.org/pdf/2607.11106.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-15T05:38:54.336358+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
