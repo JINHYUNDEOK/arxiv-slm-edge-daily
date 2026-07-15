@@ -1532,5 +1532,29 @@
     "status": "summarized",
     "processed_at": "2026-07-15T05:38:54.336358+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.11933",
+    "title": "Transforming LLMs into Efficient Cross-Encoders via Knowledge Distillation for RAG Reranking",
+    "pdf_url": "https://arxiv.org/pdf/2607.11933.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-16T05:34:51.930797+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.12422",
+    "title": "Accepted Prefixes Are Not All You Need: A Negative Result on PEFT-Based Block-Diffusion Drafting",
+    "pdf_url": "https://arxiv.org/pdf/2607.12422.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-16T05:34:51.930797+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.12111",
+    "title": "PFAdapter: Hierarchical LoRA Decomposition for Personalized Federated MLLMs",
+    "pdf_url": "https://arxiv.org/pdf/2607.12111.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-16T05:34:51.930797+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
