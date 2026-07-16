@@ -1556,5 +1556,29 @@
     "status": "summarized",
     "processed_at": "2026-07-16T05:34:51.930797+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.13430",
+    "title": "Exploring Post-Training Alignment of Small Language Models for Biomedical Data-to-Text Generation: A Case Study of Medication Leaflet",
+    "pdf_url": "https://arxiv.org/pdf/2607.13430.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-17T05:26:52.194609+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.13093",
+    "title": "Efficient and Privacy Aware Edge Cloud Collaborative Inference for Large Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2607.13093.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-17T05:26:52.194609+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.11940",
+    "title": "CARE-LoRA: Compressed Activation REconstruction for Memory-Efficient LoRA",
+    "pdf_url": "https://arxiv.org/pdf/2607.11940.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-17T05:26:52.194609+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
