@@ -1580,5 +1580,29 @@
     "status": "summarized",
     "processed_at": "2026-07-17T05:26:52.194609+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.13115",
+    "title": "Improving Molecular Property Prediction in Small Language Models Using Graph-based Tools",
+    "pdf_url": "https://arxiv.org/pdf/2607.13115.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-18T05:27:56.944767+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.14149",
+    "title": "Enhancing Small Language Models Reasoning through Knowledge Graph Grounding",
+    "pdf_url": "https://arxiv.org/pdf/2607.14149.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-18T05:27:56.944767+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.14506",
+    "title": "Non-vacuous Generalization Bounds for Reinforcement Learning with Verifiable Rewards",
+    "pdf_url": "https://arxiv.org/pdf/2607.14506.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-18T05:27:56.944767+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
