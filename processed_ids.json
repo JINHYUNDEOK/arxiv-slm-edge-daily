@@ -1604,5 +1604,29 @@
     "status": "summarized",
     "processed_at": "2026-07-18T05:27:56.944767+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.15105",
+    "title": "Long-Context Fine-Tuning with Limited VRAM",
+    "pdf_url": "https://arxiv.org/pdf/2607.15105.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-19T05:21:43.301543+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.14618",
+    "title": "PolyQ: Codesigning End-to-End Quantization Framework for Scalable Edge CPU LLM Inference",
+    "pdf_url": "https://arxiv.org/pdf/2607.14618.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-19T05:21:43.301543+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.14661",
+    "title": "SmartRAG: Native Graph-Based RAG for Mobile Device",
+    "pdf_url": "https://arxiv.org/pdf/2607.14661.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-19T05:21:43.301543+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
