@@ -1628,5 +1628,29 @@
     "status": "summarized",
     "processed_at": "2026-07-19T05:21:43.301543+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.12336",
+    "title": "Evaluating Health Misinformation in Low-Resource Languages: Integrating Small Language Models with a Culturally-Sensitive Responsible NLP Framework (Bangla as a Case Study)",
+    "pdf_url": "https://arxiv.org/pdf/2607.12336.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-20T05:23:56.253100+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.14852",
+    "title": "Towards Human-like Physical Intelligence: LifelongVision-Language-Action Learning for Robotic Manipulation",
+    "pdf_url": "https://arxiv.org/pdf/2607.14852.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-20T05:23:56.253100+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.14548",
+    "title": "HyMobileAgent: Data-Environment Co-Scaling for Efficient GUI Agents",
+    "pdf_url": "https://arxiv.org/pdf/2607.14548.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-20T05:23:56.253100+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
