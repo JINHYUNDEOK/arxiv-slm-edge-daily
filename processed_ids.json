@@ -1652,5 +1652,29 @@
     "status": "summarized",
     "processed_at": "2026-07-20T05:23:56.253100+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.13735",
+    "title": "Constraint-Driven Model Optimization: An Industry Framework for Selecting Compression and Acceleration Techniques in Modern Machine Learning Systems",
+    "pdf_url": "https://arxiv.org/pdf/2607.13735.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-21T05:49:17.561257+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.15845",
+    "title": "Knowledge-Centric Agents for Workflow Generation",
+    "pdf_url": "https://arxiv.org/pdf/2607.15845.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-21T05:49:17.561257+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.14769",
+    "title": "Dialogue Summarization with Emotion Dynamics Using Topic- and Participant-Centric Decomposition",
+    "pdf_url": "https://arxiv.org/pdf/2607.14769.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-21T05:49:17.561257+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
