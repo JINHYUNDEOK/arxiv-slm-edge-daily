@@ -1676,5 +1676,29 @@
     "status": "summarized",
     "processed_at": "2026-07-21T05:49:17.561257+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.17806",
+    "title": "PGN: Design and Implementation of a Vision-Language Navigation System Based on Pangu Multimodal Foundation Model",
+    "pdf_url": "https://arxiv.org/pdf/2607.17806.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-22T05:45:44.077979+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.18006",
+    "title": "MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models",
+    "pdf_url": "https://arxiv.org/pdf/2607.18006.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-22T05:45:44.077979+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.17532",
+    "title": "CommitLLM: A Fine-Tuned Pipeline for Git Commit Message Generation",
+    "pdf_url": "https://arxiv.org/pdf/2607.17532.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-22T05:45:44.077979+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
