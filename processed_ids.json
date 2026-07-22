@@ -1700,5 +1700,29 @@
     "status": "summarized",
     "processed_at": "2026-07-22T05:45:44.077979+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.19326",
+    "title": "Selective State-Space Adaptation and Retrieval for Language Model Reasoning",
+    "pdf_url": "https://arxiv.org/pdf/2607.19326.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-23T05:39:29.993198+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.19181",
+    "title": "Reasoning Before Translation: Enhancing Legal Machine Translation with Structured Reasoning",
+    "pdf_url": "https://arxiv.org/pdf/2607.19181.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-23T05:39:29.993198+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.18985",
+    "title": "Athena-Brain Technical Report: An Efficient Robot Brain for General Intelligence and Embodied Interactio",
+    "pdf_url": "https://arxiv.org/pdf/2607.18985.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-23T05:39:29.993198+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
