@@ -1724,5 +1724,29 @@
     "status": "summarized",
     "processed_at": "2026-07-23T05:39:29.993198+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.20216",
+    "title": "Small, Free, and Effective: Orchestrating Open-Weight Small Language Models to Outperform Single LLM for Malware Analysis",
+    "pdf_url": "https://arxiv.org/pdf/2607.20216.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-24T05:37:00.758455+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.19847",
+    "title": "Auto-Fill: Learning to Predict Missing Values Accurately with Specialist Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2607.19847.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-24T05:37:00.758455+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.19608",
+    "title": "Task Competence Is Not Instruction Following: Evaluating Instruction-Conflicting Behavior in Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2607.19608.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-24T05:37:00.758455+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
