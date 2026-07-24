@@ -1748,5 +1748,29 @@
     "status": "summarized",
     "processed_at": "2026-07-24T05:37:00.758455+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.20327",
+    "title": "PyroDash: Cost-Efficient Token-Level Small-Large Language Model Collaborative Inference",
+    "pdf_url": "https://arxiv.org/pdf/2607.20327.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-25T05:47:20.368466+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.21498",
+    "title": "Artificial Epanorthosis: Why large language models overuse a classical rhetorical figure, and how to mitigate it",
+    "pdf_url": "https://arxiv.org/pdf/2607.21498.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-25T05:47:20.368466+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.20690",
+    "title": "Learning to Detect UI Principle Violations via Reinforcement Learning",
+    "pdf_url": "https://arxiv.org/pdf/2607.20690.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-25T05:47:20.368466+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
