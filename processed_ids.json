@@ -1772,5 +1772,29 @@
     "status": "summarized",
     "processed_at": "2026-07-25T05:47:20.368466+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.18540",
+    "title": "Recti-Q: Feature-Space Rectification for Out-of-Distribution-Robust Quantized Perception in Edge Robotics",
+    "pdf_url": "https://arxiv.org/pdf/2607.18540.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-26T05:27:28.652997+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.20914",
+    "title": "Three-Pronged Spectral Control for Federated Parameter Efficient Fine Tuning",
+    "pdf_url": "https://arxiv.org/pdf/2607.20914.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-26T05:27:28.652997+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.16635",
+    "title": "TellTale: Blending Multi-Instance LoRA Text Encoders and a Zero-Shot LLM Judge for Ambivalence/Hesitancy Recognition in Videos",
+    "pdf_url": "https://arxiv.org/pdf/2607.16635.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-26T05:27:28.652997+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
