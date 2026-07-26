@@ -1796,5 +1796,29 @@
     "status": "summarized",
     "processed_at": "2026-07-26T05:27:28.652997+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.18101",
+    "title": "Empowering On-Device Model Adaptation with an Edge AI Inference Accelerator",
+    "pdf_url": "https://arxiv.org/pdf/2607.18101.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-27T06:33:02.813110+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.18081",
+    "title": "SelectInfer: Selective Neuron Loading and Computation for On-Device LLMs",
+    "pdf_url": "https://arxiv.org/pdf/2607.18081.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-27T06:33:02.813110+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.18034",
+    "title": "AdaHome: An Adaptive Smart Home Assistant using Local Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2607.18034.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-27T06:33:02.813110+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
