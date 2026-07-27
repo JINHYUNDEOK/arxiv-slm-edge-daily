@@ -1820,5 +1820,29 @@
     "status": "summarized",
     "processed_at": "2026-07-27T06:33:02.813110+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.22226",
+    "title": "Offline Vision-Language Navigation with Geometric Goal Localization for Outdoor Environments",
+    "pdf_url": "https://arxiv.org/pdf/2607.22226.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-28T05:50:57.616499+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.22489",
+    "title": "\\k{appa}-LoRA: Condition Numbers Reveal Which LoRA Matrices Worth Updating",
+    "pdf_url": "https://arxiv.org/pdf/2607.22489.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-28T05:50:57.616499+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.21680",
+    "title": "Encoding Invisible Causation for Bridge Diagnostic Agents: Triple-Guided Retrieval-Augmented Fine-Tuning with QLoRA",
+    "pdf_url": "https://arxiv.org/pdf/2607.21680.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-28T05:50:57.616499+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
