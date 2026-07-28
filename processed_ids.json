@@ -1844,5 +1844,21 @@
     "status": "summarized",
     "processed_at": "2026-07-28T05:50:57.616499+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.24585",
+    "title": "From Data to Device: ELMOD An Efficient German-First 2.7B Language Model for Mobile Inference",
+    "pdf_url": "https://arxiv.org/pdf/2607.24585.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-29T05:45:01.947255+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.24312",
+    "title": "CONSISTRE: A Unified Consistency-Aware Framework for Document-Level Relation Extraction with Large Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2607.24312.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-29T05:45:01.947255+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
