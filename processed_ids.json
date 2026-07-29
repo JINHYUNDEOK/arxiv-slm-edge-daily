@@ -1860,5 +1860,29 @@
     "status": "summarized",
     "processed_at": "2026-07-29T05:45:01.947255+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.25091",
+    "title": "Towards Robust Reinforcement Learning for Small-Scale Language Model Agents",
+    "pdf_url": "https://arxiv.org/pdf/2607.25091.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-30T05:31:33.970092+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.25583",
+    "title": "How Small Can You Go? A Controlled Study of LoRA Rank, Target Modules, and Quantization Trade-offs for Text-to-SQL on a 60M-Parameter Model",
+    "pdf_url": "https://arxiv.org/pdf/2607.25583.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-30T05:31:33.970092+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.26052",
+    "title": "Spend Experts Where You Are Unsure: Confidence-Adaptive Routing for Mixture-of-Experts LoRA",
+    "pdf_url": "https://arxiv.org/pdf/2607.26052.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-30T05:31:33.970092+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
