@@ -1884,5 +1884,29 @@
     "status": "summarized",
     "processed_at": "2026-07-30T05:31:33.970092+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.27172",
+    "title": "Improving Item Discoverability in e-Commerce Search via Related Intent Generation",
+    "pdf_url": "https://arxiv.org/pdf/2607.27172.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-31T05:43:56.179157+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.26594",
+    "title": "A Physics-Informed Framework for PID Tuning of Chemical Processes Using Large Language Model Agents",
+    "pdf_url": "https://arxiv.org/pdf/2607.26594.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-31T05:43:56.179157+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.26891",
+    "title": "DIRECT: Direct Decoding for Efficient and Aligned Sequence Labeling with Large Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2607.26891.pdf",
+    "status": "summarized",
+    "processed_at": "2026-07-31T05:43:56.179157+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
