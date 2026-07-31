@@ -1908,5 +1908,29 @@
     "status": "summarized",
     "processed_at": "2026-07-31T05:43:56.179157+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.28292",
+    "title": "CACHE-UK: A Stability-Aware Memory Editor for Sequentially Updated Quantized LLMs in Finance",
+    "pdf_url": "https://arxiv.org/pdf/2607.28292.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-01T05:42:22.753382+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.27984",
+    "title": "Share the Judge, Learn the Deferral: Where Specialization Helps LLM Evaluation",
+    "pdf_url": "https://arxiv.org/pdf/2607.27984.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-01T05:42:22.753382+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.27245",
+    "title": "Enhancing Law-Enforcement Audio Transcription: A LoRA-Based Adaptation of Whisper for BWC Footage",
+    "pdf_url": "https://arxiv.org/pdf/2607.27245.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-01T05:42:22.753382+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
