@@ -1932,5 +1932,21 @@
     "status": "summarized",
     "processed_at": "2026-08-01T05:42:22.753382+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.27506",
+    "title": "Models for minimalist RAG: B1ade 335M Embedding and 1B Parameter Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2607.27506.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-02T05:27:05.986038+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.28263",
+    "title": "Understanding Is Done Early: A Depth Division of Labor in Large Language Models and Its Use for Unbounded-Context Memory",
+    "pdf_url": "https://arxiv.org/pdf/2607.28263.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-02T05:27:05.986038+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
