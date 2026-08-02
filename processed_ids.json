@@ -1948,5 +1948,29 @@
     "status": "summarized",
     "processed_at": "2026-08-02T05:27:05.986038+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.28301",
+    "title": "HARGO: Heterogeneity-Aware Reward-Guided Optimization for RL Post-Training of LLMs on HPC Tasks",
+    "pdf_url": "https://arxiv.org/pdf/2607.28301.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-03T05:28:52.621203+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.27955",
+    "title": "SciSchema.org: A Multidisciplinary Collection of Schemas for Structured Scientific Process Descriptions",
+    "pdf_url": "https://arxiv.org/pdf/2607.27955.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-03T05:28:52.621203+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.27914",
+    "title": "Exact Action Values Are Not Enough: Rollout-Verified Reinforcement Fine-Tuning of a Reasoning Model for Multi-Zone VAV Control",
+    "pdf_url": "https://arxiv.org/pdf/2607.27914.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-03T05:28:52.621203+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
