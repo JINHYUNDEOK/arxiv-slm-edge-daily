@@ -1972,5 +1972,21 @@
     "status": "summarized",
     "processed_at": "2026-08-03T05:28:52.621203+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.29250",
+    "title": "Data Turnstile: A Scalable Open Framework for Function-Calling Data Generation",
+    "pdf_url": "https://arxiv.org/pdf/2607.29250.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-04T05:44:16.139334+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.29238",
+    "title": "Small Is Enough: Per-User Style Rewriting of AI-Edited Text via LoRA Adapters",
+    "pdf_url": "https://arxiv.org/pdf/2607.29238.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-04T05:44:16.139334+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
