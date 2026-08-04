@@ -1988,5 +1988,29 @@
     "status": "summarized",
     "processed_at": "2026-08-04T05:44:16.139334+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2607.29601",
+    "title": "The Parts Are Greater Than the Sum: Automated Task Sequencing for Efficient Training of Multi-Policy LLMs",
+    "pdf_url": "https://arxiv.org/pdf/2607.29601.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-05T05:51:51.403072+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.02528",
+    "title": "Uncertainty Is Not Enough: Value-of-Information Routing for Mixtures of LoRA Experts",
+    "pdf_url": "https://arxiv.org/pdf/2608.02528.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-05T05:51:51.403072+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.02407",
+    "title": "Antares: Foundation Models for Agentic Vulnerability Localization",
+    "pdf_url": "https://arxiv.org/pdf/2608.02407.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-05T05:51:51.403072+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
