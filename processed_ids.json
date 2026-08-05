@@ -2012,5 +2012,29 @@
     "status": "summarized",
     "processed_at": "2026-08-05T05:51:51.403072+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.03682",
+    "title": "PhyAI: Real-Time Physical AI at the Edge, Scalable Rollouts in the Cloud",
+    "pdf_url": "https://arxiv.org/pdf/2608.03682.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-06T05:44:22.473847+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.03979",
+    "title": "Video-DeepResearch: Towards the Next-Generation Multimodal Deepresearch Agent",
+    "pdf_url": "https://arxiv.org/pdf/2608.03979.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-06T05:44:22.473847+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.03579",
+    "title": "Pin Once, Swap Light: Subspace-Aligned Centroid-Residual Training for Efficient Ultra-LoRA Serving",
+    "pdf_url": "https://arxiv.org/pdf/2608.03579.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-06T05:44:22.473847+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
