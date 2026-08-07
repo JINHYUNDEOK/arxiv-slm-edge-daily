@@ -2036,5 +2036,21 @@
     "status": "summarized",
     "processed_at": "2026-08-06T05:44:22.473847+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.04488",
+    "title": "Energy- and Memory-Efficient PEFT Methods for Personalized On-Device SLMs on Consumer GPUs",
+    "pdf_url": "https://arxiv.org/pdf/2608.04488.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-07T09:49:13.264751+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.04175",
+    "title": "TriCLE: Tri-Modal Vision-Language Reasoning for Edge-Deployed Fine-Grained Clustering",
+    "pdf_url": "https://arxiv.org/pdf/2608.04175.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-07T09:49:13.264751+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
