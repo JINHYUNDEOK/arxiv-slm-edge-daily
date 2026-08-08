@@ -2076,5 +2076,13 @@
     "status": "summarized",
     "processed_at": "2026-08-08T05:06:33.938797+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.06253",
+    "title": "MetaboLLM: a metabolomics-specialized large language model for biochemical knowledge integration and predictive metabolite graph construction",
+    "pdf_url": "https://arxiv.org/pdf/2608.06253.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-09T04:55:12.938438+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
