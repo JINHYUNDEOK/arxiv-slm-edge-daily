@@ -2084,5 +2084,35 @@
     "status": "summarized",
     "processed_at": "2026-08-09T04:55:12.938438+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.05926",
+    "title": "BALANCE: Hybrid Autoregressive-Speculative LLM Inference in Wireless Edge Networks",
+    "pdf_url": "https://arxiv.org/pdf/2608.05926.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-10T04:58:49.926626+09:00",
+    "last_attempt_at": "2026-08-10T04:58:49.926626+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.05303",
+    "title": "EdgeXpert: An Edge Device for Memory-Efficient LLM Inference with Mixture-of-Experts and Speculative Decoding",
+    "pdf_url": "https://arxiv.org/pdf/2608.05303.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-10T04:58:49.926626+09:00",
+    "last_attempt_at": "2026-08-10T04:58:49.926626+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.05783",
+    "title": "GROM: Gradient-Free Rapid One-Shot Machine Unlearning",
+    "pdf_url": "https://arxiv.org/pdf/2608.05783.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-10T04:58:49.926626+09:00",
+    "last_attempt_at": "2026-08-10T04:58:49.926626+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
