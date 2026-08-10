@@ -2114,5 +2114,21 @@
     "last_attempt_at": "2026-08-10T04:58:49.926626+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.07169",
+    "title": "Agent Memory Distillation: Empowering Small LLM Agents with Hierarchical Teacher Memory",
+    "pdf_url": "https://arxiv.org/pdf/2608.07169.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-11T05:09:27.888619+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.07126",
+    "title": "PHOENIX: Fine-Tuned SLM-Powered Autonomous Satellite Lifetime Extension via Predictive Self-Healing and Multi-Agent AI Recovery",
+    "pdf_url": "https://arxiv.org/pdf/2608.07126.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-11T05:09:27.888619+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
