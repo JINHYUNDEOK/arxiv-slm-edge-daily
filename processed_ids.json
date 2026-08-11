@@ -2130,5 +2130,29 @@
     "status": "summarized",
     "processed_at": "2026-08-11T05:09:27.888619+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.08138",
+    "title": "EFFEKT: Efficient Federated Knowledge Transfer to Foundation Models",
+    "pdf_url": "https://arxiv.org/pdf/2608.08138.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-12T05:10:01.432709+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.09819",
+    "title": "Macaron-V1: Towards Open Continual Learning with Self-Improvement and Mixture-of-LoRA",
+    "pdf_url": "https://arxiv.org/pdf/2608.09819.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-12T05:10:01.432709+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.08896",
+    "title": "From Manuals to Maintenance: Fine-Tuning MedGemma for Multi-Modal Imaging System Support in Low-Resource Settings",
+    "pdf_url": "https://arxiv.org/pdf/2608.08896.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-12T05:10:01.432709+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
