@@ -2154,5 +2154,29 @@
     "status": "summarized",
     "processed_at": "2026-08-12T05:10:01.432709+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.10273",
+    "title": "Locally Deployable Small Language Models for Emergency Department Decision Support: A Systematic Benchmark of Fine-Tuning Strategies",
+    "pdf_url": "https://arxiv.org/pdf/2608.10273.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-13T05:09:03.769571+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.10538",
+    "title": "SKILLER: Language-Level Reinforcement Learning for Reusable Skill Extraction in Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2608.10538.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-13T05:09:03.769571+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.08037",
+    "title": "SkillSmith: Enhancing Locally Deployed Agents via Automatic Skill Construction and Evolution",
+    "pdf_url": "https://arxiv.org/pdf/2608.08037.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-13T05:09:03.769571+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
