@@ -2178,5 +2178,29 @@
     "status": "summarized",
     "processed_at": "2026-08-13T05:09:03.769571+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.11981",
+    "title": "Benchmarking Trustworthiness of SLMs: Pre-trained vs. Compressed",
+    "pdf_url": "https://arxiv.org/pdf/2608.11981.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-14T05:04:41.168224+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.12279",
+    "title": "Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation",
+    "pdf_url": "https://arxiv.org/pdf/2608.12279.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-14T05:04:41.168224+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.10430",
+    "title": "Actionable Hallucination Detection: Translating Latent Uncertainty into Agentic Critique",
+    "pdf_url": "https://arxiv.org/pdf/2608.10430.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-14T05:04:41.168224+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
