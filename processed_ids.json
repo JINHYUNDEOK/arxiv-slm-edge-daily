@@ -2202,5 +2202,29 @@
     "status": "summarized",
     "processed_at": "2026-08-14T05:04:41.168224+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.13420",
+    "title": "Enhancing Virtual Agents through SLMs and Edge-Computing: An Exploratory Evaluation of Think and Memory Processes",
+    "pdf_url": "https://arxiv.org/pdf/2608.13420.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-15T05:04:04.543129+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.09432",
+    "title": "ZetaGPT: A Reference Implementation of Positional--Encoding--Free State--Space--Attention Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2608.09432.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-15T05:04:04.543129+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.13069",
+    "title": "Behavioral Reprogramming of Open-Weights Models: Cognitive Plasticity and Alignment Bounds",
+    "pdf_url": "https://arxiv.org/pdf/2608.13069.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-15T05:04:04.543129+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
