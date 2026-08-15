@@ -2226,5 +2226,29 @@
     "status": "summarized",
     "processed_at": "2026-08-15T05:04:04.543129+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.13004",
+    "title": "HybridRAG-BN: A Retrieval-Augmented Framework with Fine-Tuned Verification for Bangla KBQA",
+    "pdf_url": "https://arxiv.org/pdf/2608.13004.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-16T04:46:33.107185+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.13250",
+    "title": "Follow the Norm: Accounting for Fine-Tuning and Prompt Effects on Model Rationales",
+    "pdf_url": "https://arxiv.org/pdf/2608.13250.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-16T04:46:33.107185+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.09189",
+    "title": "EmoS: A Theory-Grounded Framework for Evaluating and Aligning Emotional Intelligence in Spoken Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2608.09189.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-16T04:46:33.107185+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
