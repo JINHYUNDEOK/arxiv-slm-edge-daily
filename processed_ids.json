@@ -2250,5 +2250,35 @@
     "status": "summarized",
     "processed_at": "2026-08-16T04:46:33.107185+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.13293",
+    "title": "NAS-Driven Hardware Accelerator Exploration for Edge AI and Quantization Effects on the Pareto Space",
+    "pdf_url": "https://arxiv.org/pdf/2608.13293.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-17T04:45:40.751782+09:00",
+    "last_attempt_at": "2026-08-17T04:45:40.751782+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.10939",
+    "title": "A Cost-Efficient Routing Pipeline for Multilingual Short-Text Classification Using Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2608.10939.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-17T04:45:40.751782+09:00",
+    "last_attempt_at": "2026-08-17T04:45:40.751782+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.09119",
+    "title": "Motif 3: Technical Report",
+    "pdf_url": "https://arxiv.org/pdf/2608.09119.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-17T04:45:40.751782+09:00",
+    "last_attempt_at": "2026-08-17T04:45:40.751782+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
