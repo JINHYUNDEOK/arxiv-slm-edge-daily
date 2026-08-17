@@ -2280,5 +2280,29 @@
     "last_attempt_at": "2026-08-17T04:45:40.751782+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.14492",
+    "title": "Approximate Muon with low-rank adapters",
+    "pdf_url": "https://arxiv.org/pdf/2608.14492.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-18T04:52:28.716099+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.14221",
+    "title": "MathForm: Scaling Mathematical Autoformalization with Knowledge Retrieval and Verification-Guided Refinement",
+    "pdf_url": "https://arxiv.org/pdf/2608.14221.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-18T04:52:28.716099+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.14152",
+    "title": "Towards Efficient Multimodal and Multilingual Opinion Extraction for STI: A QLoRA-Based Fine-Tuning Approach",
+    "pdf_url": "https://arxiv.org/pdf/2608.14152.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-18T04:52:28.716099+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
