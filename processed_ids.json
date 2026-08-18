@@ -2304,5 +2304,21 @@
     "status": "summarized",
     "processed_at": "2026-08-18T04:52:28.716099+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.15693",
+    "title": "Large Models for Small Devices: Recent Advances and Empirical Analysis of Edge AI Deployment",
+    "pdf_url": "https://arxiv.org/pdf/2608.15693.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-19T04:50:08.273920+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.14094",
+    "title": "P2Skill: Privacy Preserving Skill Distillation for Cloud-Local LLM Inference Systems",
+    "pdf_url": "https://arxiv.org/pdf/2608.14094.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-19T04:50:08.273920+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
