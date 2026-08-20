@@ -2320,5 +2320,29 @@
     "status": "summarized",
     "processed_at": "2026-08-19T04:50:08.273920+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.18033",
+    "title": "Where A Small Language Model Helps in Invoice Categorisation, Understood Through Embedding Geometry",
+    "pdf_url": "https://arxiv.org/pdf/2608.18033.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-21T04:56:39.936950+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.18655",
+    "title": "TranslatePsy-AfriSLM: High-Quality Data Scaling For Low-Resource Machine Translation",
+    "pdf_url": "https://arxiv.org/pdf/2608.18655.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-21T04:56:39.936950+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.17092",
+    "title": "Structured Driving-State Narratives for Small Language Model-Based GNSS Spoofing Detection",
+    "pdf_url": "https://arxiv.org/pdf/2608.17092.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-21T04:56:39.936950+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
