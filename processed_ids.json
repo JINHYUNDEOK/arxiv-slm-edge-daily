@@ -2344,5 +2344,13 @@
     "status": "summarized",
     "processed_at": "2026-08-21T04:56:39.936950+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.20281",
+    "title": "Inject, Align, Recover: Staged Post-Training for Retrieval-Free Document Knowledge Internalization",
+    "pdf_url": "https://arxiv.org/pdf/2608.20281.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-22T04:48:39.341191+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
