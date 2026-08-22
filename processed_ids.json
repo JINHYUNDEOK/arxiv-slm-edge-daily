@@ -2352,5 +2352,35 @@
     "status": "summarized",
     "processed_at": "2026-08-22T04:48:39.341191+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.18656",
+    "title": "FlashAttention for Scalable Vector Architectures",
+    "pdf_url": "https://arxiv.org/pdf/2608.18656.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-23T04:47:13.753733+09:00",
+    "last_attempt_at": "2026-08-23T04:47:13.753733+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.18780",
+    "title": "A Real-Time Tsetlin Machine-based Non-intrusive Load Monitoring System on MCUs",
+    "pdf_url": "https://arxiv.org/pdf/2608.18780.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-23T04:47:13.753733+09:00",
+    "last_attempt_at": "2026-08-23T04:47:13.753733+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.17183",
+    "title": "Benchmarking the Benchmarks: Evaluating Automated Safety Benchmarks for Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2608.17183.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-23T04:47:13.753733+09:00",
+    "last_attempt_at": "2026-08-23T04:47:13.753733+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
