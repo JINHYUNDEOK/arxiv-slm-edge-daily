@@ -2382,5 +2382,29 @@
     "last_attempt_at": "2026-08-23T04:47:13.753733+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.20114",
+    "title": "DECOWAM: Decoupled Whole-Body World-Action Model for Legged Mobile Manipulation",
+    "pdf_url": "https://arxiv.org/pdf/2608.20114.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-24T04:46:43.166591+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.17938",
+    "title": "Grading Needs a Rubric, Not Intelligence",
+    "pdf_url": "https://arxiv.org/pdf/2608.17938.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-24T04:46:43.166591+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.17723",
+    "title": "Vision-Language Models for Analog Gauge Reading: An Empirical Study of Specialization, Transfer and Reliability",
+    "pdf_url": "https://arxiv.org/pdf/2608.17723.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-24T04:46:43.166591+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
