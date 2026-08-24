@@ -2406,5 +2406,29 @@
     "status": "summarized",
     "processed_at": "2026-08-24T04:46:43.166591+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.21172",
+    "title": "Thermo-FL: Thermal-Aware Robust Federated Fine-Tuning of Large Language Models for Edge AI",
+    "pdf_url": "https://arxiv.org/pdf/2608.21172.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-25T04:56:14.584329+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.20757",
+    "title": "PSK at WMT 2026 MIST: Task-Specialized QLoRA Adapters for Multilingual Summarization and Question Answering",
+    "pdf_url": "https://arxiv.org/pdf/2608.20757.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-25T04:56:14.584329+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.20873",
+    "title": "Nothing Changed but the Model: CellFill -- Bounded In-Cell Learning for Bit-Identical, Revocable Updates to Quantized LLMs",
+    "pdf_url": "https://arxiv.org/pdf/2608.20873.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-25T04:56:14.584329+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
