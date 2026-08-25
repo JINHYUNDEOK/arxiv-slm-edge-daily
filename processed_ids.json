@@ -2430,5 +2430,29 @@
     "status": "summarized",
     "processed_at": "2026-08-25T04:56:14.584329+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.22472",
+    "title": "Small Reasoning Models are Instruction Followers in Function Calling",
+    "pdf_url": "https://arxiv.org/pdf/2608.22472.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-26T04:56:11.249798+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.22108",
+    "title": "Development and Feasibility Evaluation of an Edge AI as Medical Device System for Breast Cancer Multidisciplinary Team Meetings",
+    "pdf_url": "https://arxiv.org/pdf/2608.22108.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-26T04:56:11.249798+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.23018",
+    "title": "SplitLite: Low-Rank Residual Compression for Split Learning",
+    "pdf_url": "https://arxiv.org/pdf/2608.23018.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-26T04:56:11.249798+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
