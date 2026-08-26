@@ -2454,5 +2454,29 @@
     "status": "summarized",
     "processed_at": "2026-08-26T04:56:11.249798+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.23816",
+    "title": "AQLoRA: A Zero-Search Recipe for Fast Quantized LoRA Fine-Tuning",
+    "pdf_url": "https://arxiv.org/pdf/2608.23816.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-27T07:24:48.137543+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.23911",
+    "title": "PROOF-Gen: From Optimized Data to Better Distillation",
+    "pdf_url": "https://arxiv.org/pdf/2608.23911.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-27T07:24:48.137543+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.23651",
+    "title": "Feedback That Backfires: Why Small Language Model Agents Repeat the Call They Just Watched Fail",
+    "pdf_url": "https://arxiv.org/pdf/2608.23651.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-27T07:24:48.137543+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
