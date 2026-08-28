@@ -2478,5 +2478,35 @@
     "status": "summarized",
     "processed_at": "2026-08-27T07:24:48.137543+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.26926",
+    "title": "A Layer Importance Metric for Quantization Accounting for the Speed-Quality Trade-off in Autoregressive Models",
+    "pdf_url": "https://arxiv.org/pdf/2608.26926.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-28T12:39:27.116131+09:00",
+    "last_attempt_at": "2026-08-28T12:39:27.116131+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.25677",
+    "title": "Learning New Facts with QLoRA: An Acquisition-Retention Frontier",
+    "pdf_url": "https://arxiv.org/pdf/2608.25677.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-28T12:39:27.116131+09:00",
+    "last_attempt_at": "2026-08-28T12:39:27.116131+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.26960",
+    "title": "Geo-LoRA: Geometry-Aware Subspace Evolution for Low-Rank Adaptation in Continual Learning",
+    "pdf_url": "https://arxiv.org/pdf/2608.26960.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-28T12:39:27.116131+09:00",
+    "last_attempt_at": "2026-08-28T12:39:27.116131+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
