@@ -2532,5 +2532,35 @@
     "status": "summarized",
     "processed_at": "2026-08-29T11:23:48.197987+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.24615",
+    "title": "Quantization Effects on Bangla Language Understanding in Large Language Models: A Systematic Evaluation",
+    "pdf_url": "https://arxiv.org/pdf/2608.24615.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-30T06:53:49.186438+09:00",
+    "last_attempt_at": "2026-08-30T06:53:49.186438+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.27417",
+    "title": "Retrieval Heads Meet Vision: Uncovering How VLMs Locate and Extract Visual Information",
+    "pdf_url": "https://arxiv.org/pdf/2608.27417.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-30T06:53:49.186438+09:00",
+    "last_attempt_at": "2026-08-30T06:53:49.186438+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.27254",
+    "title": "Circuit Condensation: Post-Training that Concentrates a Behavior's Causal Circuit",
+    "pdf_url": "https://arxiv.org/pdf/2608.27254.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-08-30T06:53:49.186438+09:00",
+    "last_attempt_at": "2026-08-30T06:53:49.186438+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
