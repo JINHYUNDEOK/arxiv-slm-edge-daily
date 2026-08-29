@@ -2508,5 +2508,29 @@
     "last_attempt_at": "2026-08-28T12:39:27.116131+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.24070",
+    "title": "Compression Trinity: Exploring Sparsity, Quantization, and Low-Rank Approximations for LLM Compression",
+    "pdf_url": "https://arxiv.org/pdf/2608.24070.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-29T11:23:48.197987+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.27167",
+    "title": "Calibrated Enough to Know, Not Calibrated to Act: Fabricated Evidence Makes LLM Agents Commit to the Unknowable",
+    "pdf_url": "https://arxiv.org/pdf/2608.27167.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-29T11:23:48.197987+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.25761",
+    "title": "Beam Search, Self-Consistency, and the Limits of Inference-Time Scaling for Grammar-Constrained Text-to-SQL in Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2608.25761.pdf",
+    "status": "summarized",
+    "processed_at": "2026-08-29T11:23:48.197987+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
