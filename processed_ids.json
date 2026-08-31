@@ -2586,5 +2586,29 @@
     "status": "summarized",
     "processed_at": "2026-08-31T08:16:32.970008+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.27919",
+    "title": "From Documents to Reasoning: A Validated Synthetic Data Pipeline and Semantic-Aware Fine-Tuning for Financial Numerical Reasoning",
+    "pdf_url": "https://arxiv.org/pdf/2608.27919.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-01T08:17:21.905258+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.28458",
+    "title": "Acquire, Repair, Preserve: A Diagnosis-Guided Post-Training Recipe for Small-Model Dialogue Game Agents",
+    "pdf_url": "https://arxiv.org/pdf/2608.28458.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-01T08:17:21.905258+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.28447",
+    "title": "Learning to Use Tools: Reinforcement Learning for Tool-Integrated Mathematical Reasoning",
+    "pdf_url": "https://arxiv.org/pdf/2608.28447.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-01T08:17:21.905258+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
