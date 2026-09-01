@@ -2610,5 +2610,29 @@
     "status": "summarized",
     "processed_at": "2026-09-01T08:17:21.905258+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.30731",
+    "title": "Calibrating Small Language Models for Claim Check-Worthiness Detection",
+    "pdf_url": "https://arxiv.org/pdf/2608.30731.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-02T06:56:00.061795+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.30987",
+    "title": "Stick to What You Know: A Study of Knowledge-Aligned Supervised Fine-Tuning",
+    "pdf_url": "https://arxiv.org/pdf/2608.30987.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-02T06:56:00.061795+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2608.30005",
+    "title": "Small Language Models as Judges for Rubric-Based Reinforcement Learning",
+    "pdf_url": "https://arxiv.org/pdf/2608.30005.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-02T06:56:00.061795+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
