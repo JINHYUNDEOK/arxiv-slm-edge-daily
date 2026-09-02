@@ -2634,5 +2634,21 @@
     "status": "summarized",
     "processed_at": "2026-09-02T06:56:00.061795+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.00590",
+    "title": "CRAFT: Fine-Tuning Pre-hoc Explainability in AI-native 6G RAN",
+    "pdf_url": "https://arxiv.org/pdf/2609.00590.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-03T06:56:24.284231+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.01046",
+    "title": "HiveTraceGuard-Pro: A Compact Generative Guardrail for Prompt Injection, Jailbreaks, and Adversarial Obfuscation",
+    "pdf_url": "https://arxiv.org/pdf/2609.01046.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-03T06:56:24.284231+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
