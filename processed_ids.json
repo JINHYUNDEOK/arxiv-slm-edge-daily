@@ -2650,5 +2650,29 @@
     "status": "summarized",
     "processed_at": "2026-09-03T06:56:24.284231+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.02735",
+    "title": "Choosing a PEFT Variant for Per-Patient Dysarthric ASR: A Single-Speaker Case Study on Two ASR Bases",
+    "pdf_url": "https://arxiv.org/pdf/2609.02735.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-04T06:50:44.329161+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.02540",
+    "title": "TrajMind: Chaining Role-Specialized LoRAs for Fast-and-Slow Collective Trajectory Anomaly Diagnosis",
+    "pdf_url": "https://arxiv.org/pdf/2609.02540.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-04T06:50:44.329161+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.02468",
+    "title": "DeepAffinity: Long-Term Aspect Preference Prediction in eCommerce using Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2609.02468.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-04T06:50:44.329161+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
