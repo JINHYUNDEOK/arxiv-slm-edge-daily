@@ -2674,5 +2674,29 @@
     "status": "summarized",
     "processed_at": "2026-09-04T06:50:44.329161+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.03900",
+    "title": "Beyond Endpoint Scores: Time- and Capacity-Conditioned Evaluation of Continual Knowledge Updating",
+    "pdf_url": "https://arxiv.org/pdf/2609.03900.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-05T06:42:02.205015+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.02760",
+    "title": "Measurement-Driven Sub-Network Selection for On-Premise Retrieval-Augmented Factory Agents",
+    "pdf_url": "https://arxiv.org/pdf/2609.02760.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-05T06:42:02.205015+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.03966",
+    "title": "Interface-Induced Trajectory Censoring",
+    "pdf_url": "https://arxiv.org/pdf/2609.03966.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-05T06:42:02.205015+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
