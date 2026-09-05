@@ -2698,5 +2698,21 @@
     "status": "summarized",
     "processed_at": "2026-09-05T06:42:02.205015+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.00665",
+    "title": "Triple-Bottom-Line Sustainability of Language Models for Edge AI: A Comparison Between SLMs and Quantized LLMs",
+    "pdf_url": "https://arxiv.org/pdf/2609.00665.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-06T06:34:41.051401+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.01918",
+    "title": "Grounded, Compute-Efficient LLM Policy Agents for Energy-Poverty Equity in Physically-Constrained Peer-to-Peer Energy Markets",
+    "pdf_url": "https://arxiv.org/pdf/2609.01918.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-06T06:34:41.051401+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
