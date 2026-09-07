@@ -2744,5 +2744,29 @@
     "last_attempt_at": "2026-09-07T06:35:13.689691+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.04526",
+    "title": "Scale-QLoRA: Code-Invariant Adapter Merging for Native 4-bit Microscaling LLMs",
+    "pdf_url": "https://arxiv.org/pdf/2609.04526.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-08T07:12:59.343052+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.04263",
+    "title": "Quality Recovery for Quantized KV Caches via Low-Rank Attention Adaptation",
+    "pdf_url": "https://arxiv.org/pdf/2609.04263.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-08T07:12:59.343052+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.05221",
+    "title": "A Verifier-Guided Explainable Reasoning Framework with Gold-Anchored QLoRA, Task-Aware Mixture-of-Experts, and Group-Relative RLVR",
+    "pdf_url": "https://arxiv.org/pdf/2609.05221.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-08T07:12:59.343052+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
