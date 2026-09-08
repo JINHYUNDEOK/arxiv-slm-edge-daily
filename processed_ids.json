@@ -2768,5 +2768,29 @@
     "status": "summarized",
     "processed_at": "2026-09-08T07:12:59.343052+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.05363",
+    "title": "Distill Globally, Adapt Locally: Reasoning Distillation and Product-Type Test-Time Training for Scalable Trade-Up Recommendation",
+    "pdf_url": "https://arxiv.org/pdf/2609.05363.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-09T06:58:24.993765+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.05189",
+    "title": "Can Large Language Models Anticipate Behavioral Responses to Social Policies? A Case of Pension Enrollment Prediction among China's Flexible Workers",
+    "pdf_url": "https://arxiv.org/pdf/2609.05189.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-09T06:58:24.993765+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.05043",
+    "title": "EuroAlpaca: Task-Preserving Localisation of Instruction Data for European Languages",
+    "pdf_url": "https://arxiv.org/pdf/2609.05043.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-09T06:58:24.993765+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
