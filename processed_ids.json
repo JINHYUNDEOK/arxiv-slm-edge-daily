@@ -2808,5 +2808,29 @@
     "status": "summarized",
     "processed_at": "2026-09-10T06:52:14.109485+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.09476",
+    "title": "From Fixed Keys to Readable Schemas: Small Language Models for Vehicle Agent Function Calls",
+    "pdf_url": "https://arxiv.org/pdf/2609.09476.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-11T06:46:49.157401+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.10155",
+    "title": "From Retrieval to Weights: Parametric Individualization of Small Language Models with Individual Text Corpora",
+    "pdf_url": "https://arxiv.org/pdf/2609.10155.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-11T06:46:49.157401+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.08189",
+    "title": "Do Dynamic Routers Need Memory? HeRo: History-Aware Routing for Efficient LLM Inference",
+    "pdf_url": "https://arxiv.org/pdf/2609.08189.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-11T06:46:49.157401+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
