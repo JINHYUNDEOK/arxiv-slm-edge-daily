@@ -2832,5 +2832,29 @@
     "status": "summarized",
     "processed_at": "2026-09-11T06:46:49.157401+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.11724",
+    "title": "The Eloquence submission for Task 2 of the Interspeech 2026 MLC-SLM challenge",
+    "pdf_url": "https://arxiv.org/pdf/2609.11724.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-12T06:52:03.120872+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.11412",
+    "title": "X-AuT: Progressive Audio-Encoder Compression for Speech LLMs with Cross-Scale Distillation",
+    "pdf_url": "https://arxiv.org/pdf/2609.11412.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-12T06:52:03.120872+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.11892",
+    "title": "Nuha-Speech: Building General-Purpose Arabic Speech-LLMs",
+    "pdf_url": "https://arxiv.org/pdf/2609.11892.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-12T06:52:03.120872+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
