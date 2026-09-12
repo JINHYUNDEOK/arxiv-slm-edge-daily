@@ -2856,5 +2856,29 @@
     "status": "summarized",
     "processed_at": "2026-09-12T06:52:03.120872+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.09662",
+    "title": "PELM: Power Efficient On-Device LLM Inference with Speculative Decoding and Dynamic Voltage Frequency Scaling",
+    "pdf_url": "https://arxiv.org/pdf/2609.09662.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-13T06:33:55.476745+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.10305",
+    "title": "RiLM: Parameter-Efficient Language Modeling via Geodesic Decoding",
+    "pdf_url": "https://arxiv.org/pdf/2609.10305.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-13T06:33:55.476745+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.09425",
+    "title": "Edu-QuRating: Multi-Dimensional Educational Data Curation with Distilled Pairwise Judgements",
+    "pdf_url": "https://arxiv.org/pdf/2609.09425.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-13T06:33:55.476745+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
