@@ -2904,5 +2904,29 @@
     "status": "summarized",
     "processed_at": "2026-09-15T07:39:50.082863+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.13682",
+    "title": "LayerRoute: Adaptive Layer-Skipping with LoRA-Preserved Quality for Efficient LLM Inference",
+    "pdf_url": "https://arxiv.org/pdf/2609.13682.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-16T07:24:24.223786+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.15606",
+    "title": "VideoScout: Learning Agentic Active Exploration with Adaptive Reasoning Pacing for Long Video Understanding",
+    "pdf_url": "https://arxiv.org/pdf/2609.15606.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-16T07:24:24.223786+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.15743",
+    "title": "Merging the Knowledge of LLMs for Automatic Speech Recognition",
+    "pdf_url": "https://arxiv.org/pdf/2609.15743.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-16T07:24:24.223786+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
