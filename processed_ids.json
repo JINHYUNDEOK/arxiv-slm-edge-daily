@@ -2928,5 +2928,21 @@
     "status": "summarized",
     "processed_at": "2026-09-16T07:24:24.223786+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.17109",
+    "title": "Shared-Prefix KV Reuse Across Standard LoRA Adapters: Quality and Serving Tradeoffs",
+    "pdf_url": "https://arxiv.org/pdf/2609.17109.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-17T07:16:02.614263+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.13470",
+    "title": "OrchSLM: Probing the Dynamics of Small Language Model Orchestration",
+    "pdf_url": "https://arxiv.org/pdf/2609.13470.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-17T07:16:02.614263+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
