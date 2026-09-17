@@ -2944,5 +2944,29 @@
     "status": "summarized",
     "processed_at": "2026-09-17T07:16:02.614263+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.19134",
+    "title": "ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments",
+    "pdf_url": "https://arxiv.org/pdf/2609.19134.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-18T07:22:59.018153+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.18766",
+    "title": "FRAUDSkill: Structured Frozen-Weight Skill Optimization for Audio Anti-Fraud Detection",
+    "pdf_url": "https://arxiv.org/pdf/2609.18766.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-18T07:22:59.018153+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.17515",
+    "title": "What Breaks Under Pruning in Smart Homes, and When? Evaluating LLM Degradation Across Architectures and Task Complexity",
+    "pdf_url": "https://arxiv.org/pdf/2609.17515.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-18T07:22:59.018153+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
