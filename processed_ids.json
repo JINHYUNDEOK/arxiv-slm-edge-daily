@@ -2968,5 +2968,21 @@
     "status": "summarized",
     "processed_at": "2026-09-18T07:22:59.018153+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.18063",
+    "title": "The Other Half of the Memory Wall: Serving 35B MoEs from SSD with Trained Routing Prediction",
+    "pdf_url": "https://arxiv.org/pdf/2609.18063.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-19T06:47:08.681677+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.19513",
+    "title": "QVAC Genesis III: A Large-Scale, High-Quality Open Synthetic STEM Corpus for Efficient Language Model Pre-Training",
+    "pdf_url": "https://arxiv.org/pdf/2609.19513.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-19T06:47:08.681677+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
