@@ -2984,5 +2984,13 @@
     "status": "summarized",
     "processed_at": "2026-09-19T06:47:08.681677+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.20684",
+    "title": "HerHealthEval: Evaluating Multilingual and Register-Sensitive Understanding of Women's Health Communication",
+    "pdf_url": "https://arxiv.org/pdf/2609.20684.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-20T06:38:21.760073+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
