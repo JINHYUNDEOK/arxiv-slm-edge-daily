@@ -2992,5 +2992,29 @@
     "status": "summarized",
     "processed_at": "2026-09-20T06:38:21.760073+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.16689",
+    "title": "Efficient Quantization-Aware Distillation with Cross-Modal Alignment for Edge Vision-Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2609.16689.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-21T06:44:52.982311+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.20715",
+    "title": "Don't Mask the Environment: Observation Supervision Changes How Agents Explore Under RL",
+    "pdf_url": "https://arxiv.org/pdf/2609.20715.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-21T06:44:52.982311+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.19923",
+    "title": "Co-VLA: Consensus-based Federated Training for Vision-Language-Action Models",
+    "pdf_url": "https://arxiv.org/pdf/2609.19923.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-21T06:44:52.982311+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
