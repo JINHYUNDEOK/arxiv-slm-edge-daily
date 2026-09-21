@@ -3016,5 +3016,35 @@
     "status": "summarized",
     "processed_at": "2026-09-21T06:44:52.982311+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.21712",
+    "title": "ZYT-World: A Real-Time Controllable World Model for Closed-Loop Autonomous-Driving Simulation",
+    "pdf_url": "https://arxiv.org/pdf/2609.21712.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-09-22T07:45:11.626988+09:00",
+    "last_attempt_at": "2026-09-22T07:45:11.626988+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.21515",
+    "title": "ServeGuard: Verifiable, Bounded-Residual Confinement of Operator-Invisible Channels Without Revealing the Certified Read Factor",
+    "pdf_url": "https://arxiv.org/pdf/2609.21515.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-09-22T07:45:11.626988+09:00",
+    "last_attempt_at": "2026-09-22T07:45:11.626988+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.21713",
+    "title": "TERMon: Detecting Persistent Behavioral Threats in Edge AI via Hardware-Native Ternary Runtime Monitor",
+    "pdf_url": "https://arxiv.org/pdf/2609.21713.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-09-22T07:45:11.626988+09:00",
+    "last_attempt_at": "2026-09-22T07:45:11.626988+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
