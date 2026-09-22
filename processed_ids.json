@@ -3046,5 +3046,29 @@
     "last_attempt_at": "2026-09-22T07:45:11.626988+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.24177",
+    "title": "Efficient LLM Distillation for Bangladesh Legal Context: A Smartphone-Compatible Retrieval-Augmented Generation Model",
+    "pdf_url": "https://arxiv.org/pdf/2609.24177.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-23T07:22:29.922799+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.24979",
+    "title": "LoRA-generating hypernetworks for efficient on-device LLM generative personalization",
+    "pdf_url": "https://arxiv.org/pdf/2609.24979.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-23T07:22:29.922799+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.24538",
+    "title": "QLoRA Fine-Tuning of Ministral LLM for Sequence-to-Function Protein Annotation",
+    "pdf_url": "https://arxiv.org/pdf/2609.24538.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-23T07:22:29.922799+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
