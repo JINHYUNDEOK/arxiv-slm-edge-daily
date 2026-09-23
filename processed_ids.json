@@ -3070,5 +3070,29 @@
     "status": "summarized",
     "processed_at": "2026-09-23T07:22:29.922799+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.23449",
+    "title": "PSD: Pseudo Self-Distillation of Memory Representation Capabilities for LLM Agents",
+    "pdf_url": "https://arxiv.org/pdf/2609.23449.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-24T07:25:35.029613+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.25373",
+    "title": "Extending FunctionGemma for Practical On-Device Mobile Function Calling",
+    "pdf_url": "https://arxiv.org/pdf/2609.25373.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-24T07:25:35.029613+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.23582",
+    "title": "ARID: A Deployable Edge AI System for Structured Information Extraction from Industrial Maintenance Work Orders",
+    "pdf_url": "https://arxiv.org/pdf/2609.23582.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-24T07:25:35.029613+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
