@@ -3094,5 +3094,29 @@
     "status": "summarized",
     "processed_at": "2026-09-24T07:25:35.029613+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.27197",
+    "title": "Enhancing Small Language Models for Power Outage Report Generation via Minimum Risk Training",
+    "pdf_url": "https://arxiv.org/pdf/2609.27197.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-25T07:39:41.655872+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.24526",
+    "title": "ME-VLM: A Unified VLM for Embodied Cognition and Agent Coordination",
+    "pdf_url": "https://arxiv.org/pdf/2609.24526.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-25T07:39:41.655872+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.28344",
+    "title": "Mizar: A 159M-Parameter Audio-Language Model for Audio Understanding",
+    "pdf_url": "https://arxiv.org/pdf/2609.28344.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-25T07:39:41.655872+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
