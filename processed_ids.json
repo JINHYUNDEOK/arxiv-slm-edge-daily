@@ -3126,5 +3126,21 @@
     "status": "summarized",
     "processed_at": "2026-09-26T07:41:47.584565+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.27669",
+    "title": "The Path Matters: Evaluating Small Language Models Beyond Answer Accuracy in KGQA",
+    "pdf_url": "https://arxiv.org/pdf/2609.27669.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-27T07:07:44.430743+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.29952",
+    "title": "Augur: A Synthetic Decision Lab for Rehearsing Reactions to Product and Policy Changes",
+    "pdf_url": "https://arxiv.org/pdf/2609.29952.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-27T07:07:44.430743+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
