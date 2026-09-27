@@ -3142,5 +3142,35 @@
     "status": "summarized",
     "processed_at": "2026-09-27T07:07:44.430743+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.29084",
+    "title": "A Rapid Pipeline for Training and Deploying ML Models on WeBe Band",
+    "pdf_url": "https://arxiv.org/pdf/2609.29084.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-09-28T07:29:07.508034+09:00",
+    "last_attempt_at": "2026-09-28T07:29:07.508034+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.29755",
+    "title": "On Growth and Form, and Function: Reusable Regulatory Handles Control Phenotypic Variation",
+    "pdf_url": "https://arxiv.org/pdf/2609.29755.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-09-28T07:29:07.508034+09:00",
+    "last_attempt_at": "2026-09-28T07:29:07.508034+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.29163",
+    "title": "Edge AI on Constrained Devices for Binary Sleep-Wake Classification in Dynamic Environments",
+    "pdf_url": "https://arxiv.org/pdf/2609.29163.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-09-28T07:29:07.508034+09:00",
+    "last_attempt_at": "2026-09-28T07:29:07.508034+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
