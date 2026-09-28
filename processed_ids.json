@@ -3172,5 +3172,29 @@
     "last_attempt_at": "2026-09-28T07:29:07.508034+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.31397",
+    "title": "Intent2Tc: Automated Intent-to-Traffic Control Translation with Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2609.31397.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-29T08:53:07.012518+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.31540",
+    "title": "Can You Check That? The Checkability Boundary for Local LLM Network Automation",
+    "pdf_url": "https://arxiv.org/pdf/2609.31540.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-29T08:53:07.012518+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.30836",
+    "title": "PTC-Decoder: Towards Intelligent SLMs on Offline Resource-Constrained Edge Devices",
+    "pdf_url": "https://arxiv.org/pdf/2609.30836.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-29T08:53:07.012518+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
