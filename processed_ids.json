@@ -3196,5 +3196,13 @@
     "status": "summarized",
     "processed_at": "2026-09-29T08:53:07.012518+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.33927",
+    "title": "Optimizing the Phi-2 Small Language Model for Real-time Chatbot Applications Using Parameter-Efficient Fine-Tuning (PEFT) with QLoRA Quantization",
+    "pdf_url": "https://arxiv.org/pdf/2609.33927.pdf",
+    "status": "summarized",
+    "processed_at": "2026-09-30T08:07:07.713618+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
