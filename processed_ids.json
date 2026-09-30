@@ -3204,5 +3204,29 @@
     "status": "summarized",
     "processed_at": "2026-09-30T08:07:07.713618+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.36982",
+    "title": "SRJudge: Empowering Large Language Models with Selective Reasoning for Fine-Grained Knowledge Concept Tagging",
+    "pdf_url": "https://arxiv.org/pdf/2609.36982.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-01T08:09:11.991139+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.36860",
+    "title": "IronLLM: Forging Compact Edge-Native Language Models for Real-Time Embodied Intelligence",
+    "pdf_url": "https://arxiv.org/pdf/2609.36860.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-01T08:09:11.991139+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.36976",
+    "title": "AMU:Admission and Memory Update for Personalized Conversations---Structured Memory with SLM Guided Control",
+    "pdf_url": "https://arxiv.org/pdf/2609.36976.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-01T08:09:11.991139+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
