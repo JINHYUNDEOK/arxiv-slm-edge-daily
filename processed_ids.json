@@ -3228,5 +3228,21 @@
     "status": "summarized",
     "processed_at": "2026-10-01T08:09:11.991139+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.39321",
+    "title": "GRPO Training Dynamics for Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2609.39321.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-02T08:21:47.475984+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.40230",
+    "title": "EviRover: Reinforcing Agentic Perception Beyond a Glance",
+    "pdf_url": "https://arxiv.org/pdf/2609.40230.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-02T08:21:47.475984+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
