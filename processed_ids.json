@@ -3244,5 +3244,29 @@
     "status": "summarized",
     "processed_at": "2026-10-02T08:21:47.475984+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.01569",
+    "title": "Managing Context and Communication in Distributed Agentic UAV Swarms",
+    "pdf_url": "https://arxiv.org/pdf/2610.01569.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-03T08:10:33.212579+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.00954",
+    "title": "Beyond Leaderboards: Tokenomics of Agentic Small Language Model Ensembles",
+    "pdf_url": "https://arxiv.org/pdf/2610.00954.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-03T08:10:33.212579+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.01963",
+    "title": "Counterfactual Auditing of Bias in Open-Source Large Language Models for Clinical Triage",
+    "pdf_url": "https://arxiv.org/pdf/2610.01963.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-03T08:10:33.212579+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
