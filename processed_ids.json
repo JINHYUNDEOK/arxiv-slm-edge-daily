@@ -3268,5 +3268,29 @@
     "status": "summarized",
     "processed_at": "2026-10-03T08:10:33.212579+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.01620",
+    "title": "FedLore: Communication and Memory Efficient Federated Learning via Shared Gradient Low-Rank Projection",
+    "pdf_url": "https://arxiv.org/pdf/2610.01620.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-04T07:21:26.628685+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2609.38948",
+    "title": "DrivingBench: Can Vision-Language Models Drive a Toyota Corolla?",
+    "pdf_url": "https://arxiv.org/pdf/2609.38948.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-04T07:21:26.628685+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.02206",
+    "title": "KaliBench: A Fine-Grained Benchmark for Cybersecurity Tool Use on Kali Linux with Runtime-Free Verifiable Rewards",
+    "pdf_url": "https://arxiv.org/pdf/2610.02206.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-04T07:21:26.628685+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
