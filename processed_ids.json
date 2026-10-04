@@ -3292,5 +3292,21 @@
     "status": "summarized",
     "processed_at": "2026-10-04T07:21:26.628685+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.01537",
+    "title": "FedFit: Federated Fine-Tuning of LLMs via Vector-Bank Parameterization and Quantization",
+    "pdf_url": "https://arxiv.org/pdf/2610.01537.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-05T07:27:04.040953+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.02142",
+    "title": "Keyword Harnesses Fail Open: A Cheap Diagnostic Ladder for Tool-Use Claims in Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2610.02142.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-05T07:27:04.040953+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
