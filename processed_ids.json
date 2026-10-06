@@ -3332,5 +3332,29 @@
     "status": "summarized",
     "processed_at": "2026-10-06T09:55:10.030666+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.05383",
+    "title": "Sibyl: An Efficient Small-large Model Collaboration Framework for Long-horizon Tasks",
+    "pdf_url": "https://arxiv.org/pdf/2610.05383.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-07T08:11:41.416698+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.06325",
+    "title": "Fine-Tuning a 3B-Parameter LLM on a Smartphone: Characterizing Sustained Training",
+    "pdf_url": "https://arxiv.org/pdf/2610.06325.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-07T08:11:41.416698+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.05318",
+    "title": "Robust Parameter-Efficient LLM Adaptation on Analog Hardware",
+    "pdf_url": "https://arxiv.org/pdf/2610.05318.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-07T08:11:41.416698+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
