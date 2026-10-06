@@ -3308,5 +3308,29 @@
     "status": "summarized",
     "processed_at": "2026-10-05T07:27:04.040953+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.03213",
+    "title": "Toward SLM-based agentic task-tool intent matching",
+    "pdf_url": "https://arxiv.org/pdf/2610.03213.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-06T09:55:10.030666+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.03163",
+    "title": "Predicting Steering Vectors and Adapter Weights for Few-Shot Author-Style Transfer",
+    "pdf_url": "https://arxiv.org/pdf/2610.03163.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-06T09:55:10.030666+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.02800",
+    "title": "BitNest: Bit-Nested Speculative Decoding for Memory-Efficient LLM Inference Acceleration",
+    "pdf_url": "https://arxiv.org/pdf/2610.02800.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-06T09:55:10.030666+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
