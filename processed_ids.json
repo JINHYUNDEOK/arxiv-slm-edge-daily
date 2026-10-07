@@ -3356,5 +3356,29 @@
     "status": "summarized",
     "processed_at": "2026-10-07T08:11:41.416698+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.07070",
+    "title": "Turnslide: Scalable Multi-Turn Data Synthesis by Walking a Finite-State Machine",
+    "pdf_url": "https://arxiv.org/pdf/2610.07070.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-08T08:41:56.225915+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.07816",
+    "title": "Do I Need the Cloud? Uncertainty-Aware Step-Level Handoff for Small Language Model Agents",
+    "pdf_url": "https://arxiv.org/pdf/2610.07816.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-08T08:41:56.225915+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.07086",
+    "title": "SchemaFill: Efficient LLM Tool Calling via Slot-Parallel Speculative Decoding",
+    "pdf_url": "https://arxiv.org/pdf/2610.07086.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-08T08:41:56.225915+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
