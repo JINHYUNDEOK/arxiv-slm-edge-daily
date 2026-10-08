@@ -3380,5 +3380,29 @@
     "status": "summarized",
     "processed_at": "2026-10-08T08:41:56.225915+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.09772",
+    "title": "Decoupling Logic from Persona: Structural Immunity of Edge LLM Agents to Context Pollution",
+    "pdf_url": "https://arxiv.org/pdf/2610.09772.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-09T08:52:04.412974+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.10349",
+    "title": "AutoAdapt: Automatic Domain Discovery Enables Low-Cost Extensibility",
+    "pdf_url": "https://arxiv.org/pdf/2610.10349.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-09T08:52:04.412974+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.09163",
+    "title": "ToolRACER: A Robust Agentic Conversation Emulation Resource for Agent Training and Evaluation",
+    "pdf_url": "https://arxiv.org/pdf/2610.09163.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-09T08:52:04.412974+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
