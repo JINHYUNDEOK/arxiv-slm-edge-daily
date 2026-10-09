@@ -3404,5 +3404,29 @@
     "status": "summarized",
     "processed_at": "2026-10-09T08:52:04.412974+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.10827",
+    "title": "Grammar Concept Annotation at Scale: Deployed Fine-Tuned Small Language Models Outperform Prompted Frontier Models",
+    "pdf_url": "https://arxiv.org/pdf/2610.10827.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-10T08:25:19.586548+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.10812",
+    "title": "Skill-SLM: Agent Skill-driven Small Language Models for Reliable Robot Operation",
+    "pdf_url": "https://arxiv.org/pdf/2610.10812.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-10T08:25:19.586548+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.09021",
+    "title": "Not Every Call Needs a Frontier Model: Per-Call-Site Evaluation of Small Language Models in a Deployed Agentic Home-Automation System",
+    "pdf_url": "https://arxiv.org/pdf/2610.09021.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-10T08:25:19.586548+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
