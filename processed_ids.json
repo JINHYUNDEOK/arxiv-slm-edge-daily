@@ -3428,5 +3428,21 @@
     "status": "summarized",
     "processed_at": "2026-10-10T08:25:19.586548+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.09209",
+    "title": "Multi-Objective Aligned Small Language Model Framework for SUD Patient Dialogue Generation",
+    "pdf_url": "https://arxiv.org/pdf/2610.09209.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-11T07:51:20.066487+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.09063",
+    "title": "Multi-Label Topic Assignment via LLM Distillation: A Comparative Analysis of Generative vs. Discriminative Student Models",
+    "pdf_url": "https://arxiv.org/pdf/2610.09063.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-11T07:51:20.066487+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
