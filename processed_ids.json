@@ -3444,5 +3444,13 @@
     "status": "summarized",
     "processed_at": "2026-10-11T07:51:20.066487+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.10854",
+    "title": "KDFP: A first-principles approach to knowledge distillation in large language models",
+    "pdf_url": "https://arxiv.org/pdf/2610.10854.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-12T08:05:14.182948+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
