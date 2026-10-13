@@ -3452,5 +3452,29 @@
     "status": "summarized",
     "processed_at": "2026-10-12T08:05:14.182948+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.13113",
+    "title": "Continually Post-training Small Models via Synthetic Self-distillation",
+    "pdf_url": "https://arxiv.org/pdf/2610.13113.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-13T10:33:47.417227+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.11160",
+    "title": "LadderEdit: Edit-Level Residual Compression for Memory-Efficient Lifelong Editing of LLMs",
+    "pdf_url": "https://arxiv.org/pdf/2610.11160.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-13T10:33:47.417227+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.13330",
+    "title": "Masked Diffusion Language Agents for Tool-Integrated Chemical Reasoning",
+    "pdf_url": "https://arxiv.org/pdf/2610.13330.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-13T10:33:47.417227+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
