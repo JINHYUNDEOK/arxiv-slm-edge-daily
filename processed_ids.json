@@ -3476,5 +3476,13 @@
     "status": "summarized",
     "processed_at": "2026-10-13T10:33:47.417227+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.13356",
+    "title": "SWE-Critix: Post-Training Generalist Verifiers for Assessing Coding-Agent Trajectories",
+    "pdf_url": "https://arxiv.org/pdf/2610.13356.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-14T08:22:45.216970+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
