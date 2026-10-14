@@ -3484,5 +3484,29 @@
     "status": "summarized",
     "processed_at": "2026-10-14T08:22:45.216970+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.14576",
+    "title": "Iterate on an LLM, Serve on an SLM",
+    "pdf_url": "https://arxiv.org/pdf/2610.14576.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-15T07:31:22.344822+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.18459",
+    "title": "Teacher-Guided Tool Learning for Small Language Models via Bidirectional KL Constraints",
+    "pdf_url": "https://arxiv.org/pdf/2610.18459.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-15T07:31:22.344822+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.18420",
+    "title": "Agaram 2.5B: The First Tamil-First Language Model Trained from Scratch with Tool Calling. A Playbook for Under-Represented Languages",
+    "pdf_url": "https://arxiv.org/pdf/2610.18420.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-15T07:31:22.344822+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
