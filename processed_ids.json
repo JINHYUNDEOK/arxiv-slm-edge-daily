@@ -3508,5 +3508,29 @@
     "status": "summarized",
     "processed_at": "2026-10-15T07:31:22.344822+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.19169",
+    "title": "Verification Turns Capability Gaps into Routing Decisions: Small Language Models for Clinical Documentation",
+    "pdf_url": "https://arxiv.org/pdf/2610.19169.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-16T07:36:04.689486+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.19901",
+    "title": "Multimodal Medical Image Parsing with Task-Specific Low-Rank Adapters",
+    "pdf_url": "https://arxiv.org/pdf/2610.19901.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-16T07:36:04.689486+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.17436",
+    "title": "SchemaWeaver: Accelerating On-Device Mobile Agentic AI via Schema-Guided Parallel LLM Decoding",
+    "pdf_url": "https://arxiv.org/pdf/2610.17436.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-16T07:36:04.689486+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
