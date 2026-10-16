@@ -3532,5 +3532,29 @@
     "status": "summarized",
     "processed_at": "2026-10-16T07:36:04.689486+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.19439",
+    "title": "Progress-Aware Distillation for Mitigating Stagnation in Small Language Model Agents",
+    "pdf_url": "https://arxiv.org/pdf/2610.19439.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-17T07:10:11.811842+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.21327",
+    "title": "DocPilot: Interactive Agent Orchestration and Training for Long Visual Document Understanding",
+    "pdf_url": "https://arxiv.org/pdf/2610.21327.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-17T07:10:11.811842+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.19382",
+    "title": "ixi-sLM: On-Device sLM for AI Call Agent Service",
+    "pdf_url": "https://arxiv.org/pdf/2610.19382.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-17T07:10:11.811842+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
