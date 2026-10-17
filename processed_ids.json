@@ -3556,5 +3556,29 @@
     "status": "summarized",
     "processed_at": "2026-10-17T07:10:11.811842+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.21151",
+    "title": "CARE-SD: Explainable Reasoning Architecture for Local SLM Self-Disclosure Analysis in Textual Data",
+    "pdf_url": "https://arxiv.org/pdf/2610.21151.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-18T06:38:28.565455+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.21308",
+    "title": "PocketTSLM: Deploying an On-Device Soft-Prompt Time-Series Language Model for Privacy-Preserving Smartphone Reasoning",
+    "pdf_url": "https://arxiv.org/pdf/2610.21308.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-18T06:38:28.565455+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.21045",
+    "title": "Learning When to Withdraw: Curriculum Coverage and Rule-Specific Failures in Fine-Tuned Language Agents",
+    "pdf_url": "https://arxiv.org/pdf/2610.21045.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-18T06:38:28.565455+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
