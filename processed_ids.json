@@ -3580,5 +3580,21 @@
     "status": "summarized",
     "processed_at": "2026-10-18T06:38:28.565455+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.23534",
+    "title": "From Billion-Scale to Million-Scale Language Models: Operational Capabilities for Embedded Post-Exploitation",
+    "pdf_url": "https://arxiv.org/pdf/2610.23534.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-20T08:00:48.535204+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.20980",
+    "title": "How to Train Your Little Dragon: Teaching a Small Language Model to Construct and Refine GPU Optimization Scripts",
+    "pdf_url": "https://arxiv.org/pdf/2610.20980.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-20T08:00:48.535204+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
