@@ -3644,5 +3644,29 @@
     "status": "summarized",
     "processed_at": "2026-10-22T07:36:39.234161+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.29426",
+    "title": "BIRD-RL: Scaling Agentic Reinforcement Learning over Stateful Data-Centric Environments",
+    "pdf_url": "https://arxiv.org/pdf/2610.29426.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-23T07:38:29.550945+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.28364",
+    "title": "Context-Aware Prompt Injection Detection via Small Language Models in RAG Pipelines: nokast-secureRAG",
+    "pdf_url": "https://arxiv.org/pdf/2610.28364.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-23T07:38:29.550945+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.29602",
+    "title": "A Diagnostic Study of Faithfulness in Diffusion Language Models for Table-to-Text Generation",
+    "pdf_url": "https://arxiv.org/pdf/2610.29602.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-23T07:38:29.550945+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
