@@ -3668,5 +3668,29 @@
     "status": "summarized",
     "processed_at": "2026-10-23T07:38:29.550945+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.31483",
+    "title": "Training Small Language Models for Transferable Tool Selection",
+    "pdf_url": "https://arxiv.org/pdf/2610.31483.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-24T07:34:47.025708+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.31280",
+    "title": "Beyond Accuracy: Disentangling Decomposition from Typed-State Quality Assurance in Multi-Agent LLM Pipelines",
+    "pdf_url": "https://arxiv.org/pdf/2610.31280.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-24T07:34:47.025708+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.29472",
+    "title": "OmniSimulator: Aligning Small Language Models for Authentic Heterogeneous Behavior Modeling",
+    "pdf_url": "https://arxiv.org/pdf/2610.29472.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-24T07:34:47.025708+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
