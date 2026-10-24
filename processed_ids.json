@@ -3692,5 +3692,29 @@
     "status": "summarized",
     "processed_at": "2026-10-24T07:34:47.025708+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.31397",
+    "title": "Parameter-Efficient Adaptation of Large Language Models to a Low-Resource Agglutinative Language: A Corpus, Datasets, and a Reproducible Benchmark for the Bashkir Language",
+    "pdf_url": "https://arxiv.org/pdf/2610.31397.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-25T06:47:06.212803+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.28872",
+    "title": "LEAN: Loss-Engineered Modulation of the Model Weight-Sensitivity Distribution for Efficient, Error-Tolerant Neural Networks",
+    "pdf_url": "https://arxiv.org/pdf/2610.28872.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-25T06:47:06.212803+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.27234",
+    "title": "EGI-BENCH: An Enterprise General Intelligence Benchmark Suite",
+    "pdf_url": "https://arxiv.org/pdf/2610.27234.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-25T06:47:06.212803+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
