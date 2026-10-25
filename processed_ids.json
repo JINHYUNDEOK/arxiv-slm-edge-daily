@@ -3716,5 +3716,35 @@
     "status": "summarized",
     "processed_at": "2026-10-25T06:47:06.212803+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.31640",
+    "title": "WorldForge V2: Eliciting Camera-Trajectory Alignment in Video Diffusion Models",
+    "pdf_url": "https://arxiv.org/pdf/2610.31640.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-10-26T06:59:11.119379+09:00",
+    "last_attempt_at": "2026-10-26T06:59:11.119379+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.29733",
+    "title": "SAKURA: Serving Attention Key-Value State Under Rate Adaptation for Private Image Editing on Phones",
+    "pdf_url": "https://arxiv.org/pdf/2610.29733.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-10-26T06:59:11.119379+09:00",
+    "last_attempt_at": "2026-10-26T06:59:11.119379+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.27152",
+    "title": "Model Exposure on One Device Endangers Others: Rethinking Edge Neural Network Security across Devices",
+    "pdf_url": "https://arxiv.org/pdf/2610.27152.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-10-26T06:59:11.119379+09:00",
+    "last_attempt_at": "2026-10-26T06:59:11.119379+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
