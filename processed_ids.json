@@ -3770,5 +3770,29 @@
     "status": "summarized",
     "processed_at": "2026-10-27T08:20:34.251487+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.34890",
+    "title": "AIPC: Evidence-Guided Agent Workflows for PyTorch Project Deployment",
+    "pdf_url": "https://arxiv.org/pdf/2610.34890.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-28T08:04:50.269063+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.32235",
+    "title": "Correct but Unselectable: The Hidden Interface Tax in Multi-Candidate Reasoning",
+    "pdf_url": "https://arxiv.org/pdf/2610.32235.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-28T08:04:50.269063+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.35654",
+    "title": "Improving JEV Entailment Reranking with Span Readouts and Selective Adaptation",
+    "pdf_url": "https://arxiv.org/pdf/2610.35654.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-28T08:04:50.269063+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
