@@ -3794,5 +3794,13 @@
     "status": "summarized",
     "processed_at": "2026-10-28T08:04:50.269063+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.37216",
+    "title": "Zhengrong-Spatial-Aware 1.0: Advancing 3D Multimodal Intelligence",
+    "pdf_url": "https://arxiv.org/pdf/2610.37216.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-29T08:25:30.911701+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
