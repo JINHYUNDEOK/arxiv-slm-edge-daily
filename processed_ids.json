@@ -3802,5 +3802,35 @@
     "status": "summarized",
     "processed_at": "2026-10-29T08:25:30.911701+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.37484",
+    "title": "Teach reality, not ethics: a drop-in continued-pretraining corpus installs coupled human-biosphere-AI welfare dispositions across model families",
+    "pdf_url": "https://arxiv.org/pdf/2610.37484.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-10-30T08:30:17.839395+09:00",
+    "last_attempt_at": "2026-10-30T08:30:17.839395+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.37206",
+    "title": "SimplexLoRA: Dynamic Rank Updating via Alternating Minimization with Simplex Projection",
+    "pdf_url": "https://arxiv.org/pdf/2610.37206.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-10-30T08:30:17.839395+09:00",
+    "last_attempt_at": "2026-10-30T08:30:17.839395+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.34304",
+    "title": "Real-Time Conveyor Belt Defect Detection via Edge TPU-Accelerated YOLOv11 on Raspberry Pi 5",
+    "pdf_url": "https://arxiv.org/pdf/2610.34304.pdf",
+    "status": "pending",
+    "first_seen_at": "2026-10-30T08:30:17.839395+09:00",
+    "last_attempt_at": "2026-10-30T08:30:17.839395+09:00",
+    "attempts": 1,
+    "model": "gemini-2.5-flash"
   }
 ]
