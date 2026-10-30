@@ -3832,5 +3832,29 @@
     "last_attempt_at": "2026-10-30T08:30:17.839395+09:00",
     "attempts": 1,
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.37833",
+    "title": "Depth through Recurrence: Towards Ultra-Efficient On-Device ASR",
+    "pdf_url": "https://arxiv.org/pdf/2610.37833.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-31T08:07:05.583675+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.39800",
+    "title": "Grammar Control for Language Learning with Sequential Monte Carlo and Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2610.39800.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-31T08:07:05.583675+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.40325",
+    "title": "How to Loop Your Transformer: Loop Scaling, Specialization, and Parallel Inference",
+    "pdf_url": "https://arxiv.org/pdf/2610.40325.pdf",
+    "status": "summarized",
+    "processed_at": "2026-10-31T08:07:05.583675+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
