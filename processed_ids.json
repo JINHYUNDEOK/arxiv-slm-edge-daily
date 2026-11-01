@@ -3864,5 +3864,13 @@
     "status": "summarized",
     "processed_at": "2026-11-01T07:43:13.253878+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.36896",
+    "title": "PREEN: Exemplar-Based Color Style Transfer with Smartphone Editor Presets",
+    "pdf_url": "https://arxiv.org/pdf/2610.36896.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-02T07:58:19.392470+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
