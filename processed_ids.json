@@ -3872,5 +3872,29 @@
     "status": "summarized",
     "processed_at": "2026-11-02T07:58:19.392470+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.41149",
+    "title": "Counterfactual Pairwise Augmentation Improves Small Pointwise LLM Judges",
+    "pdf_url": "https://arxiv.org/pdf/2610.41149.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-03T10:44:12.389341+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.41576",
+    "title": "Saidzoda-Tajik-LFM-2.6B: Adapting a 2.6B Hybrid Model to Tajik Tool Calling, and What Continued Pretraining Takes Away",
+    "pdf_url": "https://arxiv.org/pdf/2610.41576.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-03T10:44:12.389341+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2610.41552",
+    "title": "Enhancing Knowledge Entity Relation Extraction in Abstracts and Full-text Content of Academic Articles Using Large Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2610.41552.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-03T10:44:12.389341+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
