@@ -3896,5 +3896,29 @@
     "status": "summarized",
     "processed_at": "2026-11-03T10:44:12.389341+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.00877",
+    "title": "What Breaks and What Comes Back: Capability Damage and Recovery in Depth-Pruned Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2611.00877.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-04T10:30:13.616975+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.00650",
+    "title": "Heirloom: Carrying a Phone's Personalization Across Base-Model Generations",
+    "pdf_url": "https://arxiv.org/pdf/2611.00650.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-04T10:30:13.616975+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.00610",
+    "title": "Trail: Accurate Local Smart Home Control Using Decision Models",
+    "pdf_url": "https://arxiv.org/pdf/2611.00610.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-04T10:30:13.616975+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
