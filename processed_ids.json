@@ -3920,5 +3920,29 @@
     "status": "summarized",
     "processed_at": "2026-11-04T10:30:13.616975+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.03755",
+    "title": "Honest Small Decision Models for Finance: Scale, Specialization Collapse, and Mixed-Corpus Remediation",
+    "pdf_url": "https://arxiv.org/pdf/2611.03755.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-05T09:28:54.803519+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.04797",
+    "title": "Training Specialist LLMs on Your Phone: Forward-Only Optimization via Block-Spectral Coordinates",
+    "pdf_url": "https://arxiv.org/pdf/2611.04797.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-05T09:28:54.803519+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.02011",
+    "title": "MedPsy: State-of-the-Art Small Medical Language Models for Efficient Edge Deployment",
+    "pdf_url": "https://arxiv.org/pdf/2611.02011.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-05T09:28:54.803519+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
