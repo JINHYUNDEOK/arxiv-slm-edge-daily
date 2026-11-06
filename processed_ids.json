@@ -3968,5 +3968,29 @@
     "status": "summarized",
     "processed_at": "2026-11-06T09:29:22.779170+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.03948",
+    "title": "Balancing Chain-of-Thought and Answer Supervision for Small Language Models on Medical Question Answering",
+    "pdf_url": "https://arxiv.org/pdf/2611.03948.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-07T08:46:32.815488+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.04482",
+    "title": "TEMPO: Time Series Understanding via Discrete Tokenization",
+    "pdf_url": "https://arxiv.org/pdf/2611.04482.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-07T08:46:32.815488+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.08219",
+    "title": "Agent-R$^2$: Scaling Agents for Realistic Productivity Work via Real-Source Data Synthesis",
+    "pdf_url": "https://arxiv.org/pdf/2611.08219.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-07T08:46:32.815488+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
