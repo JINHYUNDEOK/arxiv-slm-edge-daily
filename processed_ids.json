@@ -3944,5 +3944,29 @@
     "status": "summarized",
     "processed_at": "2026-11-05T09:28:54.803519+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.06075",
+    "title": "UniCompress: From Multi-LoRA Experts to One Compact Model for Edge Intelligence",
+    "pdf_url": "https://arxiv.org/pdf/2611.06075.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-06T09:29:22.779170+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.03557",
+    "title": "PlantVLM-Edge: Quantized Vision-Language Models for On-Device Crop Health Diagnosis",
+    "pdf_url": "https://arxiv.org/pdf/2611.03557.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-06T09:29:22.779170+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.06731",
+    "title": "Template Gap Reconstruction for Shell Output Simulation with Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2611.06731.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-06T09:29:22.779170+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
