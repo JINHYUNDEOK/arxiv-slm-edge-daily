@@ -3992,5 +3992,29 @@
     "status": "summarized",
     "processed_at": "2026-11-07T08:46:32.815488+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.07820",
+    "title": "Axis-LoRA: Probing and Adapting Embedding Models for Personal-Memory Retrieval",
+    "pdf_url": "https://arxiv.org/pdf/2611.07820.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-08T07:54:53.710988+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.08216",
+    "title": "ProQuant: Progressive Quantization-aware Training for Edge MLLMs",
+    "pdf_url": "https://arxiv.org/pdf/2611.08216.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-08T07:54:53.710988+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.07825",
+    "title": "Generate-then-Rank: Learning Symbolic Goal Interpretation for Embodied Agents",
+    "pdf_url": "https://arxiv.org/pdf/2611.07825.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-08T07:54:53.710988+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
