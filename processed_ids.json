@@ -4016,5 +4016,29 @@
     "status": "summarized",
     "processed_at": "2026-11-08T07:54:53.710988+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.08414",
+    "title": "Spectral and Subspace Dynamics of LoRA in Supervised Fine-Tuning and Reinforcement Learning",
+    "pdf_url": "https://arxiv.org/pdf/2611.08414.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-09T08:01:48.582023+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.08133",
+    "title": "Beyond K/V Caches: Cross-Model State Handoff in Hybrid Linear-Attention LLMs",
+    "pdf_url": "https://arxiv.org/pdf/2611.08133.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-09T08:01:48.582023+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.06254",
+    "title": "HarnessFlow: MCTS-Guided Harness Optimization for LLM Agents",
+    "pdf_url": "https://arxiv.org/pdf/2611.06254.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-09T08:01:48.582023+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
