@@ -4040,5 +4040,29 @@
     "status": "summarized",
     "processed_at": "2026-11-09T08:01:48.582023+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.10292",
+    "title": "Continual Instruction Tuning for LLM-ased Management of Continuum Resources",
+    "pdf_url": "https://arxiv.org/pdf/2611.10292.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-10T11:20:51.597673+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.10145",
+    "title": "TrialJev: Open-Weight Single Pass Eligibility Scoring for Patient Trial Screening",
+    "pdf_url": "https://arxiv.org/pdf/2611.10145.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-10T11:20:51.597673+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.10443",
+    "title": "Spatial Representation Distillation and Knowledge Routing for Vision-Language-Action Models",
+    "pdf_url": "https://arxiv.org/pdf/2611.10443.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-10T11:20:51.597673+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
