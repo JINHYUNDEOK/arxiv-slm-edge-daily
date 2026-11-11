@@ -4064,5 +4064,29 @@
     "status": "summarized",
     "processed_at": "2026-11-10T11:20:51.597673+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.12628",
+    "title": "Adapting Small Language Models to Romanized Nepali: Tokenizer Fertility, Reference Likelihood, and Generation Metrics",
+    "pdf_url": "https://arxiv.org/pdf/2611.12628.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-11T09:11:44.567417+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.12164",
+    "title": "Let the Fixer Decide: Training a Code Localizer from the Fixer's Likelihood",
+    "pdf_url": "https://arxiv.org/pdf/2611.12164.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-11T09:11:44.567417+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.12311",
+    "title": "MNN-Pocket-0.3B Technical Report",
+    "pdf_url": "https://arxiv.org/pdf/2611.12311.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-11T09:11:44.567417+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
