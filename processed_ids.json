@@ -4088,5 +4088,29 @@
     "status": "summarized",
     "processed_at": "2026-11-11T09:11:44.567417+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.13509",
+    "title": "Mobile AI Factory: Building Specialized Language Models for Your Mobile Device",
+    "pdf_url": "https://arxiv.org/pdf/2611.13509.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-12T10:37:38.906119+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.14100",
+    "title": "Sckwoky at SHROOM-Visions: Character-Level Hallucination-Span Detection in Image-Conditioned VLMs via Dual-Prompted LoRA Decoders",
+    "pdf_url": "https://arxiv.org/pdf/2611.14100.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-12T10:37:38.906119+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.14059",
+    "title": "HandsOnAid: Building and Evaluating an Offline First-Aid Assistant for Emergency Response Scenarios",
+    "pdf_url": "https://arxiv.org/pdf/2611.14059.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-12T10:37:38.906119+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
