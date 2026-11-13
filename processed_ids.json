@@ -4112,5 +4112,29 @@
     "status": "summarized",
     "processed_at": "2026-11-12T10:37:38.906119+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.14397",
+    "title": "A Margin Perspective on LoRA: Robustness to Catastrophic Forgetting and Adapter Merging (MaLoRA)",
+    "pdf_url": "https://arxiv.org/pdf/2611.14397.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-13T09:38:20.087564+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.14356",
+    "title": "EngineAgent: Agentizing On-Device LLM Inference Engines with Inference Stack Hierarchy Awareness and Hardware Abilities",
+    "pdf_url": "https://arxiv.org/pdf/2611.14356.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-13T09:38:20.087564+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.13890",
+    "title": "DroneSegEdit: Adapting Pretrained Generative Editors for UAV Segmentation with Language-Grounded Verification",
+    "pdf_url": "https://arxiv.org/pdf/2611.13890.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-13T09:38:20.087564+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
