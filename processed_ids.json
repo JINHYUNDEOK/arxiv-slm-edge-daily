@@ -4136,5 +4136,29 @@
     "status": "summarized",
     "processed_at": "2026-11-13T09:38:20.087564+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.16460",
+    "title": "Fine-Tuned Small Language Model for Synthetic Clinical Data Generation and Predictive Healthcare Analytics",
+    "pdf_url": "https://arxiv.org/pdf/2611.16460.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-14T09:25:55.064038+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.17128",
+    "title": "Parameter-Efficient Conciseness Adaptation: Differentiable Length Control for Concise Clinical Reasoning in Smaller Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2611.17128.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-14T09:25:55.064038+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.17169",
+    "title": "Parsed, Plausible, Wrong: Output Format Controls Silent Errors in Small-Model Semantic Parsing",
+    "pdf_url": "https://arxiv.org/pdf/2611.17169.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-14T09:25:55.064038+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
