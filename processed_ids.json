@@ -4160,5 +4160,29 @@
     "status": "summarized",
     "processed_at": "2026-11-14T09:25:55.064038+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.17072",
+    "title": "Reasoning Supervision and Capability Retention in LoRA Domain Adaptation",
+    "pdf_url": "https://arxiv.org/pdf/2611.17072.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-15T08:16:08.046288+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.16414",
+    "title": "Small Language Models for Inference-Capability Routing: Effects of Model Capacity and Prompt Optimization on Downstream Quality and Efficiency",
+    "pdf_url": "https://arxiv.org/pdf/2611.16414.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-15T08:16:08.046288+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.17115",
+    "title": "CapLite: Prompt-Injection Defense for Small Language Model Agents without Model-Written Security Artifacts",
+    "pdf_url": "https://arxiv.org/pdf/2611.17115.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-15T08:16:08.046288+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
