@@ -4184,5 +4184,29 @@
     "status": "summarized",
     "processed_at": "2026-11-15T08:16:08.046288+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.17053",
+    "title": "Evaluating Pretrained Language Semantics for Structured EHR Prediction Tasks",
+    "pdf_url": "https://arxiv.org/pdf/2611.17053.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-16T08:28:04.896565+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.17007",
+    "title": "Skill Adapter: Personalized Modification and Online Routing of General-Purpose Skills",
+    "pdf_url": "https://arxiv.org/pdf/2611.17007.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-16T08:28:04.896565+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.16856",
+    "title": "Sustainable Federated Fine-Tuning with LoRA: Environmental Impact and Performance Footprint",
+    "pdf_url": "https://arxiv.org/pdf/2611.16856.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-16T08:28:04.896565+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
