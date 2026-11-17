@@ -4208,5 +4208,29 @@
     "status": "summarized",
     "processed_at": "2026-11-16T08:28:04.896565+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.19151",
+    "title": "MarineSparkLM-4B: A Lightweight Language Model for Marine and Offshore Engineering Built by Parameter-Efficient Adaptation",
+    "pdf_url": "https://arxiv.org/pdf/2611.19151.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-17T11:33:47.772194+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.18924",
+    "title": "Dependable Voice Command for Multi-UAV Swarms Using Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2611.18924.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-17T11:33:47.772194+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.18494",
+    "title": "ARCHER: From Rationale Imitation to Executable Reasoning in Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2611.18494.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-17T11:33:47.772194+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
