@@ -4232,5 +4232,29 @@
     "status": "summarized",
     "processed_at": "2026-11-17T11:33:47.772194+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.20458",
+    "title": "VISTA: A Framework for Vision-Informed Semantic Traffic Awareness",
+    "pdf_url": "https://arxiv.org/pdf/2611.20458.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-18T10:48:14.700687+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.21393",
+    "title": "Train After You Measure: a Pre-Registered Learning Curve for Fine-Tuning Typed Decision Models on One User's Labels",
+    "pdf_url": "https://arxiv.org/pdf/2611.21393.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-18T10:48:14.700687+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.20771",
+    "title": "Nemotron 3.5 Bolt E4B 4GB: An Open and Efficient Small Language Model for Fast Conversational Agents",
+    "pdf_url": "https://arxiv.org/pdf/2611.20771.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-18T10:48:14.700687+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
