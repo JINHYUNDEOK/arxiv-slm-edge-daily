@@ -4256,5 +4256,29 @@
     "status": "summarized",
     "processed_at": "2026-11-18T10:48:14.700687+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.23205",
+    "title": "Fine-Tuning Gemma 4 Edge Models for MATLAB Signal-Processing Code with SFT and QLoRA on a Laptop iGPU",
+    "pdf_url": "https://arxiv.org/pdf/2611.23205.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-19T10:22:26.720920+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.19767",
+    "title": "Logical AI OS: A Training-Free Governance Layer Outside the Model for Instruction Following -- Benefits, Costs, Failures, and the Calibration of the Measuring Instrument Itself",
+    "pdf_url": "https://arxiv.org/pdf/2611.19767.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-19T10:22:26.720920+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.19569",
+    "title": "Learning from Mutants: Teaching Small Language Models to Synthesise Loop Invariants",
+    "pdf_url": "https://arxiv.org/pdf/2611.19569.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-19T10:22:26.720920+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
