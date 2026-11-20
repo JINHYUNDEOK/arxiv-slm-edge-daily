@@ -4280,5 +4280,29 @@
     "status": "summarized",
     "processed_at": "2026-11-19T10:22:26.720920+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.23716",
+    "title": "Learning through Discernment: when a small language model learns from user feedback on the job, and when it decays",
+    "pdf_url": "https://arxiv.org/pdf/2611.23716.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-20T10:24:50.914265+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.22334",
+    "title": "BQ-LoRA: Binary-Quantized Low-Rank Adapters as Implicit Regularizers for Parameter-Efficient Fine-Tuning",
+    "pdf_url": "https://arxiv.org/pdf/2611.22334.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-20T10:24:50.914265+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.24650",
+    "title": "Self-Rewarded Reinforcement Learning for Better-Structured Medical Explanations in Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2611.24650.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-20T10:24:50.914265+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
