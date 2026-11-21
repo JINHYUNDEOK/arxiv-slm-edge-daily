@@ -4328,5 +4328,21 @@
     "status": "summarized",
     "processed_at": "2026-11-21T09:54:33.555725+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.25926",
+    "title": "ROAM-GRPO: Enforcing Reasoning Diversity in GRPO via Routed Off-mode Approach Mining",
+    "pdf_url": "https://arxiv.org/pdf/2611.25926.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-22T08:52:41.445485+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.24324",
+    "title": "Reducing Inference Cost of Coding Agents with Timeout Cascades",
+    "pdf_url": "https://arxiv.org/pdf/2611.24324.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-22T08:52:41.445485+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
