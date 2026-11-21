@@ -4304,5 +4304,29 @@
     "status": "summarized",
     "processed_at": "2026-11-20T10:24:50.914265+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.24535",
+    "title": "ProbMedTOD: A Bayesian Network Guided Task-Oriented Dialogue System for Patient History Taking",
+    "pdf_url": "https://arxiv.org/pdf/2611.24535.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-21T09:54:33.555725+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.26414",
+    "title": "ZeroVLN: Learning to Navigate without Supervised Fine-Tuning of the VLM Brain",
+    "pdf_url": "https://arxiv.org/pdf/2611.26414.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-21T09:54:33.555725+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.26333",
+    "title": "OceanCoder: A Verification-Guided Large Language Model for Automated Simulation Modelling in Ocean Engineering",
+    "pdf_url": "https://arxiv.org/pdf/2611.26333.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-21T09:54:33.555725+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
