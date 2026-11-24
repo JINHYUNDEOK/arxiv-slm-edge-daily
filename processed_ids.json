@@ -4368,5 +4368,29 @@
     "status": "summarized",
     "processed_at": "2026-11-23T09:25:05.422783+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.28502",
+    "title": "Shoonya: Zero-Socket In-Process Small Language Models for Graph Databases with Schema-Epoch KV Caching, Live Catalog Logit Masking, and Verifier-Advantage Distillation",
+    "pdf_url": "https://arxiv.org/pdf/2611.28502.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-24T13:22:36.293740+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.27443",
+    "title": "Learning When to Ask: Advisor-Aware Post-Training for SLM Agents",
+    "pdf_url": "https://arxiv.org/pdf/2611.27443.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-24T13:22:36.293740+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.27216",
+    "title": "Correct Precedents Induce Policy Violations in On-Device LLM Agents",
+    "pdf_url": "https://arxiv.org/pdf/2611.27216.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-24T13:22:36.293740+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
