@@ -4392,5 +4392,29 @@
     "status": "summarized",
     "processed_at": "2026-11-24T13:22:36.293740+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.30134",
+    "title": "WASP: Continual Weight Adaptation for Streaming LLM Personalization",
+    "pdf_url": "https://arxiv.org/pdf/2611.30134.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-25T12:07:21.696346+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.32064",
+    "title": "Fix How It Acts, Not How It Thinks: Surgical Fine-Tuning of Frontier LLMs",
+    "pdf_url": "https://arxiv.org/pdf/2611.32064.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-25T12:07:21.696346+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.28331",
+    "title": "Decision models for UAVBench and the viability of edge deployment",
+    "pdf_url": "https://arxiv.org/pdf/2611.28331.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-25T12:07:21.696346+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
