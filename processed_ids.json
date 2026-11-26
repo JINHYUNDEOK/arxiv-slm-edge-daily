@@ -4416,5 +4416,29 @@
     "status": "summarized",
     "processed_at": "2026-11-25T12:07:21.696346+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.33048",
+    "title": "Latent Merger: Latent-Space Composition of Hypernetwork-Generated LoRAs",
+    "pdf_url": "https://arxiv.org/pdf/2611.33048.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-26T11:23:37.859367+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.33735",
+    "title": "JOVE ICE: Intent Guided Cloud Edge Device Collaboration for AI Glasses",
+    "pdf_url": "https://arxiv.org/pdf/2611.33735.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-26T11:23:37.859367+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.33726",
+    "title": "NORMCRAFT: Cultural Norm Generation for Context-Aware Language Model Alignment",
+    "pdf_url": "https://arxiv.org/pdf/2611.33726.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-26T11:23:37.859367+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
