@@ -4440,5 +4440,13 @@
     "status": "summarized",
     "processed_at": "2026-11-26T11:23:37.859367+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.34561",
+    "title": "Compact Vision-Language Navigation in Continuous Environmentsvia On-Policy Training and Route-Bearing Output",
+    "pdf_url": "https://arxiv.org/pdf/2611.34561.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-27T11:21:28.181120+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
