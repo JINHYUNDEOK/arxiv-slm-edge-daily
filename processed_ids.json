@@ -4448,5 +4448,21 @@
     "status": "summarized",
     "processed_at": "2026-11-27T11:21:28.181120+09:00",
     "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.33510",
+    "title": "LogToPersona: New Benchmark and Efficient Persona Prediction through Semantic Log Filtering",
+    "pdf_url": "https://arxiv.org/pdf/2611.33510.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-28T11:06:29.769305+09:00",
+    "model": "gemini-2.5-flash"
+  },
+  {
+    "arxiv_id": "2611.32848",
+    "title": "Measurement Artifacts in Trustworthiness Evaluations of Quantized Small Language Models",
+    "pdf_url": "https://arxiv.org/pdf/2611.32848.pdf",
+    "status": "summarized",
+    "processed_at": "2026-11-28T11:06:29.769305+09:00",
+    "model": "gemini-2.5-flash"
   }
 ]
